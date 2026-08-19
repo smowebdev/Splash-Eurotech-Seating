@@ -1,0 +1,199 @@
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-accent: #D13532;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+select,
+textarea {
+    background-color: transparent;
+    outline: none;
+}
+
+a {
+    transition: all 0.3s ease-in-out;
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'Neue Montreal';
+    line-height: 1;
+    color: var(--color-black);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+p:last-child,
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+}
+
+/* will delete */
+main {
+    min-height: 200vh;
+}
+
+.container {
+    max-width: 1560px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    padding: 11px 19px;
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2%;
+}
+
+.btn.btn-primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.header-site {
+    padding: 21px 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+}
+
+.header-site .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.header-site .header-left {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+
+.header-site .header-right {
+    display: flex;
+    gap: 16px;
+}
+
+.header-site .header-logo {
+    width: 140px;
+    flex-shrink: 0;
+}
+
+.header-site .header-logo img {
+    width: 100%;
+}
+
+.header-site .header-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+}
+
+.header-site .header-menu ul li a {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2%;
+    color: #252525;
+
+}
+
+.header-site .header-menu ul li a:hover {
+    color: var(--color-accent);
+}
+
+.header-site .header-search {
+    position: relative;
+}
+
+.header-site .header-search .search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    transition: all 0.3s ease;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+.header-site .header-search input {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2%;
+    color: var(--color-black);
+    border-radius: 24px;
+    padding: 12px 19px 12px 42px;
+    transition: all 0.3s ease;
+    width: 120px;
+}
+
+.header-site .header-search input::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+
+.header-search:focus-within input {
+    border-color: var(--color-black);
+    width: 200px;
+}
+
+.header-search:focus-within .search-icon {
+    color: #000;
+}

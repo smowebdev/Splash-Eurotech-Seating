@@ -94,6 +94,7 @@ main {
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 2%;
+    background: transparent;
 }
 
 .btn.btn-primary {
@@ -116,8 +117,14 @@ main {
     color: var(--color-white);
 }
 
+.btn.btn-black-secondary {
+    border-color: var(--color-dark);
+    color: var(--color-dark);
+}
+
 .btn.btn-white:hover,
-.btn.btn-black:hover {
+.btn.btn-black:hover,
+.btn.btn-black-secondary:hover {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: var(--color-white);

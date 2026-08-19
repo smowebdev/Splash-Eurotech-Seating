@@ -78,6 +78,21 @@ main {
     min-height: 80vh;
 }
 
+.section-label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 24px;
+}
+
+.section-heading {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
 .container {
     max-width: 1560px;
     padding: 0 20px;
@@ -93,7 +108,7 @@ main {
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     background: transparent;
     transition: all 0.3s ease;
 }
@@ -138,6 +153,25 @@ main {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: var(--color-white);
+}
+
+.swiper-pagination {
+    bottom: -2px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 5px !important;
+    height: 5px !important;
+    background: #D9D9D9 !important;
+    opacity: 1 !important;
+    margin: 0 1px !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    width: 14px !important;
+    background: var(--color-black) !important;
+    border-radius: 20px !important;
 }
 
 .header-site {
@@ -276,7 +310,7 @@ main {
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
 }
 
 .mega-menu-column ul li a:hover,
@@ -290,7 +324,7 @@ a.mega-menu-heading:hover {
     gap: 12px;
     font-family: 'PP Neue Montreal';
     font-weight: 500;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     line-height: 19px;
     font-size: 16px;
 }
@@ -333,7 +367,7 @@ a.mega-menu-heading:hover {
     font-size: 14px;
     line-height: 17px;
     font-weight: 500;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
 }
 
 .mega-menu-card-title.title-white {
@@ -388,7 +422,7 @@ a.mega-menu-heading:hover {
     font-size: 16px;
     font-weight: 500;
     line-height: 19px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     transition: all 0.3s ease;
 }
 
@@ -396,7 +430,7 @@ a.mega-menu-heading:hover {
     margin-top: 16px;
     font-size: 14px;
     line-height: 17px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     color: var(--color-dark);
     opacity: 0.6;
     max-width: 145px;
@@ -420,7 +454,7 @@ a.mega-menu-heading:hover {
     border: 1px solid rgba(0, 0, 0, 0.2);
     font-size: 14px;
     line-height: 17px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     color: var(--color-black);
     border-radius: 24px;
     padding: 12px 19px 12px 42px;
@@ -470,7 +504,7 @@ a.mega-menu-heading:hover {
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     margin-bottom: 40px;
 }
 
@@ -487,7 +521,7 @@ a.mega-menu-heading:hover {
 .footer-site .footer-email {
     font-size: 16px;
     line-height: 140%;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     color: #A5A5A5;
 }
 
@@ -543,7 +577,7 @@ a.mega-menu-heading:hover {
 .footer-menus ul li a {
     font-size: 16px;
     line-height: 140%;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     color: #A5A5A5;
     display: block;
 }
@@ -572,7 +606,7 @@ a.mega-menu-heading:hover {
 .footer-bottom-links a {
     font-size: 14px;
     line-height: 17px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     color: #A5A5A5;
 }
 
@@ -615,13 +649,13 @@ a.mega-menu-heading:hover {
 .hero-sec .hero-heading {
     font-size: 72px;
     line-height: 110.00000000000001%;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
 }
 
 .hero-sec .hero-desc {
     font-size: 16px;
     line-height: 140%;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     max-width: 315px;
 }
 
@@ -640,7 +674,7 @@ a.mega-menu-heading:hover {
 .expolore-coll__heading {
     font-size: 32px;
     line-height: 38px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
 }
 
 
@@ -649,15 +683,17 @@ a.mega-menu-heading:hover {
     justify-content: space-between;
     margin-bottom: 40px;
     align-items: end;
+    gap: 32px;
+    flex-wrap: wrap;
 }
 
 
-.expolore-coll__navigation {
+.swiper-navigation {
     display: flex;
     gap: 32px;
 }
 
-.expolore-coll__navigation button {
+.swiper-navigation button {
     cursor: pointer;
     width: 24px;
     height: 24px;
@@ -667,11 +703,14 @@ a.mega-menu-heading:hover {
     color: #000;
 }
 
-.expolore-coll__navigation button.swiper-button-disabled {
+.swiper-navigation button.swiper-button-disabled {
     color: rgb(0, 0, 0, 0.2);
     cursor: default;
 }
 
+.swiper-navigation button.swiper-button-lock {
+    display: none;
+}
 
 .expolore-coll__slider {
     overflow: visible;
@@ -682,12 +721,12 @@ a.mega-menu-heading:hover {
     width: 420px;
 }
 
-.expolore-coll__item {
+.cs-product__item {
     display: block;
     overflow: hidden;
 }
 
-.expolore-coll__item .item-image {
+.cs-product__item .item-image {
     aspect-ratio: 420/580;
     display: flex;
     align-items: center;
@@ -697,11 +736,11 @@ a.mega-menu-heading:hover {
     position: relative;
 }
 
-.expolore-coll__item .item-image img {
+.cs-product__item .item-image img {
     width: 100%;
 }
 
-.expolore-coll__item .item-configure {
+.cs-product__item .item-configure {
     position: absolute;
     z-index: 2;
     position: absolute;
@@ -712,31 +751,31 @@ a.mega-menu-heading:hover {
     transition: all 0.4s ease;
 }
 
-.expolore-coll__item:hover .item-configure {
+.cs-product__item:hover .item-configure {
     bottom: 24px;
 }
 
-.expolore-coll__item .item-configure:hover {
+.cs-product__item .item-configure:hover {
     background: var(--color-dark);
     border-color: var(--color-dark);
 }
 
-.expolore-coll__item .item-content {
+.cs-product__item .item-content {
     padding-top: 16px;
 }
 
-.expolore-coll__item .item-title {
+.cs-product__item .item-title {
     font-size: 20px;
     line-height: 1.2;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
 }
 
-.expolore-coll__item .item-view {
+.cs-product__item .item-view {
     font-family: 'PP Neue Montreal';
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    letter-spacing: 2%;
+    letter-spacing: 0.02em;
     color: var(--color-dark);
     opacity: 0.5;
     display: flex;
@@ -749,27 +788,27 @@ a.mega-menu-heading:hover {
 
 }
 
-.expolore-coll__item .item-view svg {
+.cs-product__item .item-view svg {
     transition: all 0.3s ease;
     transform: translateX(-12px);
     opacity: 0;
 }
 
-.expolore-coll__item .item-view:hover {
+.cs-product__item .item-view:hover {
     opacity: 1;
 }
 
-.expolore-coll__item .item-view:hover svg {
+.cs-product__item .item-view:hover svg {
     transform: translateX(0);
     opacity: 1;
 }
 
-.expolore-coll__item:hover .item-view {
+.cs-product__item:hover .item-view {
     visibility: visible;
     transform: translateY(0);
 }
 
-.expolore-coll__slider .swiper-scrollbar {
+.swiper-scrollbar {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -779,8 +818,423 @@ a.mega-menu-heading:hover {
     background: #EBEBEB;
 }
 
-.expolore-coll__slider .swiper-scrollbar-drag {
+.swiper-scrollbar-drag {
     height: 3px;
     border-radius: 0;
     background: var(--color-dark);
+}
+
+/* Module About Stat */
+.about-stat-sec {
+    padding: 60px 0;
+}
+
+.about-stat__content {
+    padding: 16px 0 4px;
+    max-width: 1165px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-stat__content .section-heading {
+    font-weight: 400;
+    font-family: "Neue Montreal";
+    letter-spacing: 0.02em;
+    max-width: 888px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.stat-list {
+    display: grid;
+    grid-template-columns: 190px 187px 131px 297px;
+    grid-gap: 120px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    position: relative;
+}
+
+.stat-item::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    right: -60px;
+}
+
+.stat-item:last-child::before {
+    display: none;
+}
+
+.stat-item .item-value {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--color-accent);
+}
+
+.stat-item .item-label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+}
+
+.about-stat__btn {
+    margin-top: 60px;
+    text-align: center;
+}
+
+/* Module Designed for Every Environment */
+.designed-environment-sec {
+    padding: 60px 0 80px;
+    overflow: hidden;
+}
+
+.designed-environment__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.designed-environment__heading {
+    max-width: 358px;
+}
+
+/* =========================
+   WORKSPACE SLIDER
+========================= */
+
+.workspace-slider {
+    padding-bottom: 30px;
+    overflow: visible;
+}
+
+.workspace-slider .swiper-slide {
+    width: 1000px;
+}
+
+
+/* =========================
+   WORKSPACE CARD
+========================= */
+
+.workspace-card {
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 30px;
+
+    color: var(--color-white);
+}
+
+.workspace-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0) 59.5%,
+            rgba(0, 0, 0, 0.7) 95.67%);
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.workspace-card .card-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    align-items: flex-start;
+
+    transition: all 0.4s ease;
+
+    transform: translateY(40px);
+}
+
+.workspace-card .card-models {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--color-white);
+    display: inline-block;
+    color: var(--color-black);
+}
+
+.workspace-card .card-title {
+    font-size: 36px;
+    line-height: 43px;
+}
+
+.workspace-card .card-title a {
+    color: inherit;
+}
+
+.workspace-card .card-desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    max-width: 254px;
+}
+
+.workspace-card .card-desc p {
+    margin: 0;
+}
+
+.workspace-card .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    color: var(--color-white);
+    font-family: "PP Neue Montreal";
+    opacity: 0.5;
+    transition: all 0.4s ease;
+    margin-top: 3px;
+    transform: translateY(20px);
+}
+
+.workspace-card .card-link svg {
+    transform: translateX(-12px);
+
+    transition: all 0.3s ease;
+
+    opacity: 0;
+}
+
+.workspace-card .card-link:hover {
+    opacity: 1;
+}
+
+.workspace-card .card-link:hover svg {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.workspace-card:hover .card-content,
+.workspace-card:hover .card-link {
+    transform: translateY(0);
+}
+
+
+
+.product-hotspot {
+    position: absolute;
+
+    left: var(--hotspot-x);
+    top: var(--hotspot-y);
+
+    z-index: 5;
+}
+
+
+
+.hotspot-btn {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.hotspot-btn .inner {
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hotspot-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.hotspot-btn:hover {
+    width: 62px;
+    height: 62px;
+}
+
+
+.product-hotspot.active {}
+
+
+.product-popup {
+    position: absolute;
+
+    top: 50%;
+
+    width: 210px;
+    min-height: 145px;
+
+    padding: 14px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    background: #fff;
+
+    color: #222;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        all 0.3s ease
+}
+
+
+
+
+.product-hotspot.popup-right .product-popup {
+    left: calc(100% + 16px);
+
+    transform:
+        translateY(-50%) translateX(-15px);
+}
+
+.product-hotspot.popup-right.active .product-popup {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(-50%) translateX(0);
+}
+
+
+
+
+.product-hotspot.popup-left .product-popup {
+    right: calc(100% + 16px);
+
+    transform:
+        translateY(-50%) translateX(15px);
+}
+
+.product-hotspot.popup-left.active .product-popup {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(-50%) translateX(0);
+}
+
+
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.product-info h4 {
+    margin: 0;
+
+    font-size: 18px;
+    line-height: 1.25;
+
+    font-weight: 400;
+}
+
+.product-price {
+    margin-top: 6px;
+
+    font-size: 14px;
+    line-height: 1.4;
+
+    color: #d13532;
+}
+
+.product-info a {
+    margin-top: auto;
+
+    font-size: 13px;
+
+    color: #222;
+
+    text-decoration: underline;
+}
+
+
+
+
+.product-image {
+    width: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.product-hotspot.active {
+    z-index: 10;
 }

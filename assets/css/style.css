@@ -1,0 +1,504 @@
+.hero-sec.hero-sec-small {
+  min-height: 450px;
+  padding: 40px 0;
+}
+.hero-sec-small .hero-main {
+  gap: 12px;
+}
+.hero-sec-small .section-label {
+  margin-bottom: 0;
+  color: #fff;
+}
+.hero-sec-small .hero-sec .hero-heading {
+  font-size: 60px;
+  line-height: 100%;
+  margin-bottom: 4px;
+}
+
+.hero-sec-small .hero-desc {
+  max-width: 400px;
+  margin-bottom: 12px;
+}
+
+/* help-options */
+.help-options {
+  padding: 100px 0 140px;
+}
+.help-options__heading {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #1d1d1d;
+}
+.help-options__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+}
+.help-options__item {
+  width: calc(25% - 7.5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fbfbfb;
+  gap: 47px;
+  padding: 30px;
+}
+.help-options__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #d13532;
+  border-radius: 2px;
+  padding: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.help-options__icon img {
+  /* transition: all 0.3s ease-in-out; */
+  display: block;
+}
+.help-options__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 16px;
+}
+.help-options__desc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #00000099;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 24px;
+}
+.help-options__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease-in-out;
+  color: #25252580;
+}
+.help-options__link img {
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-10px);
+  opacity: 0;
+}
+.help-options__item:hover {
+  background: #d13532;
+}
+.help-options__link:hover img {
+  transform: translateX(0);
+  opacity: 1;
+}
+.help-options__item:hover .help-options__icon {
+  background: #fff;
+}
+.help-options__item:hover .help-options__icon img {
+  filter: brightness(0) saturate(100%) invert(24%) sepia(85%) saturate(2107%)
+    hue-rotate(343deg) brightness(88%) contrast(91%);
+}
+.help-options__item:hover .help-options__title,
+.help-options__item:hover .help-options__desc {
+  color: #fbfbfb;
+}
+.help-options__item:hover .help-options__link {
+  color: #fff;
+}
+
+/* dealer-finder */
+.dealer-finder__heading {
+  max-width: 469px;
+  margin: 0 auto 55px;
+}
+.dealer-finder__title {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #1d1d1d;
+  margin-bottom: 24px;
+}
+.dealer-finder__subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+
+  text-align: center;
+  color: #000;
+  max-width: 292px;
+  margin: 0 auto;
+}
+.dealer-finder__row {
+  display: flex;
+  gap: 63px;
+}
+.dealer-finder__map {
+  flex: 1 0 0;
+}
+.dealer-finder__info {
+  max-width: 664px;
+  width: 100%;
+}
+.dealer-finder__state {
+  background: #d13532;
+  padding: 24px;
+  margin-bottom: 40px;
+}
+.dealer-finder__state-name {
+  font-family: Neue Montreal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+  color: #fff;
+}
+.dealer-finder__state-desc {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.dealer-finder__dealer,
+.dealer-finder__reps {
+  margin-left: 24px;
+}
+.dealer-finder__reps {
+  margin-top: 60px;
+}
+.dealer-finder__dealer-name,
+.dealer-finder__reps-heading {
+  font-family: Neue Montreal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #000;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e4e4e0;
+  margin-bottom: 24px;
+}
+.dealer-finder__reps-heading {
+  color: #d13532;
+  margin-bottom: 32px;
+}
+.dealer-finder__dealer-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1fr;
+  gap: 24px;
+}
+.dealer-finder__dealer-grid:has(> :nth-child(2):last-child) {
+  grid-template-columns: 1fr 1fr;
+}
+.dealer-finder__dealer-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dealer-finder__label {
+  font-family: Neue Montreal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #d13532;
+  display: block;
+  margin-bottom: 16px;
+}
+.dealer-finder__text {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.02em;
+  gap: 8px;
+}
+.dealer-finder__text > * {
+  margin-bottom: 0;
+}
+.dealer-finder__call {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #d13532;
+}
+.dealer-finder__states {
+  margin-top: 40px;
+}
+.dealer-finder__states .dealer-finder__label {
+  color: #707070;
+}
+.dealer-finder__states-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.dealer-finder__state-tag {
+  font-family: Neue Montreal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #000000;
+  display: block;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+.dealer-finder__rep-name {
+  font-family: Neue Montreal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000;
+  margin-bottom: 6px;
+}
+.dealer-finder__rep-role {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin-bottom: 32px;
+  opacity: 0.6;
+}
+.dealer-finder__rep-col-end {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.dealer-finder__rep-col-end a {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #d13532;
+  display: block;
+}
+.dealer-finder__rep {
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e4e4e0;
+}
+.dealer-finder__rep:last-of-type {
+  margin-bottom: 0;
+}
+.dealer-finder {
+  margin-bottom: 140px;
+}
+/* Quick Navigation */
+.quick-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #efefef;
+  border-top: 1px solid #efefef;
+  background: #fff;
+}
+
+.quick-nav.is-visible {
+  top: 85px;
+  transform: translateY(0);
+}
+.quick-nav__label {
+  display: block;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #000000;
+}
+.quick-nav__row {
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  display: flex;
+}
+.quick-nav__list {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+}
+.quick-nav__item {
+  display: block;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #00000099;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding: 22px 16px 23px 26px;
+}
+.quick-nav__item:hover,
+.quick-nav__item--active {
+  color: #000000;
+}
+
+.quick-nav__item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.quick-nav__item:hover::after,
+.quick-nav__item--active::after {
+  transform: scaleX(1);
+}
+
+/* dealer-services */
+.dealer-services {
+  padding: 0 0 100px;
+}
+.dealer-services .section-label {
+  margin-bottom: 12px;
+}
+.dealer-services__heading {
+  max-width: 300px;
+}
+.dealer-services__list {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dealer-services__item {
+  display: flex;
+  min-height: 280px;
+  background: #fbfbfb;
+  padding: 32px;
+  width: calc(25% - 7.5px);
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.dealer-services__title {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #1d1d1d;
+  margin-bottom: 16px;
+}
+.dealer-services__desc-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.dealer-services__arrow {
+  display: block;
+  width: 19px;
+  height: 19px;
+}
+.dealer-services__desc {
+  flex: 1 0 0;
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #00000099;
+  margin: 0;
+}
+
+/* reach-team */
+.reach-team {
+  padding: 0 0 80px;
+}
+.reach-team__row {
+  max-width: 1300px;
+  display: flex;
+  gap: 60px;
+  align-items: stretch;
+}
+.reach-team__image {
+  flex: 1 0 0;
+}
+.reach-team__image img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+.reach-team__info {
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+}
+.reach-team__heading {
+  max-width: 240px;
+  color: #1d1d1d;
+}
+.reach-team__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.reach-team__list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+.reach-team__row-item {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  gap: 24px;
+  padding:0 0 24px;
+  border-bottom: 1px solid #0000001A;
+}
+.reach-team__row-item .dealer-finder__label {
+  margin: 0;
+}

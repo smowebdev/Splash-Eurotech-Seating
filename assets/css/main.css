@@ -58,8 +58,8 @@ p {
     margin-bottom: 1em;
 }
 
-p:last-child,
-p:last-of-type {
+p:last-child
+ {
     margin-bottom: 0;
 }
 
@@ -86,6 +86,7 @@ main {
     text-transform: uppercase;
     color: var(--color-accent);
     margin-bottom: 24px;
+    display: inline-block;
 }
 
 .section-heading {

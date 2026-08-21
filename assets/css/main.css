@@ -58,8 +58,7 @@ p {
     margin-bottom: 1em;
 }
 
-p:last-child
- {
+p:last-child {
     margin-bottom: 0;
 }
 
@@ -470,7 +469,7 @@ a.mega-menu-heading:hover {
 
 .header-search:focus-within input {
     border-color: var(--color-black);
-    width: 200px;
+    width: 160px;
 }
 
 .header-search:focus-within .search-icon {
@@ -930,12 +929,9 @@ a.mega-menu-heading:hover {
 }
 
 
-/* =========================
-   WORKSPACE CARD
-========================= */
 
 .workspace-card {
-    min-height: 600px;
+    aspect-ratio: 1000/600;
     position: relative;
     overflow: hidden;
 
@@ -961,9 +957,7 @@ a.mega-menu-heading:hover {
 }
 
 
-/* =========================
-   CARD CONTENT
-========================= */
+
 
 .workspace-card .card-content {
     position: relative;
@@ -1055,10 +1049,9 @@ a.mega-menu-heading:hover {
 
 .product-hotspot {
     position: absolute;
-
     left: var(--hotspot-x);
     top: var(--hotspot-y);
-
+    transform: translate(-50%, -50%);
     z-index: 5;
 }
 
@@ -1068,174 +1061,158 @@ a.mega-menu-heading:hover {
     position: relative;
     width: 52px;
     height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 7px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: all 0.4s ease;
 }
 
-.hotspot-btn .inner {
-    width: 100%;
+.hotspot__outer,
+.hotspot__middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
 }
+
+.hotspot__middle {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.hotspot__outer {
+    width: 52px;
+    height: 52px;
+}
+
+.hotspot__middle {
+    width: 36px;
+    height: 36px;
+}
+
 
 
 .hotspot-icon {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 20px;
     height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-radius: 50%;
+    transform: translate(-50%, -50%);
     background: var(--color-white);
     color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hotspot-btn:hover {
-    width: 62px;
-    height: 62px;
+.hotspot-btn:hover .hotspot__outer {
+    transform: translate(-50%, -50%) scale(1.1923);
+}
+
+.hotspot-btn:hover .hotspot__middle {
+    transform: translate(-50%, -50%) scale(1.1667);
 }
 
 
-.product-hotspot.active {}
+.product-hotspot.active .hotspot-icon {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
 
 
 .product-popup {
     position: absolute;
-
-    top: 50%;
-
+    top: -31px;
     width: 210px;
-    min-height: 145px;
-
-    padding: 14px;
-
+    min-height: 144px;
     display: flex;
     justify-content: space-between;
-
-    gap: 10px;
-
-    background: #fff;
-
-    color: #222;
-
+    background: var(--color-white);
+    color: var(--color-black);
     opacity: 0;
     visibility: hidden;
-
     pointer-events: none;
-
     transition:
-        all 0.3s ease
+        all 0.3s ease;
+    border-radius: 4px;
 }
 
 
 
 
 .product-hotspot.popup-right .product-popup {
-    left: calc(100% + 16px);
-
-    transform:
-        translateY(-50%) translateX(-15px);
+    left: calc(100% + 18px);
 }
 
 .product-hotspot.popup-right.active .product-popup {
     opacity: 1;
     visibility: visible;
-
     pointer-events: auto;
-
-    transform:
-        translateY(-50%) translateX(0);
 }
 
 
-
-
 .product-hotspot.popup-left .product-popup {
-    right: calc(100% + 16px);
-
-    transform:
-        translateY(-50%) translateX(15px);
+    right: calc(100% + 18px);
 }
 
 .product-hotspot.popup-left.active .product-popup {
     opacity: 1;
     visibility: visible;
-
     pointer-events: auto;
-
-    transform:
-        translateY(-50%) translateX(0);
 }
 
 
+.product-popup .product-link {
+    position: absolute;
+    inset: 0;
+}
 
-.product-info {
+.product-popup .product-info {
+    padding: 12px 15px 12px 12px;
     display: flex;
     flex-direction: column;
+    font-family: 'PP Neue Montreal';
+    gap: 6px;
 
-    flex: 1;
 }
 
-.product-info h4 {
-    margin: 0;
-
-    font-size: 18px;
-    line-height: 1.25;
-
-    font-weight: 400;
+.product-popup .product-info .product-name {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 19px;
+    font-weight: 500;
 }
 
-.product-price {
-    margin-top: 6px;
-
+.product-popup .product-info .product-price {
+    font-weight: 500;
     font-size: 14px;
-    line-height: 1.4;
-
-    color: #d13532;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    color: var(--color-accent);
 }
 
-.product-info a {
+.product-popup .product-browse {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
     margin-top: auto;
-
-    font-size: 13px;
-
-    color: #222;
-
+    letter-spacing: 0.02em;
     text-decoration: underline;
+    text-underline-offset: 2px;
 }
-
-
 
 
 .product-image {
-    width: 85px;
-
+    width: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
 }
 
 .product-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
-}
-
-
-.product-hotspot.active {
-    z-index: 10;
 }

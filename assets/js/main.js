@@ -67,4 +67,16 @@ $(function () {
       $(".product-hotspot").removeClass("active");
     }
   });
+
+  $(".model-filter__toggle").on("click", function () {
+    const $filter = $(this).closest(".model-filter");
+
+    $filter.toggleClass("is-newest");
+
+    if ($filter.hasClass("is-newest")) {
+      console.log("Show Newest");
+    } else {
+      console.log("Show Popular");
+    }
+  });
 });

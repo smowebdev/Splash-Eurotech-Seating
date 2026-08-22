@@ -23,6 +23,7 @@ svg,
 video {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 input,
@@ -531,6 +532,7 @@ a.mega-menu-heading:hover {
 
 .footer-site .footer-address {
     max-width: 224px;
+    margin-bottom: 0;
 }
 
 .footer-socials {
@@ -738,6 +740,7 @@ a.mega-menu-heading:hover {
 
 .cs-product__item .item-image img {
     width: 100%;
+    transition: all 0.4s ease;
 }
 
 .cs-product__item .item-configure {
@@ -753,6 +756,11 @@ a.mega-menu-heading:hover {
 
 .cs-product__item:hover .item-configure {
     bottom: 24px;
+}
+
+.cs-product__item:hover .item-image img {
+    transform: scale(1.104) translateY(-30px);
+
 }
 
 .cs-product__item .item-configure:hover {
@@ -1138,9 +1146,6 @@ a.mega-menu-heading:hover {
     border-radius: 4px;
 }
 
-
-
-
 .product-hotspot.popup-right .product-popup {
     left: calc(100% + 18px);
 }
@@ -1203,7 +1208,7 @@ a.mega-menu-heading:hover {
 }
 
 
-.product-image {
+.product-popup .product-image {
     width: 90px;
     display: flex;
     align-items: center;
@@ -1211,8 +1216,449 @@ a.mega-menu-heading:hover {
     flex-shrink: 0;
 }
 
-.product-image img {
+.product-popup .product-image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+/* Module Engineered for the way you work */
+.engineered-work-sec {
+    padding: 80px 0 140px;
+}
+
+.engineered-work__heading {
+    max-width: 358px;
+    margin-bottom: 40px;
+}
+
+.engineered-work__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.engineered-work__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.engineered-work__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #F9F9F9;
+    pointer-events: none;
+
+    transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.engineered-work__item:hover::before {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.engineered-work__item:hover .item-image img {
+    transform: scale(1.05);
+}
+
+.engineered-work__item .item-image {
+    aspect-ratio: 372/300;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.engineered-work__item .item-image img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease;
+    object-fit: cover;
+}
+
+.engineered-work__item .item-content {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.engineered-work__item .item-number {
+    color: var(--color-accent);
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+}
+
+.engineered-work__item .item-title {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
+.engineered-work__item .item-desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    max-width: 297px;
+}
+
+.engineered-work__item .item-content__bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 29px;
+}
+
+.engineered-work__item .item-info__value {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    color: var(--color-accent);
+}
+
+.engineered-work__item .item-info__label {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #707070;
+    margin-top: 6px;
+}
+
+/* Module CTA FULL BACKGROUND  */
+.cta-sec {
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: var(--color-white);
+    padding: 40px 0;
+    position: relative;
+}
+
+.cta-sec::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(188.47deg, rgba(0, 0, 0, 0) 54.15%, rgba(0, 0, 0, 0.6) 87.38%);
+    pointer-events: none;
+}
+
+.cta-sec .container {
+    width: 100%;
+}
+
+.cta-sec .cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+    max-width: 525px;
+}
+
+.cta-sec .cta-heading {
+    font-size: 60px;
+    line-height: 1.2;
+}
+
+.cta-sec .cta-desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    max-width: 375px;
+}
+
+/* Module Featured Brands */
+.featured-brands-sec {
+    padding: 70px 0;
+}
+
+.featured-brands__main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.featured-brands__item {
+    min-height: 700px;
+    position: relative;
+    padding: 60px 40px 170px;
+    color: var(--color-black);
+}
+
+.featured-brands__item.item-right {
+    color: var(--color-white);
+}
+
+.featured-brands__item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 15.13%, rgba(255, 255, 255, 0) 60.53%);
+    z-index: 1;
+}
+
+.featured-brands__item.item-right::before {
+    background: linear-gradient(5.67deg, rgba(0, 0, 0, 0) 52.87%, rgba(0, 0, 0, 0.6) 83.17%);
+}
+
+.featured-brands__item .item-content {
+    position: relative;
+    z-index: 2;
+    max-width: 349px;
+}
+
+.featured-brands__item.item-right .item-content {
+    max-width: 310px;
+}
+
+.featured-brands__item .item-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-brands__item .item-logo {
+    position: absolute;
+    z-index: 1;
+    top: 72px;
+    right: 47px;
+    width: 119px;
+}
+
+.featured-brands__item .item-title {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.featured-brands__item.item-right .item-title {
+    font-size: 48px;
+    line-height: 110.00000000000001%;
+}
+
+.featured-brands__item .item-desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.featured-brands__item .section-label {
+    margin-bottom: 12px;
+}
+
+.featured-brands__item.item-right .section-label {
+    color: #FBFBFB;
+}
+
+.featured-brands__item .item-btn {
+    margin-top: 24px;
+}
+
+.featured-brands__item.item-left .item-btn {
+    padding: 11px 15px;
+}
+
+.featured-brands__services {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 32px 40px 38px;
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px 130px;
+}
+
+.featured-brands__services .services-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.featured-brands__services .services-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -65px;
+    width: 1px;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.featured-brands__services .services-item:last-child:before {
+    display: none;
+}
+
+.featured-brands__services .services-item .item-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.featured-brands__services .services-item .item-value {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: var(--color-black);
+
+}
+
+.featured-brands__services .services-item .item-label {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-top: 6px;
+    color: var(--color-dark);
+}
+
+.popular-models-sec {
+    padding: 70px 0 88px;
+}
+
+.popular-models__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.popular-models__heading {
+    text-align: center;
+    line-height: 1.1;
+}
+
+.model-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.model-filter__label {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--color-black);
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.model-filter__label.active {
+    opacity: 1;
+}
+
+.model-filter__toggle {
+    position: relative;
+    width: 48px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid var(--color-black);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.model-filter__circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-black);
+    transition: all 0.3s ease;
+}
+
+.model-filter .model-filter__label--popular {
+    opacity: 1;
+}
+
+.model-filter.is-newest .model-filter__circle {
+    transform: translateX(20px);
+    background: var(--color-white);
+}
+
+.model-filter.is-newest .model-filter__toggle {
+    background-color: var(--color-black);
+}
+
+.model-filter.is-newest .model-filter__label--popular {
+    opacity: 0.4;
+}
+
+.model-filter.is-newest .model-filter__label--newest {
+    opacity: 1;
+}
+
+.popular-models__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.popular-models__list .cs-product__item .item-image {
+    aspect-ratio: 372/510;
+}
+
+.popular-models__list .cs-product__item:hover .item-image img {
+    transform: scale(1.03) translateY(-15px);
+}
+
+/* Module CTA FULL BACKGROUND 2 */
+
+.cta-sec.cta-small-text-black {
+    min-height: 700px;
+    color: var(--color-black);
+}
+
+.cta-sec.cta-small-text-black::before {
+    display: none;
+}
+
+.cta-sec.cta-small-text-black .cta-heading {
+    color: #1D1D1D;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+.cta-sec.cta-small-text-black .cta-desc {
+    max-width: 438px;
+}
+
+.cta-sec.cta-small-text-black .cta-content {
+    max-width: 469px;
+    gap: 24px;
 }

@@ -494,11 +494,66 @@
 }
 .reach-team__row-item {
   display: grid;
-  grid-template-columns:  1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
-  padding:0 0 24px;
-  border-bottom: 1px solid #0000001A;
+  padding: 0 0 24px;
+  border-bottom: 1px solid #0000001a;
 }
 .reach-team__row-item .dealer-finder__label {
   margin: 0;
+}
+
+/* contact-form */
+.contact-form__row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+.contact-form__content {
+}
+.contact-form__image {
+  width: 50%;
+  flex: 1 0 0;
+}
+.contact-form__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contact-form__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 60px;
+  height: 100%;
+  max-width: 564px;
+}
+.contact-form__content-wrapper {
+  width: 50%;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+}
+.contact-form__heading {
+  color: #1d1d1d;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  margin: 0 0 16px;
+  max-width: 524px;
+}
+.contact-form__subtitle {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #00000099;
+}
+.contact-form__form {
 }

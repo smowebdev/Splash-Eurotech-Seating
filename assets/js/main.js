@@ -262,6 +262,7 @@ $(function () {
 
   // Collection Tabs - End
 
+  // Collection Explore Tab - Start
   $(".collection-explore-sec").each(function () {
     const $section = $(this);
     const $tabs = $section.find(".collection-explore__tab");
@@ -278,12 +279,90 @@ $(function () {
         const $product = $(this);
         const type = $product.data("type");
 
-        if (filter === "all" || type === filter) {
-          $product.fadeIn(250);
-        } else {
-          $product.fadeOut(250);
-        }
+        $product.css(
+          "display",
+          filter === "all" || type === filter ? "block" : "none",
+        );
       });
     });
   });
+  // Collection Explore Tab - End
+
+  // Collection Video - Start
+  $(".collection-video").each(function () {
+    const $wrapper = $(this);
+    const $video = $wrapper.find(".collection-video__video");
+    const $playButton = $wrapper.find(".collection-video__play");
+
+    $playButton.on("click", function () {
+      $video.attr("controls", true);
+      $video[0].play();
+
+      $(this).addClass("is-hidden");
+    });
+
+    $video.on("ended", function () {
+      $playButton.removeClass("is-hidden");
+      $video.attr("controls", false);
+    });
+  });
+  // Collection Video - End
+
+  // Chair Options - Start
+  const $chairOptions = $(".build-chair__option");
+  const $annotations = $(".build-chair__annotation");
+  const $colors = $(".build-chair__color");
+  const $chairImage = $(".build-chair__image");
+  const $indicator = $(".build-chair__color-indicator");
+
+  const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
+
+  function activeChairOption($option) {
+    const id = $option.data("id");
+
+    $chairOptions.removeClass("active");
+    $option.addClass("active");
+
+    $annotations.removeClass("active");
+    $annotations.filter(`[data-id="${id}"]`).addClass("active");
+  }
+
+  function moveIndicator($color) {
+    if (!$color.length || !$indicator.length) return;
+
+    $indicator.css(
+      "transform",
+      `translate(${$color.position().left - 2.2}px, -50%)`,
+    );
+  }
+
+  $chairOptions.on("mouseenter", function () {
+    if (isDesktop()) {
+      activeChairOption($(this));
+    }
+  });
+
+  $chairOptions.on("click", function () {
+    if (!isDesktop()) {
+      activeChairOption($(this));
+    }
+  });
+
+  $colors.on("click", function () {
+    const $this = $(this);
+
+    $colors.removeClass("active");
+    $this.addClass("active");
+
+    $chairImage.attr("src", $this.data("image"));
+
+    moveIndicator($this);
+  });
+
+  moveIndicator($colors.filter(".active").first());
+
+  $(window).on("resize", function () {
+    moveIndicator($colors.filter(".active").first());
+  });
+  // Chair Options - End
 });

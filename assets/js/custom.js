@@ -9,13 +9,11 @@ $(function () {
         if (!$target.length) return;
 
         var targetTop = $target.offset().top;
-        var targetBottom = targetTop + $target.outerHeight();
         var scrollTop = $(window).scrollTop();
 
         var reached = scrollTop + headerHeight >= targetTop;
-        var passed = scrollTop + headerHeight >= targetBottom;
 
-        if (reached && !passed) {
+        if (reached) {
             $nav.addClass('is-visible');
         } else {
             $nav.removeClass('is-visible');
@@ -24,6 +22,48 @@ $(function () {
 
     $(window).on('scroll resize', toggleNav);
     toggleNav();
+
+    $nav.on('click', '.quick-nav__item[data-page]', function (e) {
+        e.preventDefault();
+
+        var $item = $(this);
+        var page = $item.data('page');
+        var $section = $('.' + page);
+
+        if (!$section.length) return;
+
+        var offsetTop = $section.offset().top - 150;
+
+        $('html, body').animate({
+            scrollTop: offsetTop
+        }, 500);
+    });
+
+    var $navItems = $nav.find('.quick-nav__item[data-page]');
+
+    function updateActiveNav() {
+        var scrollTop = $(window).scrollTop();
+        var current = null;
+
+        $navItems.each(function () {
+            var page = $(this).data('page');
+            var $section = $('.' + page);
+            if (!$section.length) return;
+
+            var sectionTop = $section.offset().top - 150 - 10;
+            if (scrollTop >= sectionTop) {
+                current = $(this);
+            }
+        });
+
+        $navItems.removeClass('quick-nav__item--active');
+        if (current) {
+            current.addClass('quick-nav__item--active');
+        }
+    }
+
+    $(window).on('scroll resize', updateActiveNav);
+    updateActiveNav();
 
     // Documents Library
     $('.documents-library__filter-toggle').on('click', function () {
@@ -39,6 +79,19 @@ $(function () {
         }
     });
 
+    // contract details Toggle
+    $('.contract-details__toggle').on('click', function () {
+        var $item = $(this).closest('.contract-details__item');
+        var $body = $item.find('.contract-details__body');
+
+        if ($item.hasClass('is-open')) {
+            $item.removeClass('is-open');
+            $body.slideUp(200);
+        } else {
+            $item.addClass('is-open');
+            $body.slideDown(200);
+        }
+    });
     // Featured Videos
     var $items = $('.featured-videos__item');
 

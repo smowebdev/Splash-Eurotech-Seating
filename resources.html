@@ -263,13 +263,15 @@
 
     <main>
         <!-- Module Hero -->
-        <section class="resources-hero"
-            style="background: url(assets/images/Resources/hero__image.png) no-repeat center right;">
+        <section class="resources-hero" style="">
+            <div class="resources-hero__bg">
+                <img src="./assets/images/Resources/hero__image.png" alt="">
+            </div>
             <div class="container">
                 <div class="resources-hero__row">
                     <div class="resources-hero__content">
                         <span class="section-label">Resources</span>
-                        <h1 class="section-heading resources-hero__heading">Everything you need to specify, install,
+                        <h1 class="resources-hero__heading">Everything you need to specify, install,
                             configure
                             and maintain Eurotech seating</h1>
                     </div>
@@ -300,7 +302,232 @@
                 </div>
             </div>
         </section>
+        <section class="documents-library">
+            <div class="container">
+                <div class="documents-library__row">
 
+                    <div class="documents-library__sidebar">
+                        <h2 class="documents-library__heading">Documents Library</h2>
+
+                        <div class="documents-library__search">
+                            <svg class="documents-library__search-icon" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11" cy="11" r="7" stroke="#00000033" stroke-width="2" />
+                                <path d="M21 21L16.65 16.65" stroke="#00000033" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <input type="text" class="documents-library__search-input" placeholder="Search Documents">
+                        </div>
+
+                        <div class="documents-library__filters">
+                            <div class="documents-library__filter">
+                                <button type="button" class="documents-library__filter-toggle">
+                                    <span>Category</span>
+                                    <svg class="documents-library__filter-icon" width="14" height="14"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 5V19M5 12H19" stroke="#000000" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                                <div class="documents-library__filter-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#">All Collections</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Ergohuman</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="documents-library__filter">
+                                <button type="button" class="documents-library__filter-toggle">
+                                    <span>Product Collection</span>
+                                    <svg class="documents-library__filter-icon" width="14" height="14"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 5V19M5 12H19" stroke="#000000" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                                <div class="documents-library__filter-body">
+                                    <!-- filter options -->
+                                </div>
+                            </div>
+
+                            <div class="documents-library__filter">
+                                <button type="button" class="documents-library__filter-toggle">
+                                    <span>Document Type</span>
+                                    <svg class="documents-library__filter-icon" width="14" height="14"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 5V19M5 12H19" stroke="#000000" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                                <div class="documents-library__filter-body">
+
+                                </div>
+                            </div>
+
+                            <div class="documents-library__filter">
+                                <button type="button" class="documents-library__filter-toggle">
+                                    <span>Year</span>
+                                    <svg class="documents-library__filter-icon" width="14" height="14"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 5V19M5 12H19" stroke="#000000" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                                <div class="documents-library__filter-body">
+                                    <!-- filter options -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="documents-library__content">
+                        <div class="documents-library__table">
+                            <div class="documents-library__table-head documents-library__table-col">
+                                <span class="documents-library__col documents-library__col--doc">Document</span>
+                                <span
+                                    class="documents-library__col documents-library__col--collection">Collection</span>
+                                <span class="documents-library__col documents-library__col--type">Type</span>
+                                <span class="documents-library__col documents-library__col--size">Size</span>
+                                <span class="documents-library__col documents-library__col--download"></span>
+                            </div>
+
+                            <div class="documents-library__table-row documents-library__table-col">
+                                <div class="documents-library__col documents-library__col--doc">
+                                    <img src="./assets/images/Resources/library__col.png" alt="Pricebook 2026"
+                                        class="documents-library__thumb">
+                                    <span class="documents-library__col">Pricebook 2026</span>
+                                </div>
+                                <span class="documents-library__col documents-library__col--collection">All
+                                    Collections</span>
+                                <span class="documents-library__col documents-library__col--type">Brochure</span>
+                                <span class="documents-library__col documents-library__col--size">1.3MB</span>
+                                <a href="#"
+                                    class="documents-library__col documents-library__col--download documents-library__download">
+                                    Download
+                                    <img src="./assets/images/material-symbols_download-rounded.svg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="documents-library__table-row documents-library__table-col">
+                                <div class="documents-library__col documents-library__col--doc">
+                                    <img src="./assets/images/Resources/library__col.png" alt="Ergohuman Xtreme"
+                                        class="documents-library__thumb">
+                                    <span>Ergohuman Xtreme</span>
+                                </div>
+                                <span class="documents-library__col documents-library__col--collection">Ergohuman</span>
+                                <span class="documents-library__col documents-library__col--type">Brochure</span>
+                                <span class="documents-library__col documents-library__col--size">12.3MB</span>
+                                <a href="#"
+                                    class="documents-library__col documents-library__col--download documents-library__download">
+                                    Download
+                                    <img src="./assets/images/material-symbols_download-rounded.svg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="documents-library__table-row documents-library__table-col">
+                                <div class="documents-library__col documents-library__col--doc">
+                                    <img src="./assets/images/Resources/library__col.png" alt="Healthcare Brochure"
+                                        class="documents-library__thumb">
+                                    <span>Healthcare Brochure</span>
+                                </div>
+                                <span class="documents-library__col documents-library__col--collection">Health
+                                    care</span>
+                                <span class="documents-library__col documents-library__col--type">Brochure</span>
+                                <span class="documents-library__col documents-library__col--size">2.9MB</span>
+                                <a href="#"
+                                    class="documents-library__col documents-library__col--download documents-library__download">
+                                    Download
+                                    <img src="./assets/images/material-symbols_download-rounded.svg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="documents-library__table-row documents-library__table-col">
+                                <div class="documents-library__col documents-library__col--doc">
+                                    <img src="./assets/images/Resources/library__col.png" alt="Adapt Collection"
+                                        class="documents-library__thumb">
+                                    <span>Adapt Collection</span>
+                                </div>
+                                <span class="documents-library__col documents-library__col--collection">Adapt</span>
+                                <span class="documents-library__col documents-library__col--type">Brochure</span>
+                                <span class="documents-library__col documents-library__col--size">10.1MB</span>
+                                <a href="#"
+                                    class="documents-library__col documents-library__col--download documents-library__download">
+                                    Download
+                                    <img src="./assets/images/material-symbols_download-rounded.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-black-secondary documents-library__view-all">View all
+                            document</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="featured-videos">
+            <div class="container">
+                <div class="featured-videos__head">
+                    <h2 class="featured-videos__heading">Featured Videos</h2>
+                    <a href="#" class="btn btn-black-secondary">View all videos</a>
+                </div>
+
+                <div class="featured-videos__list">
+
+                    <div class="featured-videos__item" data-video-type="video">
+                        <div class="featured-videos__media">
+                            <img src="./assets/images/Resources/videos__thumb.png" alt="Apollo Synchro tilt"
+                                class="featured-videos__thumb">
+
+                            <video class="featured-videos__video" playsinline>
+                                <source
+                                    src="https://www.htplus.jp/wp-content/uploads/2024/03/4c65a5cb-3bf4-4fcf-ac56-242be488dfbc.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <button type="button" class="featured-videos__play">
+                                <img src="./assets/images/iconoir_play-solid.svg" alt="">
+                            </button>
+                        </div>
+                        <p class="featured-videos__title">Apollo Synchro tilt</p>
+                    </div>
+
+                    <div class="featured-videos__item" data-video-type="iframe">
+                        <div class="featured-videos__media">
+                            <img src="./assets/images/Resources/videos__thumb-2.png" alt="4x4 Final"
+                                class="featured-videos__thumb">
+                            <iframe width="1337" height="752"
+                                src="https://www.youtube.com/embed/OJZ18NQuIvw?list=RDOJZ18NQuIvw"
+                                title="NHẠC REMIX TIKTOK HAY 2026🔥NONSTOP 2026 DJ THÁI HOÀNG REMIX🎼BXH NHẠC TRẺ REMIX HOT NHẤT 2026"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <button type="button" class="featured-videos__play">
+                                <img src="./assets/images/iconoir_play-solid.svg" alt="">
+                            </button>
+                        </div>
+                        <p class="featured-videos__title">4x4 Final</p>
+                    </div>
+
+                    <div class="featured-videos__item" data-video-type="video">
+                        <div class="featured-videos__media">
+                            <img src="./assets/images/Resources/videos__thumb3.png" alt="Manchester"
+                                class="featured-videos__thumb">
+                            <video class="featured-videos__video" src="video-3.mp4" playsinline></video>
+                            <button type="button" class="featured-videos__play">
+                                <img src="./assets/images/iconoir_play-solid.svg" alt="">
+                            </button>
+                        </div>
+                        <p class="featured-videos__title">Manchester</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer-site">
         <div class="container">

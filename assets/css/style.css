@@ -687,6 +687,7 @@
 }
 .documents-library__content {
   flex: 1 0 0;
+  margin-top: 90px;
 }
 .documents-library .container {
 }
@@ -886,20 +887,20 @@
 
 .featured-videos__media video,
 .featured-videos__media iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .featured-videos__item.is-playing video,
 .featured-videos__item.is-playing iframe {
-    opacity: 1;
-    pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 .featured-videos__item.is-playing .featured-videos__thumb,
 .featured-videos__item.is-playing .featured-videos__play {
@@ -917,14 +918,113 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.6);
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: opacity 0.3s ease;
+}
+
+.featured-videos__title {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #000;
+  margin-top: 16px;
+}
+.latest-insights__heading {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0.02em;
+  color: #000000;
+  padding-bottom: 40px;
+}
+.latest-insights__item {
+  display: flex;
+  gap: 80px;
+  padding: 24px 0 60px;
+  border-top: 1px solid #00000033;
+}
+.latest-insights__image {
+  width: 500px;
+  aspect-ratio: 500 / 300;
+}
+.latest-insights__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.latest-insights__content {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.latest-insights__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.latest-insights__category {
+  font-family: Neue Montreal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #d13532;
+  display: block;
+}
+.latest-insights__date {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #00000099;
+}
+
+.latest-insights__body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.latest-insights__text {
+  max-width: 339px;
+}
+.latest-insights__title {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin-bottom: 24px;
+}
+.latest-insights__desc {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000;
+  max-width: 331px;
+}
+.latest-insights {
+  padding-bottom: 80px;
+}
+.latest-insights__action .latest-insights__btn:hover {
+  color: #fff;
+  background: #252525;
+  border-color: #252525;
 }

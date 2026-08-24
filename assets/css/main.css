@@ -43,7 +43,16 @@ button {
     cursor: pointer;
     background-color: transparent;
     outline: none;
+    transition: all 0.3s ease-in-out;
     border: 0;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+em {
+    font-style: italic;
 }
 
 body {
@@ -344,6 +353,21 @@ a.mega-menu-heading:hover {
     overflow: hidden;
 }
 
+.mega-menu-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.mega-menu-card.title-black .mega-menu-image::before {
+    background: linear-gradient(-166.84deg, rgba(255, 255, 255, 0) 59.62%, rgba(255, 255, 255, 0.9) 97.98%);
+}
+
+.mega-menu-card.title-white .mega-menu-image::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 66.08%, rgba(0, 0, 0, 0.4) 100%);
+}
+
 .mega-menu-image img {
     width: 100%;
     height: 100%;
@@ -367,9 +391,10 @@ a.mega-menu-heading:hover {
     letter-spacing: 0.02em;
 }
 
-.mega-menu-card-title.title-white {
+.mega-menu-card.title-white .mega-menu-card-title {
     color: var(--color-white);
 }
+
 
 .mega-menu-materials {
     display: grid;
@@ -2324,4 +2349,278 @@ a.mega-menu-heading:hover {
     right: 10px;
     max-height: 50px;
     z-index: 2;
+}
+
+/* collection-taxonomy */
+.collection-taxonomy .hero-sec .hero-desc {
+    max-width: 351px;
+}
+
+.collection-taxonomy .hero-sec::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 54.65%, rgba(0, 0, 0, 0.5) 78.29%);
+}
+
+.collection-taxonomy .hero-sec {
+    padding: 40px 0;
+}
+
+.collection-taxonomy .hero-sec .hero-heading {
+    letter-spacing: 0;
+}
+
+.collection-tabs-sec {
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+.collection-tabs__header {
+    border-bottom: 1px solid #EFEFEF;
+    margin-bottom: 100px;
+}
+
+.collection-tabs__list {
+    display: flex;
+    gap: 38px;
+    justify-content: end;
+    margin-right: -24px;
+}
+
+.collection-tabs__item {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    padding: 23px 22px;
+    position: relative;
+}
+
+.collection-tabs__item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--color-accent);
+    transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.collection-tabs__item:hover::after,
+.collection-tabs__item.active::after {
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.collection-tabs__item:hover,
+.collection-tabs__item.active {
+    color: var(--color-black);
+}
+
+.collection-tabs__content-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.collection-tabs__content-inner .left {
+    width: 37%;
+    padding-right: 40px;
+}
+
+.collection-tabs__content-inner .right {
+    width: 63%;
+}
+
+.collection-tabs__content-title {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 2%;
+}
+
+.collection-tabs__content-text {
+    max-width: 870px;
+    font-size: 32px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: #D9D9D9;
+}
+
+.collection-tabs__content-text span {
+    color: var(--color-black);
+}
+
+.collection-tabs__content {
+    display: none;
+}
+
+.collection-tabs__content.active {
+    display: block;
+}
+
+.collection-tabs__content-image {
+    margin-top: 120px;
+}
+
+.collection-tabs__content-image img {
+    width: 100%;
+}
+
+.collection-explore-sec {
+    padding: 60px 0 68px;
+}
+
+.collection-explore__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.collection-explore__heading {
+    font-size: 48px;
+    line-height: 58px;
+}
+
+.collection-explore__desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    max-width: 293px;
+    margin: 0 auto;
+}
+
+.collection-explore__tabs {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.collection-explore__tab {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: var(--color-black);
+    opacity: 0.4;
+    padding: 0 16px;
+}
+
+.collection-explore__tab:hover,
+.collection-explore__tab.active {
+    opacity: 1;
+
+}
+
+.collection-explore__tab.active {
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.collection-benefits-sec {
+    padding: 70px 0 120px;
+}
+
+.collection-benefits__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.collection-benefits-sec .section-label {
+    margin-bottom: 12px;
+}
+
+.collection-benefits__heading {
+    line-height: 1.1;
+}
+
+.collection-benefits__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px 10px;
+}
+
+.collection-benefits__item {
+    min-height: 500px;
+    overflow: hidden;
+    position: relative;
+    background-color: #F9F9F9;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.collection-benefits__item .item-number {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2%;
+    color: var(--color-accent);
+    margin-bottom: 12px;
+}
+
+.collection-benefits__item .item-title {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 2%;
+    margin-bottom: 16px;
+}
+
+.collection-benefits__item .item-desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: rgb(0, 0, 0, 0.6);
+    max-width: 255px;
+}
+
+.collection-benefits__item .item-desc strong {
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.collection-benefits__item .item-services {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    max-width: 107px;
+}
+
+.collection-benefits__item span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: rgb(0, 0, 0, 0.6);
+}
+
+.collection-benefits__item .item-services__icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.collection-benefits__item .item-img {
+    position: absolute;
+    max-width: 85%;
+    right: 0;
+    bottom: 0;
 }

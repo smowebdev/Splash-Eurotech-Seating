@@ -1,49 +1,55 @@
 $(function () {
-  const exploreCollectionSwiper = new Swiper(".expolore-coll__slider", {
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    speed: 700,
-    grabCursor: true,
+  // Slider Explore Collections In Home Page - Start
+  $("section")
+    .has(".expolore-coll__slider")
+    .each(function () {
+      const $section = $(this);
 
-    navigation: {
-      nextEl: ".expolore-coll__next",
-      prevEl: ".expolore-coll__prev",
-    },
+      new Swiper($section.find(".expolore-coll__slider")[0], {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        speed: 700,
+        grabCursor: true,
 
-    scrollbar: {
-      el: ".expolore-coll__scrollbar",
-      draggable: true,
-    },
+        navigation: {
+          nextEl: $section.find(".expolore-coll__next")[0],
+          prevEl: $section.find(".expolore-coll__prev")[0],
+        },
 
-    // breakpoints: {
-    //   0: {
-    //     slidesPerGroup: 1,
-    //   },
+        scrollbar: {
+          el: $section.find(".expolore-coll__scrollbar")[0],
+          draggable: true,
+        },
+      });
+    });
+  // Slider Explore Collections In Home Page - End
 
-    //   768: {
-    //     slidesPerGroup: 1,
-    //   },
+  // Slider WorkSpace In Home Page - Start
+  $("section")
+    .has(".workspace-slider")
+    .each(function () {
+      const $section = $(this);
 
-    //   1024: {
-    //     slidesPerGroup: 1,
-    //   },
-    // },
-  });
-  const workspaceSwiper = new Swiper(".workspace-slider", {
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    speed: 700,
-    grabCursor: true,
-    navigation: {
-      nextEl: ".workspace__next",
-      prevEl: ".workspace__prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+      new Swiper($section.find(".workspace-slider")[0], {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        speed: 700,
+        grabCursor: true,
 
+        navigation: {
+          nextEl: $section.find(".workspace__next")[0],
+          prevEl: $section.find(".workspace__prev")[0],
+        },
+
+        pagination: {
+          el: $section.find(".swiper-pagination")[0],
+          clickable: true,
+        },
+      });
+    });
+  // Slider WorkSpace In Home Page - End
+
+  // hotspot in WorkSpace Card - Start
   $(".workspace-card").each(function () {
     const $card = $(this);
 
@@ -67,7 +73,9 @@ $(function () {
       $(".product-hotspot").removeClass("active");
     }
   });
+  // hotspot in WorkSpace Card - End
 
+  // Toggle Popular/Newest - Start
   $(".model-filter__toggle").on("click", function () {
     const $filter = $(this).closest(".model-filter");
 
@@ -79,8 +87,9 @@ $(function () {
       console.log("Show Popular");
     }
   });
-});
-$(function () {
+  // Toggle Popular/Newest - End
+
+  // Filter Product - Start
   const $filterProduct = $(".product-filter");
   const $itemsFilters = $filterProduct.find(".product-filter__item");
 
@@ -228,5 +237,53 @@ $(function () {
     $(this).toggleClass("active");
 
     applyFilters();
+  });
+  // Filter Product - End
+
+  // Collection Tabs - Start
+  $(".collection-tabs-sec").each(function () {
+    const $section = $(this);
+    const $items = $section.find(".collection-tabs__item");
+    const $contents = $section.find(".collection-tabs__content");
+    $items.first().addClass("active");
+    const firstTab = $items.first().data("tab");
+    $contents.filter(`[data-content="${firstTab}"]`).addClass("active");
+    $items.on("click", function () {
+      const $this = $(this);
+      const tab = $this.data("tab");
+
+      $items.removeClass("active");
+      $contents.removeClass("active");
+
+      $this.addClass("active");
+      $contents.filter(`[data-content="${tab}"]`).addClass("active");
+    });
+  });
+
+  // Collection Tabs - End
+
+  $(".collection-explore-sec").each(function () {
+    const $section = $(this);
+    const $tabs = $section.find(".collection-explore__tab");
+    const $products = $section.find(".cs-product__item");
+
+    $tabs.on("click", function () {
+      const $this = $(this);
+      const filter = $this.data("filter");
+
+      $tabs.removeClass("active");
+      $this.addClass("active");
+
+      $products.stop(true, true).each(function () {
+        const $product = $(this);
+        const type = $product.data("type");
+
+        if (filter === "all" || type === filter) {
+          $product.fadeIn(250);
+        } else {
+          $product.fadeOut(250);
+        }
+      });
+    });
   });
 });

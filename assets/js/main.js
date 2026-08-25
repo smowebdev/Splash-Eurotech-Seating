@@ -278,11 +278,11 @@ $(function () {
 
   // Collection Tabs - End
 
-  // Collection Explore Tab - Start
-  $(".collection-explore-sec").each(function () {
+  // Custom Tab - Start
+  $(".section-tabs").each(function () {
     const $section = $(this);
-    const $tabs = $section.find(".collection-explore__tab");
-    const $products = $section.find(".cs-product__item");
+    const $tabs = $section.find(".tab-item");
+    const $tabContentItems = $section.find(".tab-content__item");
 
     $tabs.on("click", function () {
       const $this = $(this);
@@ -291,24 +291,24 @@ $(function () {
       $tabs.removeClass("active");
       $this.addClass("active");
 
-      $products.stop(true, true).each(function () {
-        const $product = $(this);
-        const type = $product.data("type");
+      $tabContentItems.stop(true, true).each(function () {
+        const $item = $(this);
+        const type = $item.data("type");
 
-        $product.css(
+        $item.css(
           "display",
           filter === "all" || type === filter ? "block" : "none",
         );
       });
     });
   });
-  // Collection Explore Tab - End
+  // Custom Tab - End
 
-  // Collection Video - Start
-  $(".collection-video").each(function () {
+  // Custom Video - Start
+  $(".custom-video").each(function () {
     const $wrapper = $(this);
-    const $video = $wrapper.find(".collection-video__video");
-    const $playButton = $wrapper.find(".collection-video__play");
+    const $video = $wrapper.find(".custom-video__video");
+    const $playButton = $wrapper.find(".custom-video__play");
 
     $playButton.on("click", function () {
       $video.attr("controls", true);
@@ -322,7 +322,7 @@ $(function () {
       $video.attr("controls", false);
     });
   });
-  // Collection Video - End
+  // Custom Video - End
 
   // Chair Options - Start
   const $chairOptions = $(".build-chair__option");
@@ -348,7 +348,7 @@ $(function () {
 
     $indicator.css(
       "transform",
-      `translate(${$color.position().left - 2.2}px, -50%)`,
+      `translate(${$color.position().left - 0}px, -50%)`,
     );
   }
 

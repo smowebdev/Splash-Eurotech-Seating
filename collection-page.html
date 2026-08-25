@@ -263,7 +263,8 @@
         <div class="collection-taxonomy">
 
             <!-- Module Hero -->
-            <section class="hero-sec" style="background: url(assets/images/home-hero.png) no-repeat center / cover;">
+            <section class="hero-sec"
+                style="background: url(assets/images/collection-page-bg.png) no-repeat center / cover;">
                 <div class="container">
                     <div class="hero-main">
                         <h1 class="hero-heading">Apollo Collection</h1>
@@ -353,31 +354,31 @@
                 </div>
             </section>
 
-            <section class="collection-explore-sec">
+            <section class="collection-explore-sec section-tabs">
                 <div class="container">
                     <div class="collection-explore__header">
                         <h2 class="collection-explore__heading">Explore the Apollo</h2>
                         <div class="collection-explore__desc">
                             <p>Choose the model that best fits your workspace and requirements.</p>
                         </div>
-                        <div class="collection-explore__tabs">
-                            <button type="button" class="collection-explore__tab active" data-filter="all">
+                        <div class="tab-list collection-explore__tabs">
+                            <button type="button" class="tab-item collection-explore__tab active" data-filter="all">
                                 All
                             </button>
 
-                            <button type="button" class="collection-explore__tab" data-filter="mid-back">
+                            <button type="button" class="tab-item collection-explore__tab" data-filter="mid-back">
                                 Mid-back
                             </button>
 
-                            <button type="button" class="collection-explore__tab" data-filter="high-back">
+                            <button type="button" class="tab-item collection-explore__tab" data-filter="high-back">
                                 High-back
                             </button>
 
-                            <button type="button" class="collection-explore__tab" data-filter="stool">
+                            <button type="button" class="tab-item collection-explore__tab" data-filter="stool">
                                 Stool
                             </button>
 
-                            <button type="button" class="collection-explore__tab" data-filter="guest">
+                            <button type="button" class="tab-item collection-explore__tab" data-filter="guest">
                                 Guest
                             </button>
                         </div>
@@ -385,7 +386,7 @@
                     <div class="collection-explore__products">
                         <div class="product-list">
 
-                            <a href="#" class="cs-product__item" data-type="mid-back">
+                            <a href="#" class="tab-content__item cs-product__item" data-type="mid-back">
                                 <div class="item-image">
                                     <img class="image" src="assets/images/products/Apollo-Maze-Loop-Arms.png" alt="">
                                     <img src="assets/images/fabrix-logo-color.svg" alt="" class="image-logo">
@@ -399,7 +400,7 @@
                                 </div>
                             </a>
 
-                            <a href="#" class="cs-product__item" data-type="mid-back">
+                            <a href="#" class="tab-content__item cs-product__item" data-type="mid-back">
                                 <div class="item-image">
                                     <img class="image" src="assets/images/products/Apollo-Mid-Back.png" alt="">
                                     <img src="assets/images/fabrix-logo-color.svg" alt="" class="image-logo">
@@ -413,7 +414,7 @@
                                 </div>
                             </a>
 
-                            <a href="#" class="cs-product__item" data-type="high-back">
+                            <a href="#" class="tab-content__item cs-product__item" data-type="high-back">
                                 <div class="item-image">
                                     <img class="image"
                                         src="assets/images/products/Apollo-High-Synchro-With-Ratchet-Back.png" alt="">
@@ -429,7 +430,7 @@
                                 </div>
                             </a>
 
-                            <a href="#" class="cs-product__item" data-type="stool">
+                            <a href="#" class="tab-content__item cs-product__item" data-type="stool">
                                 <div class="item-image">
                                     <img class="image" src="assets/images/products/Apollo-Synchro-High-Back.png" alt="">
                                     <img src="assets/images/fabrix-logo-color.svg" alt="" class="image-logo">
@@ -443,7 +444,7 @@
                                 </div>
                             </a>
 
-                            <a href="#" class="cs-product__item" data-type="high-back">
+                            <a href="#" class="tab-content__item cs-product__item" data-type="high-back">
                                 <div class="item-image">
                                     <img class="image" src="assets/images/products/Apollo-Drafting-Chair.png" alt="">
                                     <img src="assets/images/fabrix-logo-color.svg" alt="" class="image-logo">
@@ -458,7 +459,7 @@
                                 </div>
                             </a>
 
-                            <a href="#" class="cs-product__item" data-type="high-back">
+                            <a href="#" class="tab-content__item cs-product__item" data-type="high-back">
                                 <div class="item-image">
                                     <img class="image" src="assets/images/products/Apollo-Guest-Chair.png" alt="">
                                     <img src="assets/images/fabrix-logo-color.svg" alt="" class="image-logo">
@@ -563,14 +564,14 @@
 
             <section class="collection-video-sec">
                 <div class="container">
-                    <div class="collection-video">
-                        <video class="collection-video__video" poster="assets/images/poster-video.png" playsinline>
+                    <div class="custom-video collection-video">
+                        <video class="custom-video__video" poster="assets/images/poster-video.png" playsinline>
                             <source src="assets/images/video-demo.mp4" type="video/mp4">
                         </video>
 
-                        <button type="button" class="collection-video__play" aria-label="Play video">
+                        <button type="button" class="custom-video__play" aria-label="Play video">
 
-                            <img src="assets/images/iconoir_play-solid.svg" alt="" class="collection-video__play-icon">
+                            <img src="assets/images/iconoir_play-solid.svg" alt="" class="custom-video__play-icon">
                         </button>
                     </div>
                 </div>
@@ -649,26 +650,31 @@
                                 <button type="button" class="build-chair__color active"
                                     data-image="assets/images/chair-black.png" style="--color: #1D1D1D;"
                                     aria-label="Black">
+                                    <div class="dot"></div>
                                 </button>
 
                                 <button type="button" class="build-chair__color"
                                     data-image="assets/images/chair-black.png"
                                     style="--color: #3B5168; --border-color:#23384E" aria-label="Blue">
+                                    <div class="dot"></div>
                                 </button>
 
                                 <button type="button" class="build-chair__color"
                                     data-image="assets/images/chair-green.png"
                                     style="--color: #6D7B5E; --border-color:#394C21" aria-label="Green">
+                                    <div class="dot"></div>
                                 </button>
 
                                 <button type="button" class="build-chair__color"
                                     data-image="assets/images/chair-black.png"
                                     style="--color: #8A8F96; --border-color:#5F656D;" aria-label="Grey">
+                                    <div class="dot"></div>
                                 </button>
 
                                 <button type="button" class="build-chair__color"
                                     data-image="assets/images/chair-green.png"
                                     style="--color: #7D5A4A; --border-color:#7D5A4A;" aria-label="Brown">
+                                    <div class="dot"></div>
                                 </button>
 
                             </div>

@@ -1143,7 +1143,7 @@
   margin-top: 43px;
 }
 .browse-settings-sec-contract {
-  padding-bottom: 120px;
+  padding-bottom: 60px;
 }
 .contract-details__list {
   display: grid;
@@ -1153,10 +1153,9 @@
 .contract-details__item {
   padding: 31px 0;
   border-top: 1px solid #efefef;
-
 }
-.contract-details__item:nth-last-child(-n+2) {
-    border-bottom: 1px solid #efefef;
+.contract-details__item:nth-last-child(-n + 2) {
+  border-bottom: 1px solid #efefef;
 }
 .contract-details__toggle {
   display: flex;
@@ -1192,4 +1191,84 @@
   letter-spacing: 0.02em;
   color: #00000099;
   display: none;
+}
+
+/* how-it-works */
+.how-it-works {
+  padding: 60px 0;
+}
+.how-it-works__row {
+  display: flex;
+}
+.how-it-works__image {
+  width: 56.25%;
+}
+.how-it-works__image img {
+  width: 100%;
+}
+.how-it-works__wrap {
+  flex: 1 0 0;
+  background: #fbfbfb;
+  padding: 80px 77px 50px 80px;
+}
+.how-it-works__content {
+  max-width: 543px;
+}
+.how-it-works__heading {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.how-it-works__item {
+  padding: 24px 0;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  gap: 30px;
+  max-width: 233px;
+}
+.how-it-works__item:first-child {
+  padding-top: 0;
+}
+.how-it-works__item:last-child {
+  padding-bottom: 0;
+  border: none;
+}
+.how-it-works__number {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #fff;
+  background: #d13532;
+  border-radius: 50%;
+}
+.how-it-works__title {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin-bottom: 16px;
+}
+.how-it-works__desc {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #00000099;
+}
+.how-it-works__text{
+  flex: 1 0 0;
 }

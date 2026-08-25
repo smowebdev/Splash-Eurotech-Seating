@@ -32,11 +32,11 @@ $(function () {
 
         if (!$section.length) return;
 
-        const offsetTop = $section.offset().top - 150;
-
-        $('html, body').animate({
-            scrollTop: offsetTop
-        }, 500);
+        lenis.scrollTo($section[0], {
+            offset: -150,
+            duration: 1,
+        });
+        
     });
 
     const $navItems = $nav.find('.quick-nav__item[data-page]');

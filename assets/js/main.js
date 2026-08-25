@@ -1,20 +1,20 @@
-$(function () {
-  let lenis = null;
+let lenis = null;
 
-  if (typeof Lenis !== "undefined") {
-    lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-      smoothTouch: false,
-    });
+if (typeof Lenis !== "undefined") {
+  lenis = new Lenis({
+    duration: 1.2,
+    smoothWheel: true,
+    smoothTouch: false,
+  });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
   }
+
+  requestAnimationFrame(raf);
+}
+$(function () {
   // Slider Explore Collections In Home Page - Start
   $("section")
     .has(".expolore-coll__slider")
@@ -313,7 +313,7 @@ $(function () {
     $playButton.on("click", function () {
       $video.attr("controls", true);
       $video[0].play();
-
+      $wrapper.addClass("playing");
       $(this).addClass("is-hidden");
     });
   });
@@ -530,4 +530,31 @@ $(function () {
     useDataSlide: true,
   });
   // Product Detail Info - End
+
+  // Product Detail Faq - Start
+  const $productSpecs = $(".pr-detail-wrap");
+  $productSpecs.find(".pr-detail__content").first().show();
+  $productSpecs.find(".pr-detail__item").first().addClass("is-active");
+
+  $productSpecs.on("click", ".pr-detail__trigger", function () {
+    const $trigger = $(this);
+    const $item = $trigger.closest(".pr-detail__item");
+    const $content = $item.find(".pr-detail__content");
+    const isActive = $item.hasClass("is-active");
+
+    $productSpecs.find(".pr-detail__item").removeClass("is-active");
+
+    $productSpecs.find(".pr-detail__trigger").attr("aria-expanded", "false");
+
+    $productSpecs.find(".pr-detail__content").stop(true, true).slideUp(400);
+
+    if (!isActive) {
+      $item.addClass("is-active");
+
+      $trigger.attr("aria-expanded", "true");
+
+      $content.stop(true, true).slideDown(400);
+    }
+  });
+  // Product Detail Faq - End
 });

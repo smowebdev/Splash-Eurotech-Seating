@@ -1,4 +1,22 @@
 $(function () {
+  // Scroll Smooth - Start
+  if (typeof Lenis !== "undefined") {
+    const lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }
+
+  // Scroll Smooth - End
+
   // Slider Explore Collections In Home Page - Start
   $("section")
     .has(".expolore-coll__slider")
@@ -365,4 +383,53 @@ $(function () {
     moveIndicator($colors.filter(".active").first());
   });
   // Chair Options - End
+
+  // Typing Text - Start
+  const $typingText = $(".typing-fade");
+
+  if (!$typingText.length) return;
+
+  $typingText.each(function () {
+    const $el = $(this);
+
+    const text = $el.text().replace(/\s+/g, " ").trim();
+
+    const activeColor = $el.data("color") || "#000000";
+    const fadeColor = $el.data("fade-color") || "#D9D9D9";
+
+    $el.empty();
+
+    [...text].forEach(function (char) {
+      $("<span>", {
+        text: char,
+      })
+        .css("color", fadeColor)
+        .appendTo($el);
+    });
+
+    const $letters = $el.find("span");
+
+    function updateTypingByScroll() {
+      const rect = $el[0].getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const start = windowHeight * 0.8;
+      const end = windowHeight * 0.2;
+
+      let progress = (start - rect.top) / (start - end);
+
+      progress = Math.max(0, Math.min(1, progress));
+
+      const activeCount = Math.floor(progress * $letters.length);
+
+      $letters.each(function (index) {
+        $(this).css("color", index < activeCount ? activeColor : fadeColor);
+      });
+    }
+
+    updateTypingByScroll();
+
+    $(window).on("scroll", updateTypingByScroll);
+  });
+  // Typing Text - End
 });

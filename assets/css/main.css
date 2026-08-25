@@ -2783,7 +2783,7 @@ a.mega-menu-heading:hover {
 }
 
 
-.build-chair__colors {
+.cs-colors {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2793,7 +2793,7 @@ a.mega-menu-heading:hover {
     position: relative;
 }
 
-.build-chair__color {
+.cs-color {
     position: relative;
     z-index: 2;
     padding: 0;
@@ -2805,7 +2805,7 @@ a.mega-menu-heading:hover {
     text-align: center;
 }
 
-.build-chair__color .dot {
+.cs-color .dot {
     background: var(--color);
     border: 1px solid var(--border-color, var(--color));
     border-radius: 50%;
@@ -2814,7 +2814,7 @@ a.mega-menu-heading:hover {
     flex-shrink: 0;
 }
 
-.build-chair__color span {
+.cs-color span {
     margin-top: 12px;
     font-family: 'PP Neue Montreal';
     font-weight: 500;
@@ -2824,7 +2824,7 @@ a.mega-menu-heading:hover {
     display: block;
 }
 
-.build-chair__color-indicator {
+.cs-color-indicator {
     position: absolute;
     z-index: 1;
 

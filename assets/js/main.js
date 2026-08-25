@@ -327,9 +327,10 @@ $(function () {
   // Chair Options - Start
   const $chairOptions = $(".build-chair__option");
   const $annotations = $(".build-chair__annotation");
+  const $color = $(".cs-color");
   const $buildChairColors = $(".build-chair__color");
   const $chairImage = $(".build-chair__image");
-  const $indicator = $(".build-chair__color-indicator");
+  const $indicator = $(".cs-color-indicator");
 
   const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
 
@@ -364,21 +365,20 @@ $(function () {
     }
   });
 
-  $buildChairColors.on("click", function () {
+  $color.on("click", function () {
     const $this = $(this);
-
-    $buildChairColors.removeClass("active");
+    $color.removeClass("active");
     $this.addClass("active");
-
-    $chairImage.attr("src", $this.data("image"));
-
     moveIndicator($this);
   });
-
-  moveIndicator($buildChairColors.filter(".active").first());
+  $buildChairColors.on("click", function () {
+    const $this = $(this);
+    $chairImage.attr("src", $this.data("image"));
+  });
+  moveIndicator($color.filter(".active").first());
 
   $(window).on("resize", function () {
-    moveIndicator($buildChairColors.filter(".active").first());
+    moveIndicator($color.filter(".active").first());
   });
   // Chair Options - End
 

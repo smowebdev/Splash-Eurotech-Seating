@@ -316,71 +316,8 @@ $(function () {
 
       $(this).addClass("is-hidden");
     });
-
-    $video.on("ended", function () {
-      $playButton.removeClass("is-hidden");
-      $video.attr("controls", false);
-    });
   });
   // Custom Video - End
-
-  // Chair Options - Start
-  const $chairOptions = $(".build-chair__option");
-  const $annotations = $(".build-chair__annotation");
-  const $color = $(".cs-color");
-  const $buildChairColors = $(".build-chair__color");
-  const $chairImage = $(".build-chair__image");
-  const $indicator = $(".cs-color-indicator");
-
-  const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
-
-  function activeChairOption($option) {
-    const id = $option.data("id");
-
-    $chairOptions.removeClass("active");
-    $option.addClass("active");
-
-    $annotations.removeClass("active");
-    $annotations.filter(`[data-id="${id}"]`).addClass("active");
-  }
-
-  function moveIndicator($color) {
-    if (!$color.length || !$indicator.length) return;
-
-    $indicator.css(
-      "transform",
-      `translate(${$color.position().left - 0}px, -50%)`,
-    );
-  }
-
-  $chairOptions.on("mouseenter", function () {
-    if (isDesktop()) {
-      activeChairOption($(this));
-    }
-  });
-
-  $chairOptions.on("click", function () {
-    if (!isDesktop()) {
-      activeChairOption($(this));
-    }
-  });
-
-  $color.on("click", function () {
-    const $this = $(this);
-    $color.removeClass("active");
-    $this.addClass("active");
-    moveIndicator($this);
-  });
-  $buildChairColors.on("click", function () {
-    const $this = $(this);
-    $chairImage.attr("src", $this.data("image"));
-  });
-  moveIndicator($color.filter(".active").first());
-
-  $(window).on("resize", function () {
-    moveIndicator($color.filter(".active").first());
-  });
-  // Chair Options - End
 
   // Typing Text - Start
   $(".typing-fade-wrap").each(function () {
@@ -437,4 +374,160 @@ $(function () {
     $(window).on("scroll", updateTypingByScroll);
   });
   // Typing Text - End
+
+  // Color Picker - Common - Start
+  function initColorPicker({
+    $colors,
+    $indicator,
+    slider = null,
+    useDataSlide = false,
+  }) {
+    if (!$colors.length) return;
+
+    function getIndex($color) {
+      if (useDataSlide) {
+        return Number($color.data("slide"));
+      }
+
+      return $colors.index($color);
+    }
+
+    function moveIndicator($color) {
+      if (!$color.length || !$indicator.length) return;
+
+      $indicator.css(
+        "transform",
+        `translate(${$color.position().left}px, -50%)`,
+      );
+    }
+
+    function setActive(index) {
+      const $activeColor = useDataSlide
+        ? $colors.filter(`[data-slide="${index}"]`)
+        : $colors.eq(index);
+
+      if (!$activeColor.length) return;
+
+      $colors.removeClass("active");
+      $activeColor.addClass("active");
+
+      moveIndicator($activeColor);
+    }
+
+    $colors.on("click", function () {
+      const $this = $(this);
+      const index = getIndex($this);
+
+      setActive(index);
+
+      if (slider && slider.activeIndex !== index) {
+        slider.slideTo(index);
+      }
+    });
+
+    if (slider) {
+      slider.on("slideChange", function () {
+        setActive(this.activeIndex);
+      });
+    }
+
+    const $initialColor = $colors.filter(".active").first();
+
+    if ($initialColor.length) {
+      const initialIndex = getIndex($initialColor);
+
+      setActive(initialIndex);
+
+      if (slider && slider.activeIndex !== initialIndex) {
+        slider.slideTo(initialIndex, 0);
+      }
+    }
+
+    $(window).on("resize", function () {
+      moveIndicator($colors.filter(".active").first());
+    });
+  }
+  // Color Picker - Common - End
+
+  // Build Your Chair - Start
+  const $chairOptions = $(".build-chair__option");
+  const $annotations = $(".build-chair__annotation");
+
+  const $color = $(".cs-color");
+  const $buildChairColors = $(".build-chair__color");
+  const $chairImage = $(".build-chair__image");
+
+  const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
+
+  function activeChairOption($option) {
+    const id = $option.data("id");
+
+    $chairOptions.removeClass("active");
+    $option.addClass("active");
+
+    $annotations.removeClass("active");
+
+    $annotations.filter(`[data-id="${id}"]`).addClass("active");
+  }
+
+  $chairOptions.on("mouseenter", function () {
+    if (isDesktop()) {
+      activeChairOption($(this));
+    }
+  });
+
+  $chairOptions.on("click", function () {
+    if (!isDesktop()) {
+      activeChairOption($(this));
+    }
+  });
+
+  initColorPicker({
+    $colors: $color,
+    $indicator: $(".build-chair .cs-color-indicator"),
+  });
+
+  $buildChairColors.on("click", function () {
+    const $this = $(this);
+
+    $chairImage.attr("src", $this.data("image"));
+  });
+  // Build Your Chair - End
+
+  // Product Detail Info - Start
+  const $productDetailColors = $(".product-detail-info__color");
+
+  const $productDetailIndicator = $(
+    ".product-detail-info__colors .cs-color-indicator",
+  );
+
+  const initialProductDetailSlide = Number(
+    $productDetailColors.filter(".active").first().data("slide") || 0,
+  );
+
+  const productDetailSlider = new Swiper(".product-detail-slider", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 700,
+    initialSlide: initialProductDetailSlide,
+    pagination: {
+      el: ".product-detail-slider__pagination",
+      clickable: true,
+    },
+
+    keyboard: {
+      enabled: true,
+    },
+    grabCursor: true,
+    observer: true,
+    observeParents: true,
+  });
+
+  initColorPicker({
+    $colors: $productDetailColors,
+    $indicator: $productDetailIndicator,
+    slider: productDetailSlider,
+    useDataSlide: true,
+  });
+  // Product Detail Info - End
 });

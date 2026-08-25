@@ -327,7 +327,7 @@ $(function () {
   // Chair Options - Start
   const $chairOptions = $(".build-chair__option");
   const $annotations = $(".build-chair__annotation");
-  const $colors = $(".build-chair__color");
+  const $buildChairColors = $(".build-chair__color");
   const $chairImage = $(".build-chair__image");
   const $indicator = $(".build-chair__color-indicator");
 
@@ -364,10 +364,10 @@ $(function () {
     }
   });
 
-  $colors.on("click", function () {
+  $buildChairColors.on("click", function () {
     const $this = $(this);
 
-    $colors.removeClass("active");
+    $buildChairColors.removeClass("active");
     $this.addClass("active");
 
     $chairImage.attr("src", $this.data("image"));
@@ -375,40 +375,47 @@ $(function () {
     moveIndicator($this);
   });
 
-  moveIndicator($colors.filter(".active").first());
+  moveIndicator($buildChairColors.filter(".active").first());
 
   $(window).on("resize", function () {
-    moveIndicator($colors.filter(".active").first());
+    moveIndicator($buildChairColors.filter(".active").first());
   });
   // Chair Options - End
 
   // Typing Text - Start
-  const $typingText = $(".typing-fade");
+  $(".typing-fade-wrap").each(function () {
+    const $container = $(this);
+    const $typingText = $container.find("p, .typing-fade");
 
-  if (!$typingText.length) return;
+    if (!$typingText.length) return;
 
-  $typingText.each(function () {
-    const $el = $(this);
+    const activeColor = $container.data("color") || "#000000";
+    const fadeColor = $container.data("fade-color") || "#D9D9D9";
 
-    const text = $el.text().replace(/\s+/g, " ").trim();
+    let totalLetters = 0;
 
-    const activeColor = $el.data("color") || "#000000";
-    const fadeColor = $el.data("fade-color") || "#D9D9D9";
+    $typingText.each(function () {
+      const $el = $(this);
 
-    $el.empty();
+      const text = $el.text().replace(/\s+/g, " ").trim();
 
-    [...text].forEach(function (char) {
-      $("<span>", {
-        text: char,
-      })
-        .css("color", fadeColor)
-        .appendTo($el);
+      $el.empty();
+
+      [...text].forEach(function (char) {
+        $("<span>", {
+          text: char,
+        })
+          .css("color", fadeColor)
+          .appendTo($el);
+
+        totalLetters++;
+      });
     });
 
-    const $letters = $el.find("span");
+    const $letters = $container.find("p span, .typing-fade span");
 
     function updateTypingByScroll() {
-      const rect = $el[0].getBoundingClientRect();
+      const rect = $container[0].getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
       const start = windowHeight * 0.8;
@@ -418,7 +425,7 @@ $(function () {
 
       progress = Math.max(0, Math.min(1, progress));
 
-      const activeCount = Math.floor(progress * $letters.length);
+      const activeCount = Math.floor(progress * totalLetters);
 
       $letters.each(function (index) {
         $(this).css("color", index < activeCount ? activeColor : fadeColor);

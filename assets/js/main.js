@@ -1,22 +1,4 @@
 $(function () {
-  // Scroll Smooth - Start
-  if (typeof Lenis !== "undefined") {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-      smoothTouch: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }
-
-  // Scroll Smooth - End
-
   // Slider Explore Collections In Home Page - Start
   $("section")
     .has(".expolore-coll__slider")

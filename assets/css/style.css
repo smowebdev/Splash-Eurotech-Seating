@@ -354,7 +354,7 @@
 }
 .quick-nav__list {
   display: flex;
-  gap: 64px;
+  gap: 82px;
   align-items: center;
 }
 .quick-nav__item {
@@ -368,7 +368,7 @@
   color: #00000099;
   transition: all 0.3s ease-in-out;
   position: relative;
-  padding: 22px 16px 23px 26px;
+  padding: 22px 0 23px 0;
 }
 .quick-nav__item:hover,
 .quick-nav__item--active {
@@ -379,10 +379,10 @@
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: -16px;
+  width: calc(100% + 42px);
   height: 2px;
-  background: #000000;
+  background: #d13532;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease-in-out;
@@ -588,7 +588,6 @@
 }
 .resources-hero__row {
   max-width: 660px;
-  margin-bottom: 60px;
 }
 .resources-hero__content .section-label {
   margin-bottom: 12px;
@@ -597,6 +596,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  margin-top: 60px;
 }
 
 .resources-hero__item {
@@ -1027,4 +1027,169 @@
   color: #fff;
   background: #252525;
   border-color: #252525;
+}
+
+/* single-contracts-hero */
+.single-contracts-hero__logo {
+  margin-bottom: 24px;
+}
+.single-contracts-hero {
+  padding: 155px 0 40px;
+}
+.single-contracts-hero__desc {
+  max-width: 382px;
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000;
+  margin: 24px 0;
+}
+.single-contracts-hero__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+.single-contracts-hero__contract {
+  margin: 98px 0 0;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  color: #d13532;
+  display: flex;
+  gap: 24px;
+}
+.quick-nav-contracts {
+}
+.quick-nav-contracts {
+  position: sticky;
+  top: 85px;
+  z-index: 8;
+  border-bottom: 1px solid #efefef;
+  border-top: 1px solid #efefef;
+  background: #fff;
+  transform: none;
+}
+.quick-nav-contracts .quick-nav__item {
+  padding: 22px 0 23px 0;
+}
+.quick-nav-contracts .quick-nav__list {
+  gap: 88px;
+}
+.quick-nav-contracts .quick-nav__item::after {
+  width: calc(100% + 80px);
+  left: -40px;
+}
+/* quick-contract-overview */
+.quick-contract-overview {
+  padding: 80px 0;
+}
+.quick-contract-overview__list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.quick-contract-overview__item {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  background: #fafafa;
+  padding: 16px;
+}
+.quick-contract-overview__dot {
+  display: block;
+  background: #d13532;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+}
+.quick-contract-overview__label {
+  display: block;
+  font-family: PP Neue Montreal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 110.00000000000001%;
+  letter-spacing: 0.02em;
+  color: #00000099;
+}
+.quick-contract-overview__value {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin: 10px 0 0;
+}
+/* browse */
+.browse-settings__title,
+.quick-contract-overview__heading,
+.contract-details__heading {
+  margin-bottom: 40px;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+.browse-loadmore {
+  text-align: center;
+  margin-top: 43px;
+}
+.browse-settings-sec-contract {
+  padding-bottom: 120px;
+}
+.contract-details__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 78px;
+}
+.contract-details__item {
+  padding: 31px 0;
+  border-top: 1px solid #efefef;
+
+}
+.contract-details__item:nth-last-child(-n+2) {
+    border-bottom: 1px solid #efefef;
+}
+.contract-details__toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 24px;
+}
+.contract-details__icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+.contract-details__item.is-open .contract-details__icon {
+  transform: rotate(180deg);
+}
+.contract-details__toggle h3 {
+  flex: 1 0 0;
+  font-family: Neue Montreal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000000;
+  text-align: left;
+}
+.contract-details__body {
+  font-family: Neue Montreal;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #00000099;
+  display: none;
 }

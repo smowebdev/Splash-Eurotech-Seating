@@ -527,6 +527,7 @@
   gap: 60px;
   height: 100%;
   max-width: 564px;
+  width: 100%;
 }
 .contact-form__content-wrapper {
   width: 50%;
@@ -534,7 +535,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   padding: 80px;
 }
 .contact-form__heading {
@@ -1129,7 +1130,8 @@
 /* browse */
 .browse-settings__title,
 .quick-contract-overview__heading,
-.contract-details__heading {
+.contract-details__heading,
+.contract-pdf__heading {
   margin-bottom: 40px;
   font-family: PP Neue Montreal;
   font-weight: 500;
@@ -1228,7 +1230,6 @@
   border-bottom: 1px solid #efefef;
   display: flex;
   gap: 30px;
-  
 }
 .how-it-works__item:first-child {
   padding-top: 0;
@@ -1270,6 +1271,107 @@
   letter-spacing: 0.02em;
   color: #00000099;
 }
-.how-it-works__text{
+.how-it-works__text {
   flex: 1 0 0;
 }
+.contact-form-contracts .contact-form__image {
+  order: -1;
+}
+.contact-form-contracts .contact-form__content-wrapper {
+  align-items: flex-start;
+}
+.contact-form-contracts .contact-form__heading{
+  margin-bottom: 24px;
+}
+.contract-pdf {
+  padding: 60px 0 100px;
+}
+.contract-pdf__list {
+  display: flex;
+  gap: 10px;
+}
+
+.contract-pdf__item {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 220px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.contract-pdf__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fafafa;
+  z-index: -2;
+}
+
+.contract-pdf__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #d13532;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  z-index: -1;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.contract-pdf__item:hover::before {
+  transform: scaleY(1);
+}
+
+.contract-pdf__item > * {
+  position: relative;
+  z-index: 1;
+}
+.contract-pdf__tag {
+  font-family: Neue Montreal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #00000099;
+  display: block;
+  margin-bottom: 6px;
+  transition: all 0.3s ease-in-out;
+}
+.contract-pdf__title {
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease-in-out;
+  color: #000;
+}
+.contract-pdf__download {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #d13532;
+  font-family: PP Neue Montreal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110.00000000000001%;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.02em;
+}
+.contract-pdf__download img {
+  transition: all 0.3s ease-in-out;
+}
+.contract-pdf__item:hover .contract-pdf__title,
+.contract-pdf__item:hover .contract-pdf__tag,
+.contract-pdf__item:hover .contract-pdf__download{
+  color: #fff;
+}
+.contract-pdf__item:hover .contract-pdf__download img{
+      filter: brightness(0) invert(1);
+
+} 

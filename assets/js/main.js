@@ -1,20 +1,20 @@
-let lenis = null;
+$(function () {
+  let lenis = null;
 
-if (typeof Lenis !== "undefined") {
-  lenis = new Lenis({
-    duration: 1.2,
-    smoothWheel: true,
-    smoothTouch: false,
-  });
+  if (typeof Lenis !== "undefined") {
+    lenis = new Lenis({
+      duration: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
+    });
 
-  function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
     requestAnimationFrame(raf);
   }
-
-  requestAnimationFrame(raf);
-}
-$(function () {
   // Slider Explore Collections In Home Page - Start
   $("section")
     .has(".expolore-coll__slider")

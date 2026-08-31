@@ -125,7 +125,8 @@
     align-items: center;
     justify-content: space-between;
 }
-.metarial-library-product-sec .collection-item p{
+
+.metarial-library-product-sec .collection-item p {
     margin: 0;
 }
 
@@ -207,4 +208,16 @@
 
 }
 
-.metarial-library-product-sec {}
+@media (max-width: 1200px) {
+    .metarial-library-product-sec .product-list {
+        grid-template-columns: repeat(3, 1fr);
+        padding-right: unset;
+
+    }
+}
+@media (max-width: 768px) {
+    .metarial-library-product-sec .product-list {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}

@@ -14,7 +14,34 @@ if (typeof Lenis !== "undefined") {
 
   requestAnimationFrame(raf);
 }
+function updatePerformanceFeaturesLayout() {
+  const $list = $(".performance-features__list");
+  if (!$list) {
+    return;
+  }
+  $list.find(".performance-features__item-line").remove();
+
+  $list
+    .find(".performance-features__item .item-inner")
+    .css("border-right", "1px solid rgba(0, 0, 0, 0.05)");
+
+  const $visibleItems = $list.find(".performance-features__item:visible");
+
+  $visibleItems.each(function (index) {
+    const position = index + 1;
+
+    if (position % 4 === 0) {
+      $(this).find(".item-inner").css("border-right", "none");
+
+      $(this).after('<div class="performance-features__item-line"></div>');
+    }
+  });
+}
 $(function () {
+  // Update line for Performance Features - Start
+  updatePerformanceFeaturesLayout();
+  // Update line for Performance Features - End
+
   // Slider Explore Collections In Home Page - Start
   $("section")
     .has(".expolore-coll__slider")
@@ -300,6 +327,7 @@ $(function () {
           filter === "all" || type === filter ? "block" : "none",
         );
       });
+      updatePerformanceFeaturesLayout();
     });
   });
   // Custom Tab - End

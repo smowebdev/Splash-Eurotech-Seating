@@ -667,6 +667,7 @@ a.mega-menu-heading:hover {
 .hero-sec .hero-main {
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 24px;
     position: relative;
     max-width: 811px;
@@ -1661,7 +1662,11 @@ a.mega-menu-heading:hover {
     opacity: 1;
 }
 
-.popular-models__list {
+.popular-models-sec .popular-models__list--newest {
+    display: none;
+}
+
+.popular-models__list-inner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
@@ -3750,4 +3755,191 @@ a.breadcrumb__item:hover {
 .product-related__list .cs-product__item .item-view {
     visibility: visible;
     transform: none;
+}
+
+/* Tempurpedic Page */
+.hero-sec.hero-sec-medium {
+    min-height: 600px;
+    padding: 40px 0;
+}
+
+.hero-sec.hero-sec-medium .hero-main {
+    max-width: 468px;
+}
+
+.hero-sec.hero-sec-medium::before {
+    background: linear-gradient(93.8deg, rgba(34, 33, 33, 0.4) 5.46%, rgba(0, 0, 0, 0) 40.34%);
+}
+
+.hero-sec.hero-sec-medium .hero-logo {
+    max-height: 36px;
+    margin-bottom: -4px;
+}
+
+.hero-sec.hero-sec-medium .hero-desc {
+    max-width: 100%;
+}
+
+.hero-sec.hero-sec-medium .hero-heading {
+    font-size: 48px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+
+}
+
+.tempur-difference-sec {
+    padding: 60px 0 0;
+    background-color: #FBFBFB;
+}
+
+.tempur-difference__inner {
+    display: flex;
+    align-items: end;
+}
+
+.tempur-difference__left {
+    width: 43.45%;
+}
+
+.tempur-difference__right {
+    width: 56.55%;
+    padding: 80px;
+
+}
+
+.tempur-difference__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 381px;
+}
+
+.tempur-difference__image {
+    position: relative;
+    aspect-ratio: 660/700;
+    overflow: hidden;
+    display: block;
+}
+
+.tempur-difference__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tempur-difference-sec .section-label {
+    margin-bottom: 0;
+}
+
+.tempur-difference__heading {
+    font-size: 48px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    max-width: 373px;
+}
+
+.tempur-difference__desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+}
+
+.tempur-benefits-sec {
+    padding: 80px 0;
+}
+
+.tempur-benefits__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.tempur-benefits__item {
+    min-height: 214px;
+    background-color: #FBFBFB;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 78px 24px 41px;
+}
+
+.tempur-benefits__item .item-title {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 110.00000000000001%;
+}
+
+.tempur-benefits__item .item-desc {
+    font-size: 14px;
+    line-height: 140%;
+    color: var(--color-black-light);
+    max-width: 211px;
+}
+
+.tempur-comfort-sec {
+    padding-bottom: 60px;
+}
+
+.tempur-comfort__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.tempur-comfort__card {
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.tempur-comfort__card .card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.tempur-comfort__card .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 281px;
+    color: var(--color-white);
+    position: relative;
+    z-index: 2;
+}
+
+.tempur-comfort__card .card-title {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 110.00000000000001%;
+}
+
+.tempur-comfort__card .card-desc {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 2%;
+}
+
+.tempur-ava-collec__heading {
+    letter-spacing: 2%;
+    margin-bottom: 24px;
+}
+
+.tempur-ava-collec__desc {
+    max-width: 291px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: var(--color-dark);
 }

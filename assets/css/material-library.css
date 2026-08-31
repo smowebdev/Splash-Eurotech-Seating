@@ -1,0 +1,210 @@
+.metarial-library-hero-sec {
+    min-height: 320px;
+    padding: 39px 0;
+}
+
+.metarial-library-hero-sec .hero-heading {
+    font-size: 48px;
+}
+
+.metarial-library-hero-sec .hero-desc {
+    max-width: 404px;
+}
+
+.metarial-library-product-sec {
+    padding-top: 40px;
+}
+
+.metarial-library-product-sec .filter-search {
+    max-width: 841px;
+
+}
+
+.metarial-library-product-sec .filter-search input {
+    border: 1px solid #E4E4E0;
+    padding: 10px 16px;
+    border-radius: 24px;
+    width: 100%;
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+}
+
+.metarial-library-product-sec .filter-search input::placeholder {
+    font-family: 'PP Neue Montreal';
+    opacity: 50%;
+}
+
+.metarial-library-product-sec .filter-cta .btn-black-secondary {
+    border-color: #00000033;
+
+}
+
+.metarial-library-product-sec .filter-cta .btn {
+    padding: 11px 23px;
+
+}
+
+.metarial-library-product-sec .filter-product {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.metarial-library-product-sec .filter-cta {
+    display: flex;
+    gap: 10.2px;
+}
+
+.metarial-library-product-sec .collection-swatches {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 47px;
+    opacity: 50%;
+}
+
+
+.metarial-library-product-sec .collection-swatches-line {
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 100%;
+}
+
+.metarial-library-product-sec .product-row {
+    display: flex;
+    border-top: 1px solid #E4E4E0;
+    margin-top: 11px;
+    padding-bottom: 60px;
+}
+
+.metarial-library-product-sec .product-left-title {
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: var(--color-accent);
+    margin-top: 59px;
+    margin-bottom: 10px;
+}
+
+.metarial-library-product-sec .product-left {
+    width: 280px;
+    border-right: 1px solid #E4E4E0;
+
+}
+
+.metarial-library-product-sec .product-right {
+    flex: 1;
+}
+
+.metarial-library-product-sec .product-left-collection {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 2%;
+    opacity: 50%;
+    padding-right: 39px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    border-top: 1px solid #E4E4E0;
+    padding-top: 32px;
+
+}
+
+.metarial-library-product-sec .product-left-collection .collection-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.metarial-library-product-sec .collection-item p{
+    margin: 0;
+}
+
+.metarial-library-product-sec .product-right-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-left: 40px;
+}
+
+.metarial-library-product-sec .product-right-title-left {
+
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    padding-top: 41px;
+    padding-bottom: 11px;
+}
+
+.metarial-library-product-sec .product-right-title-right {
+
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    margin-bottom: 21px;
+
+}
+
+.metarial-library-product-sec .product-right-title-right p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    color: var(--color-accent);
+    padding: 8px 8px;
+
+}
+
+.metarial-library-product-sec .product-right-title-left p {
+    font-size: 32px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    margin: 0;
+
+}
+
+.metarial-library-product-sec .product-right-title span {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: #656565;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+
+}
+
+.metarial-library-product-sec .product-list {
+    border-top: 1px solid #E4E4E0;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 32px;
+    column-gap: 20px;
+    padding-bottom: 19px;
+    padding-right: 100px;
+}
+
+.metarial-library-product-sec .product-item img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.metarial-library-product-sec .product-item p {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    margin-top: 10px;
+
+}
+
+.metarial-library-product-sec {}

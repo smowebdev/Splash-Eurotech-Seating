@@ -1662,7 +1662,11 @@ a.mega-menu-heading:hover {
     opacity: 1;
 }
 
-.popular-models__list {
+.popular-models-sec .popular-models__list--newest {
+    display: none;
+}
+
+.popular-models__list-inner {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;

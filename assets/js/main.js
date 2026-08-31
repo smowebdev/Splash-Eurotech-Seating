@@ -121,13 +121,18 @@ $(function () {
   // Toggle Popular/Newest - Start
   $(".model-filter__toggle").on("click", function () {
     const $filter = $(this).closest(".model-filter");
+    const $section = $filter.closest(".popular-models-sec");
 
     $filter.toggleClass("is-newest");
 
     if ($filter.hasClass("is-newest")) {
-      console.log("Show Newest");
+      $section.find(".popular-models__list--popular").fadeOut(250, function () {
+        $section.find(".popular-models__list--newest").fadeIn(250);
+      });
     } else {
-      console.log("Show Popular");
+      $section.find(".popular-models__list--newest").fadeOut(250, function () {
+        $section.find(".popular-models__list--popular").fadeIn(250);
+      });
     }
   });
   // Toggle Popular/Newest - End

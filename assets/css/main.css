@@ -3888,13 +3888,13 @@ a.breadcrumb__item:hover {
 }
 
 .tempur-comfort__card {
-    min-height: 600px;
     position: relative;
     overflow: hidden;
     padding: 32px;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    aspect-ratio: 755/600;
 }
 
 .tempur-comfort__card .card-img {
@@ -3942,4 +3942,148 @@ a.breadcrumb__item:hover {
     line-height: 140%;
     letter-spacing: 2%;
     color: var(--color-dark);
+}
+
+.cta-contact-sec {
+    overflow: hidden;
+}
+
+.cta-contact__inner {
+    display: flex;
+}
+
+.cta-contact__left {
+    width: 50%;
+    padding: 80px 40px 74px 20px;
+}
+
+.cta-contact__right {
+    flex: 50%;
+}
+
+.cta-contact__image {
+    margin-right: calc(0px - calc((100vw - 1520px)/2));
+    position: relative;
+    height: 100%;
+}
+
+.cta-contact__image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 59.5%, rgba(0, 0, 0, 0.7) 95.67%);
+}
+
+.cta-contact__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-contact__heading {
+    letter-spacing: 2%;
+    margin-bottom: 24px;
+    max-width: 477px;
+}
+
+.cta-contact__desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: var(--color-black-light);
+    max-width: 440px;
+}
+
+.cta-contact__content {
+    max-width: 560px;
+}
+
+.cta-contact__form {
+    margin-top: 60px;
+}
+
+.cta-contact__form .form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px 20px;
+}
+
+.cta-contact__form .form-label {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: var(--color-black);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cta-contact__form .form-label span {
+    color: var(--color-accent);
+}
+
+.cta-contact__form .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px 20px;
+}
+
+.cta-contact__form input:not([type="submit"]),
+.cta-contact__form textarea {
+    font-family: 'PP Neue Montreal Book';
+    font-size: 14px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    color: var(--color-black);
+    background: #F4F4F6;
+    border: 1px solid #E3E3E5;
+    border-radius: 6px;
+    padding: 13px 15px;
+    outline: none;
+    width: 100%;
+}
+
+.cta-contact__form input:not([type="submit"])::placeholder,
+.cta-contact__form textarea::placeholder {
+    color: var(--color-black-light);
+}
+
+.cta-contact__form textarea {
+    min-height: 100px;
+}
+
+.cta-contact__form .form-footer {
+    margin-top: 24px;
+}
+
+.cta-contact__form input[type="submit"] {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2%;
+    padding: 12px 24px;
+    background: var(--color-dark);
+    color: var(--color-white);
+    border-radius: 24px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.cta-contact__form input[type="submit"]:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.cta-contact__form .form-note {
+    font-family: 'PP Neue Montreal Book';
+    font-size: 14px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    text-align: center;
+    color: var(--color-black);
+    margin-top: 16px;
 }

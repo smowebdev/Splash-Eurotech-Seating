@@ -1,0 +1,319 @@
+.contaracts-hero-sec .hero-desc {
+    max-width: 512px;
+
+}
+
+.contaracts-col-sec .purchasing-row {
+    display: grid;
+    grid-template-columns: 560px 360px 600px;
+    width: min(1520px, 100%);
+    margin: 0 auto;
+    border-top: 1px solid #0000000D;
+    border-bottom: 1px solid #0000000D;
+}
+
+.contaracts-col-sec .col-lef {
+    padding-top: 59px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contaracts-col-sec .col-lef-category {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.contaracts-col-sec .col-lef-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 38px;
+}
+
+.contaracts-col-sec .col-lef-list li {
+    position: relative;
+    letter-spacing: 2%;
+    padding-left: 15px;
+    line-height: 140%;
+
+}
+
+.contaracts-col-sec .col-lef-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    background: var(--color-accent);
+    border-radius: 100%;
+}
+
+.contaracts-col-sec .section-heading {
+    margin-top: 13px;
+    margin-bottom: 20px;
+    letter-spacing: 2%;
+
+}
+
+.contaracts-col-sec {
+    padding-bottom: 100px;
+    padding-top: 80px;
+}
+
+.contaracts-col-sec .col-center {
+    border-left: 1px solid #0000000D;
+    border-right: 1px solid #0000000D;
+    background-color: #FBFBFB;
+    padding-bottom: 38px;
+    padding-left: 32px;
+
+}
+
+.contaracts-col-sec .col-right {
+    position: relative;
+    height: 618px;
+}
+
+.contaracts-col-sec .gsa-img-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contaracts-col-sec .gsa-img-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 76px;
+    height: 78px;
+    z-index: 1;
+}
+
+
+.contaracts-col-sec .col-center-row .btn {
+    margin-top: 8px;
+    width: max-content;
+}
+
+.contaracts-col-sec .col-center-row {
+    display: flex;
+    flex-direction: column;
+    gap: 34.5px;
+}
+
+.contaracts-col-sec .col-center {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.contaracts-col-sec .col-center-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contaracts-col-sec .col-center-content p {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 2%;
+
+}
+
+.contaracts-col-sec .col-center-content span {
+    font-family: 'PP Neue Montreal';
+    font-size: 14px;
+    line-height: 110.00000000000001%;
+    color: #00000099;
+
+}
+
+
+.contaracts-col-sec .col-lef-des {
+    max-width: 411px;
+    letter-spacing: 2%;
+    color: #00000099;
+    line-height: 140%;
+
+}
+
+.contaracts-process {
+    background-color: #FBFBFB;
+    padding-top: 103px;
+    padding-bottom: 100px;
+}
+
+.contaracts-process h2 {
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.contaracts-process .process-list {
+    position: relative;
+    max-width: 1155px;
+    display: grid;
+    grid-template-columns: 156px 156px 208px 156px;
+    margin: 0 auto;
+    column-gap: 160px;
+}
+
+.contaracts-process .process-list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 99vw;
+    height: 1px;
+    background: var(--color-accent);
+    transform: translateX(-50%);
+}
+
+.contaracts-process .process-content {
+    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contaracts-process .bage-note {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: var(--color-accent);
+    margin-top: -8px;
+}
+
+.contaracts-process .process-content span,
+.contaracts-purchar .purchar-item-content span {
+    font-family: ' PP Neue Montreal';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 8%;
+    color: var(--color-accent);
+}
+
+.contaracts-process .process-content-title {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+
+}
+
+.contaracts-process .process-contanr-des {
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: #00000099;
+}
+
+.contaracts-purchar {
+    padding-top: 100px;
+    padding-bottom: 130px;
+}
+
+.contaracts-purchar h2 {
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+
+.contaracts-purchar .purchar-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+}
+
+.contaracts-purchar .purchar-item-image {
+    height: 300px;
+    object-fit: cover;
+}
+
+.contaracts-purchar .purchar-item-content {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    margin-top: 33px;
+}
+
+.contaracts-purchar .purchar-item-content .purchar-item-content-title {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 100%;
+
+}
+
+.contaracts-purchar .purchar-item:first-child .purchar-item-content .purchar-item-content-title {
+    letter-spacing: 2%;
+
+}
+
+.contaracts-purchar .purchar-item-content .purchar-item-content-des {
+    line-height: 140%;
+    letter-spacing: 2%;
+}
+
+.contaracts-pdf .contract-pdf__list {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+}
+
+.contaracts-contact-sec .cta-content__left{
+  padding: 40px 0;
+}
+
+
+@media (max-width: 1200px) {
+    .contaracts-col-sec .purchasing-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contaracts-pdf .contract-pdf__list {
+        grid-template-columns: repeat(5, 1fr);
+
+    }
+
+    .contaracts-col-sec .purchasing-row .col-center {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 991px) {
+    .contaracts-pdf .contract-pdf__list {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media (max-width: 768px) {
+    .contaracts-col-sec .purchasing-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contaracts-col-sec .purchasing-row .col-center {
+        grid-column: auto;
+    }
+
+    .contaracts-pdf .contract-pdf__list {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}

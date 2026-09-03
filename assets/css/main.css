@@ -3946,6 +3946,7 @@ a.breadcrumb__item:hover {
 
 .cta-contact-sec {
     overflow: hidden;
+    background: #FAFAFA;
 }
 
 .cta-contact__inner {

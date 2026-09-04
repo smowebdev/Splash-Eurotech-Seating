@@ -14,11 +14,22 @@ $(function () {
       });
 
       $wrapper.on("click", ".color-option", function () {
-        const url = $(this).data("url");
+        const $this = $(this);
 
-        if (!url) return;
+        const configKey = $this.data("config");
+        const value = $.trim($this.find("span").text());
+        const url = $this.data("url");
 
-        $chairModel[0].src = url;
+        $this
+          .closest(".configure-option")
+          .find(".configure-option__label span")
+          .text(value);
+
+        $(`[data-config-output="${configKey}"] .item-value`).text(value);
+
+        if (url) {
+          $chairModel[0].src = url;
+        }
       });
 
       const $initialColor = $wrapper.find(".color-option.active").first();
@@ -32,27 +43,28 @@ $(function () {
       }
     });
 
-    $(".option-cates").each(function () {
-      const $wrapper = $(this);
+    $(".option-cates").on("click", ".option-cate", function () {
+      const $this = $(this);
 
-      $wrapper.on("click", ".option-cate", function () {
-        const $this = $(this);
-        const url = $this.data("url");
+      const configKey = $this.data("config");
+      const value = $.trim($this.text());
+      const url = $this.data("url");
 
-        $wrapper.find(".option-cate").removeClass("selected");
-        $this.addClass("selected");
+      $this
+        .addClass("selected")
+        .siblings(".option-cate")
+        .removeClass("selected");
 
-        const text = $.trim($this.text());
+      $this
+        .closest(".configure-option")
+        .find(".configure-option__label span")
+        .text(value);
 
-        $wrapper
-          .closest(".configure-option")
-          .find(".configure-option__label span")
-          .text(text);
+      $(`[data-config-output="${configKey}"] .item-value`).text(value);
 
-        if (url) {
-          $chairModel[0].src = url;
-        }
-      });
+      if (url) {
+        $chairModel[0].src = url;
+      }
     });
   }
 

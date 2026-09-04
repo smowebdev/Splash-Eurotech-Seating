@@ -858,17 +858,43 @@
 
                                     <div class="chair-accordion__answer">
                                         <div class="chair-accordion__answer-inner">
-                                            <p>
-                                                Ergonomic chair with adjustable seat height, backrest,
-                                                armrests and lumbar support.
-                                            </p>
+                                            <div class="chair-accordion__spec">
+                                                <div class="spec-item">
+                                                    <div class="spec-item__label">Back</div>
+                                                    <div class="spec-item__value">20.67" x 27.17-29.92" (W x H)
+                                                    </div>
+                                                </div>
 
-                                            <ul>
-                                                <li>Seat height: 450–550mm</li>
-                                                <li>Weight capacity: 130kg</li>
-                                                <li>Adjustable armrests</li>
-                                                <li>Adjustable lumbar support</li>
-                                            </ul>
+                                                <div class="spec-item">
+                                                    <div class="spec-item__label">Cube</div>
+                                                    <div class="spec-item__value">10.8</div>
+                                                </div>
+
+                                                <div class="spec-item">
+                                                    <div class="spec-item__label">Seat</div>
+                                                    <div class="spec-item__value">20.67" x 19.69" (W x D)</div>
+                                                </div>
+
+                                                <div class="spec-item">
+                                                    <div class="spec-item__label">Weight</div>
+                                                    <div class="spec-item__value">66 lbs</div>
+                                                </div>
+
+                                                <div class="spec-item spec-item--full">
+                                                    <div class="spec-item__label">Seat height</div>
+                                                    <div class="spec-item__value">
+                                                        17.83" (at lowest point)<br>
+                                                        21.38" (at highest point)
+                                                    </div>
+                                                </div>
+
+                                                <div class="spec-item spec-item--full">
+                                                    <div class="spec-item__label">Overall dimensions</div>
+                                                    <div class="spec-item__value">
+                                                        26.18" x 26.57" x 44.69-51.18" (W x D x H)
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -884,9 +910,44 @@
 
                                     <div class="chair-accordion__answer">
                                         <div class="chair-accordion__answer-inner">
-                                            <p>
-                                                Your current chair configuration is displayed here.
-                                            </p>
+                                            <div class="chair-accordion__current-config">
+
+                                                <div class="current-config__item" data-config-output="seat">
+                                                    <div class="item-label">Seat</div>
+                                                    <div class="item-value">Mesh</div>
+                                                </div>
+
+                                                <div class="current-config__item" data-config-output="seatColor">
+                                                    <div class="item-label">Seat Color</div>
+                                                    <div class="item-value">Blue</div>
+                                                </div>
+
+                                                <div class="current-config__item" data-config-output="back">
+                                                    <div class="item-label">Back</div>
+                                                    <div class="item-value">Mesh</div>
+                                                </div>
+
+                                                <div class="current-config__item" data-config-output="backColor">
+                                                    <div class="item-label">Back Color</div>
+                                                    <div class="item-value">Blue</div>
+                                                </div>
+
+                                                <div class="current-config__item" data-config-output="seatComfort">
+                                                    <div class="item-label">Seat Foam</div>
+                                                    <div class="item-value">Standart</div>
+                                                </div>
+
+                                                <div class="current-config__item" data-config-output="arms">
+                                                    <div class="item-label">Arms</div>
+                                                    <div class="item-value">Armless</div>
+                                                </div>
+
+                                                <div class="current-config__item" data-config-output="casters">
+                                                    <div class="item-label">Casters</div>
+                                                    <div class="item-value">Roller Blade</div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -902,9 +963,28 @@
 
                                     <div class="chair-accordion__answer">
                                         <div class="chair-accordion__answer-inner">
-                                            <a href="#" target="_blank">Download Specifications PDF</a>
-                                            <a href="#" target="_blank">Download Product Brochure</a>
-                                            <a href="#" target="_blank">Download User Manual</a>
+                                            <div class="chair-accordion__download">
+                                                <a href="#" class="download-item">
+                                                    <img src="assets/images/quill_download.svg" alt="">
+                                                    <span>Spec Sheet</span>
+                                                </a>
+                                                <a href="#" class="download-item">
+                                                    <img src="assets/images/quill_download.svg" alt="">
+                                                    <span>CAD Files</span>
+                                                </a>
+                                                <a href="#" class="download-item">
+                                                    <img src="assets/images/quill_download.svg" alt="">
+                                                    <span>Dimensions</span>
+                                                </a>
+                                                <a href="#" class="download-item">
+                                                    <img src="assets/images/quill_download.svg" alt="">
+                                                    <span>Warranty</span>
+                                                </a>
+                                                <a href="#" class="download-item">
+                                                    <img src="assets/images/quill_download.svg" alt="">
+                                                    <span>Assembly Instructions</span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1231,11 +1311,13 @@
                                         </div>
 
                                         <div class="option-cates">
-                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                            <div class="option-cate selected" data-config="seat"
+                                                data-url="assets/models/chair.glb">
                                                 Mesh
                                             </div>
 
-                                            <div class="option-cate" data-url="assets/models/chair-1.glb">
+                                            <div class="option-cate" data-config="seat"
+                                                data-url="assets/models/chair-1.glb">
                                                 Leather
                                             </div>
                                         </div>
@@ -1250,14 +1332,14 @@
 
                                             <span class="cs-color-indicator"></span>
 
-                                            <button type="button" class="cs-color color-option "
+                                            <button type="button" class="cs-color color-option " data-config="seatColor"
                                                 data-url="assets/models/chair-1.glb" style="--color: #070707;"
                                                 aria-label="Black">
                                                 <div class="dot"></div>
                                                 <span>Black</span>
                                             </button>
 
-                                            <button type="button" class="cs-color color-option"
+                                            <button type="button" class="cs-color color-option" data-config="seatColor"
                                                 data-url="assets/models/chair-2.glb" style="--color: #C0C0C0;"
                                                 aria-label="Grey">
                                                 <div class="dot"></div>
@@ -1265,12 +1347,11 @@
                                             </button>
 
                                             <button type="button" class="cs-color color-option active"
-                                                data-url="assets/models/chair.glb" style="--color: #5182A4;"
-                                                aria-label="Blue">
+                                                data-config="seatColor" data-url="assets/models/chair.glb"
+                                                style="--color: #5182A4;" aria-label="Blue">
                                                 <div class="dot"></div>
                                                 <span>Blue</span>
                                             </button>
-
 
                                         </div>
 
@@ -1281,11 +1362,13 @@
                                         </div>
 
                                         <div class="option-cates">
-                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                            <div class="option-cate selected" data-config="back"
+                                                data-url="assets/models/chair.glb">
                                                 Mesh
                                             </div>
 
-                                            <div class="option-cate" data-url="assets/models/chair-2.glb">
+                                            <div class="option-cate" data-config="back"
+                                                data-url="assets/models/chair-2.glb">
                                                 Leather
                                             </div>
                                         </div>
@@ -1300,27 +1383,26 @@
 
                                             <span class="cs-color-indicator"></span>
 
-                                            <button type="button" class="cs-color color-option "
+                                            <button type="button" class="cs-color color-option " data-config="backColor"
                                                 data-url="assets/models/chair-2.glb" style="--color: #070707;"
                                                 aria-label="Black">
                                                 <div class="dot"></div>
                                                 <span>Black</span>
                                             </button>
 
-                                            <button type="button" class="cs-color color-option"
+                                            <button type="button" data-config="backColor" class="cs-color color-option"
                                                 data-url="assets/models/chair-1.glb" style="--color: #D13532;"
                                                 aria-label="Red">
                                                 <div class="dot"></div>
                                                 <span>Red</span>
                                             </button>
 
-                                            <button type="button" class="cs-color color-option active"
-                                                data-url="assets/models/chair.glb" style="--color: #5182A4;"
-                                                aria-label="Blue">
+                                            <button type="button" data-config="backColor"
+                                                class="cs-color color-option active" data-url="assets/models/chair.glb"
+                                                style="--color: #5182A4;" aria-label="Blue">
                                                 <div class="dot"></div>
                                                 <span>Blue</span>
                                             </button>
-
 
                                         </div>
 
@@ -1331,10 +1413,12 @@
                                             5. Select Seat comfort: <span>Tempur-Pedic®</span>
                                         </div>
                                         <div class="option-cates">
-                                            <div class="option-cate " data-url="assets/models/chair-3.glb">
+                                            <div class="option-cate " data-config="seatComfort"
+                                                data-url="assets/models/chair-3.glb">
                                                 Standard foam
                                             </div>
-                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                            <div class="option-cate selected" data-config="seatComfort"
+                                                data-url="assets/models/chair.glb">
                                                 Tempur-Pedic®
                                             </div>
                                         </div>
@@ -1344,13 +1428,16 @@
                                             6. Select Arms: <span>Tempur-Pedic®</span>
                                         </div>
                                         <div class="option-cates">
-                                            <div class="option-cate " data-url="assets/models/chair-1.glb">
+                                            <div class="option-cate " data-config="arms"
+                                                data-url="assets/models/chair-1.glb">
                                                 Armless
                                             </div>
-                                            <div class="option-cate " data-url="assets/models/chair-3.glb">
+                                            <div class="option-cate " data-config="arms"
+                                                data-url="assets/models/chair-3.glb">
                                                 Height Adjustable + Pivot
                                             </div>
-                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                            <div class="option-cate selected" data-config="arms"
+                                                data-url="assets/models/chair.glb">
                                                 Height Adjustable + Pivot + Flip Front
                                             </div>
                                         </div>
@@ -1360,13 +1447,16 @@
                                             7. Select Casters: <span>Tempur-Pedic®</span>
                                         </div>
                                         <div class="option-cates">
-                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                            <div class="option-cate selected" data-config="casters"
+                                                data-url="assets/models/chair.glb">
                                                 Roller Blade
                                             </div>
-                                            <div class="option-cate " data-url="assets/models/chair-3.glb">
+                                            <div class="option-cate " data-config="casters"
+                                                data-url="assets/models/chair-3.glb">
                                                 Stationary Glides
                                             </div>
-                                            <div class="option-cate " data-url="assets/models/chair-2.glb">
+                                            <div class="option-cate " data-config="casters"
+                                                data-url="assets/models/chair-2.glb">
                                                 Hoodless Multi Surface
                                             </div>
                                         </div>

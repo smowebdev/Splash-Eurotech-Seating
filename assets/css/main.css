@@ -4088,3 +4088,446 @@ a.breadcrumb__item:hover {
     color: var(--color-black);
     margin-top: 16px;
 }
+
+
+.chair-configurator {
+    width: 100%;
+    display: flex;
+    background: #FAFAFA;
+    height: 700px;
+}
+
+
+/* =========================================
+   LEFT
+========================================= */
+
+.chair-info {
+    flex: 0 0 29%;
+    width: 29%;
+
+    min-width: 0;
+
+    padding: 30px 16px 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #fafafa;
+
+    overflow: hidden;
+
+    transition:
+        flex-basis .6s cubic-bezier(.4, 0, .2, 1),
+        width .6s cubic-bezier(.4, 0, .2, 1),
+        padding .6s ease;
+
+}
+
+.chair-info__top h1 {
+    margin: 0 0 5px;
+
+    font-size: 21px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.chair-info__collection,
+.chair-info__code {
+    display: block;
+
+    color: #888;
+
+    font-size: 8px;
+    line-height: 1.4;
+}
+
+.chair-info__code {
+    margin-top: 8px;
+    color: #222;
+}
+
+.chair-info__description {
+    margin-top: 13px;
+
+    max-width: 240px;
+
+    color: #888;
+
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.chair-info__description p {
+    margin: 0 0 8px;
+}
+
+
+/* Accordion */
+
+.chair-accordion {
+    margin-top: 12px;
+}
+
+.chair-accordion__item {
+    width: 100%;
+
+    min-height: 34px;
+
+    padding: 0;
+
+    border-top: 1px solid #e5e5e5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 9px;
+
+    color: #444;
+}
+
+.chair-accordion__item:last-child {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+/* Bottom */
+
+.chair-info__bottom {
+    margin-top: auto;
+}
+
+.shipping,
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 17px;
+
+    font-size: 9px;
+}
+
+.shipping small {
+    font-size: 8px;
+}
+
+.price span:last-child {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.price small {
+    color: #888;
+}
+
+.price strong {
+    color: #e52c32;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.quote-btn,
+.download-btn {
+    width: 100%;
+    height: 25px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+}
+
+.quote-btn {
+    color: #fff;
+    background: #222;
+}
+
+.download-btn {
+    margin-top: 3px;
+
+    border: 1px solid #bbb;
+
+    color: #333;
+    background: #fff;
+}
+
+
+/* =========================================
+   CENTER 3D
+========================================= */
+
+.chair-viewer {
+    position: relative;
+
+    flex: 1 1 auto;
+    min-width: 0;
+
+    height: 100%;
+
+
+    overflow: hidden;
+
+    transition: flex .6s cubic-bezier(.4, 0, .2, 1);
+}
+
+
+
+model-viewer {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+
+    --poster-color: transparent;
+}
+
+
+/* Bottom toolbar */
+
+.viewer-toolbar {
+    position: absolute;
+
+    left: 50%;
+    bottom: 13px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    white-space: nowrap;
+}
+
+.viewer-tool {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 4px;
+
+    color: #222;
+
+    font-size: 8px;
+}
+
+.viewer-tool span {
+    font-size: 13px;
+}
+
+.viewer-tool:first-child,
+.viewer-tool:nth-child(2) {
+    font-size: 14px;
+}
+
+.fullscreen-icon {
+    font-size: 14px !important;
+}
+
+
+/* =========================================
+   RIGHT
+========================================= */
+
+
+.chair-config {
+    flex: 0 0 27%;
+    width: 27%;
+
+    min-width: 0;
+
+    padding: 29px 12px 20px;
+
+    background: #fff;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition:
+        flex-basis .6s cubic-bezier(.4, 0, .2, 1),
+        width .6s cubic-bezier(.4, 0, .2, 1),
+        padding .6s ease;
+}
+
+.chair-config h2 {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* Config section */
+
+.config-section {
+    margin-top: 15px;
+
+    border-top: 1px solid #e5e5e5;
+}
+
+.config-heading {
+    min-height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 8px;
+    color: #777;
+}
+
+.config-heading span:last-child {
+    color: #222;
+}
+
+.config-heading small {
+    margin-left: 5px;
+}
+
+
+/* Chair types */
+
+.chair-types {
+    display: flex;
+    gap: 7px;
+
+    padding: 3px 0 13px;
+}
+
+.chair-type {
+    width: 51px;
+    height: 68px;
+
+    padding: 3px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+.chair-type.active {
+    border-color: #999;
+}
+
+.chair-type img {
+    width: 42px;
+    height: 43px;
+
+    object-fit: contain;
+}
+
+.chair-type span {
+    font-size: 7px;
+}
+
+
+/* =========================================
+   CONFIGURE
+========================================= */
+
+.configure {
+    margin-top: 30px;
+}
+
+.option {
+    padding: 15px 0;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.option-title {
+    margin-bottom: 13px;
+
+    color: #777;
+
+    font-size: 8px;
+}
+
+.mesh-option {
+    padding: 4px 8px;
+
+    border: 1px solid #222;
+    border-radius: 20px;
+
+    font-size: 8px;
+}
+
+
+
+
+
+/* =========================================
+   FULLSCREEN
+========================================= */
+
+.chair-configurator.is-fullscreen .chair-info {
+    flex: 0 0 0;
+    width: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.chair-configurator.is-fullscreen .chair-config {
+    flex: 0 0 0;
+    width: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.chair-configurator.is-fullscreen .chair-viewer {
+    flex: 1 1 100%;
+    width: 100%;
+}
+
+.view-room-wrapper {
+    position: relative;
+}
+
+.qr-code {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12px);
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+
+.view-room-wrapper.is-open .qr-code {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.qr-code img,
+.qr-code canvas {
+    display: block;
+    width: 160px !important;
+    height: 160px !important;
+}

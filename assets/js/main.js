@@ -1,19 +1,74 @@
-let lenis = null;
+// Color Picker - Common - Start
+function initColorPicker({
+  $colors,
+  $indicator,
+  slider = null,
+  useDataSlide = false,
+}) {
+  if (!$colors.length) return;
 
-if (typeof Lenis !== "undefined") {
-  lenis = new Lenis({
-    duration: 1.2,
-    smoothWheel: true,
-    smoothTouch: false,
-  });
+  function getIndex($color) {
+    if (useDataSlide) {
+      return Number($color.data("slide"));
+    }
 
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
+    return $colors.index($color);
   }
 
-  requestAnimationFrame(raf);
+  function moveIndicator($color) {
+    if (!$color.length || !$indicator.length) return;
+    console.log($color);
+
+    $indicator.css("transform", `translate(${$color.position().left}px, -50%)`);
+  }
+
+  function setActive(index) {
+    const $activeColor = useDataSlide
+      ? $colors.filter(`[data-slide="${index}"]`)
+      : $colors.eq(index);
+
+    if (!$activeColor.length) return;
+
+    $colors.removeClass("active");
+    $activeColor.addClass("active");
+
+    moveIndicator($activeColor);
+  }
+
+  $colors.on("click", function () {
+    const $this = $(this);
+    const index = getIndex($this);
+
+    setActive(index);
+
+    if (slider && slider.activeIndex !== index) {
+      slider.slideTo(index);
+    }
+  });
+
+  if (slider) {
+    slider.on("slideChange", function () {
+      setActive(this.activeIndex);
+    });
+  }
+
+  const $initialColor = $colors.filter(".active").first();
+
+  if ($initialColor.length) {
+    const initialIndex = getIndex($initialColor);
+
+    setActive(initialIndex);
+
+    if (slider && slider.activeIndex !== initialIndex) {
+      slider.slideTo(initialIndex, 0);
+    }
+  }
+
+  $(window).on("resize", function () {
+    moveIndicator($colors.filter(".active").first());
+  });
 }
+// Color Picker - Common - End
 function updatePerformanceFeaturesLayout() {
   const $list = $(".performance-features__list");
   if (!$list) {
@@ -37,557 +92,490 @@ function updatePerformanceFeaturesLayout() {
     }
   });
 }
-$(function () {
-  // Update line for Performance Features - Start
-  updatePerformanceFeaturesLayout();
-  // Update line for Performance Features - End
+(function ($) {
+  "use strict";
+  $(function () {
+    // Update line for Performance Features - Start
+    updatePerformanceFeaturesLayout();
+    // Update line for Performance Features - End
 
-  // Slider Explore Collections In Home Page - Start
-  $("section")
-    .has(".expolore-coll__slider")
-    .each(function () {
-      const $section = $(this);
+    // Slider Explore Collections In Home Page - Start
+    $("section")
+      .has(".expolore-coll__slider")
+      .each(function () {
+        const $section = $(this);
 
-      new Swiper($section.find(".expolore-coll__slider")[0], {
-        slidesPerView: "auto",
-        spaceBetween: 10,
-        speed: 700,
-        grabCursor: true,
+        new Swiper($section.find(".expolore-coll__slider")[0], {
+          slidesPerView: "auto",
+          spaceBetween: 10,
+          speed: 700,
+          grabCursor: true,
 
-        navigation: {
-          nextEl: $section.find(".expolore-coll__next")[0],
-          prevEl: $section.find(".expolore-coll__prev")[0],
-        },
+          navigation: {
+            nextEl: $section.find(".expolore-coll__next")[0],
+            prevEl: $section.find(".expolore-coll__prev")[0],
+          },
 
-        scrollbar: {
-          el: $section.find(".expolore-coll__scrollbar")[0],
-          draggable: true,
-        },
+          scrollbar: {
+            el: $section.find(".expolore-coll__scrollbar")[0],
+            draggable: true,
+          },
+        });
+      });
+    // Slider Explore Collections In Home Page - End
+
+    // Slider WorkSpace In Home Page - Start
+    $("section")
+      .has(".workspace-slider")
+      .each(function () {
+        const $section = $(this);
+
+        new Swiper($section.find(".workspace-slider")[0], {
+          slidesPerView: "auto",
+          spaceBetween: 10,
+          speed: 700,
+          grabCursor: true,
+
+          navigation: {
+            nextEl: $section.find(".workspace__next")[0],
+            prevEl: $section.find(".workspace__prev")[0],
+          },
+
+          pagination: {
+            el: $section.find(".swiper-pagination")[0],
+            clickable: true,
+          },
+        });
+      });
+    // Slider WorkSpace In Home Page - End
+
+    // hotspot in WorkSpace Card - Start
+    $(".workspace-card").each(function () {
+      const $card = $(this);
+
+      $card.find(".hotspot-btn").on("click", function (e) {
+        e.stopPropagation();
+
+        const $hotspot = $(this).closest(".product-hotspot");
+
+        const isActive = $hotspot.hasClass("active");
+
+        $card.find(".product-hotspot").removeClass("active");
+
+        if (!isActive) {
+          $hotspot.addClass("active");
+        }
       });
     });
-  // Slider Explore Collections In Home Page - End
 
-  // Slider WorkSpace In Home Page - Start
-  $("section")
-    .has(".workspace-slider")
-    .each(function () {
-      const $section = $(this);
-
-      new Swiper($section.find(".workspace-slider")[0], {
-        slidesPerView: "auto",
-        spaceBetween: 10,
-        speed: 700,
-        grabCursor: true,
-
-        navigation: {
-          nextEl: $section.find(".workspace__next")[0],
-          prevEl: $section.find(".workspace__prev")[0],
-        },
-
-        pagination: {
-          el: $section.find(".swiper-pagination")[0],
-          clickable: true,
-        },
-      });
+    $(document).on("click", function (e) {
+      if (!$(e.target).closest(".product-hotspot").length) {
+        $(".product-hotspot").removeClass("active");
+      }
     });
-  // Slider WorkSpace In Home Page - End
+    // hotspot in WorkSpace Card - End
 
-  // hotspot in WorkSpace Card - Start
-  $(".workspace-card").each(function () {
-    const $card = $(this);
+    // Toggle Popular/Newest - Start
+    $(".model-filter__toggle").on("click", function () {
+      const $filter = $(this).closest(".model-filter");
+      const $section = $filter.closest(".popular-models-sec");
 
-    $card.find(".hotspot-btn").on("click", function (e) {
+      $filter.toggleClass("is-newest");
+
+      if ($filter.hasClass("is-newest")) {
+        $section
+          .find(".popular-models__list--popular")
+          .fadeOut(250, function () {
+            $section.find(".popular-models__list--newest").fadeIn(250);
+          });
+      } else {
+        $section
+          .find(".popular-models__list--newest")
+          .fadeOut(250, function () {
+            $section.find(".popular-models__list--popular").fadeIn(250);
+          });
+      }
+    });
+    // Toggle Popular/Newest - End
+
+    // Filter Product - Start
+    const $filterProduct = $(".product-filter");
+    const $itemsFilters = $filterProduct.find(".product-filter__item");
+
+    function closeAllFilters() {
+      $itemsFilters
+        .removeClass("is-active")
+        .find(".product-filter__trigger")
+        .attr("aria-expanded", "false");
+    }
+
+    $filterProduct.on("click", ".product-filter__trigger", function (e) {
+      e.preventDefault();
       e.stopPropagation();
 
-      const $hotspot = $(this).closest(".product-hotspot");
+      const $trigger = $(this);
+      const $item = $trigger.closest(".product-filter__item");
+      const isActive = $item.hasClass("is-active");
 
-      const isActive = $hotspot.hasClass("active");
-
-      $card.find(".product-hotspot").removeClass("active");
+      closeAllFilters();
 
       if (!isActive) {
-        $hotspot.addClass("active");
+        $item
+          .addClass("is-active")
+          .find(".product-filter__trigger")
+          .attr("aria-expanded", "true");
       }
     });
-  });
 
-  $(document).on("click", function (e) {
-    if (!$(e.target).closest(".product-hotspot").length) {
-      $(".product-hotspot").removeClass("active");
-    }
-  });
-  // hotspot in WorkSpace Card - End
+    $filterProduct.on("click", ".product-filter__dropdown", function (e) {
+      e.stopPropagation();
+    });
 
-  // Toggle Popular/Newest - Start
-  $(".model-filter__toggle").on("click", function () {
-    const $filter = $(this).closest(".model-filter");
-    const $section = $filter.closest(".popular-models-sec");
-
-    $filter.toggleClass("is-newest");
-
-    if ($filter.hasClass("is-newest")) {
-      $section.find(".popular-models__list--popular").fadeOut(250, function () {
-        $section.find(".popular-models__list--newest").fadeIn(250);
-      });
-    } else {
-      $section.find(".popular-models__list--newest").fadeOut(250, function () {
-        $section.find(".popular-models__list--popular").fadeIn(250);
-      });
-    }
-  });
-  // Toggle Popular/Newest - End
-
-  // Filter Product - Start
-  const $filterProduct = $(".product-filter");
-  const $itemsFilters = $filterProduct.find(".product-filter__item");
-
-  function closeAllFilters() {
-    $itemsFilters
-      .removeClass("is-active")
-      .find(".product-filter__trigger")
-      .attr("aria-expanded", "false");
-  }
-
-  $filterProduct.on("click", ".product-filter__trigger", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const $trigger = $(this);
-    const $item = $trigger.closest(".product-filter__item");
-    const isActive = $item.hasClass("is-active");
-
-    closeAllFilters();
-
-    if (!isActive) {
-      $item
-        .addClass("is-active")
-        .find(".product-filter__trigger")
-        .attr("aria-expanded", "true");
-    }
-  });
-
-  $filterProduct.on("click", ".product-filter__dropdown", function (e) {
-    e.stopPropagation();
-  });
-
-  $(document).on("click", function () {
-    closeAllFilters();
-  });
-
-  $(document).on("keydown", function (e) {
-    if (e.key === "Escape") {
+    $(document).on("click", function () {
       closeAllFilters();
+    });
+
+    $(document).on("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeAllFilters();
+      }
+    });
+
+    function updateFilterCount($item) {
+      const count = $item.find('input[type="checkbox"]:checked').length;
+      const $count = $item.find(".product-filter__count");
+
+      $count.text(count || "").toggleClass("is-visible", count > 0);
+
+      $item.toggleClass("has-value", count > 0);
     }
-  });
 
-  function updateFilterCount($item) {
-    const count = $item.find('input[type="checkbox"]:checked').length;
-    const $count = $item.find(".product-filter__count");
-
-    $count.text(count || "").toggleClass("is-visible", count > 0);
-
-    $item.toggleClass("has-value", count > 0);
-  }
-
-  $itemsFilters.each(function () {
-    updateFilterCount($(this));
-  });
-
-  $filterProduct.on("change", 'input[type="checkbox"]', function () {
-    updateFilterCount($(this).closest(".product-filter__item"));
-  });
-
-  $filterProduct.on("click", ".product-filter__clear", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const $item = $(this).closest(".product-filter__item");
-
-    $item.find('input[type="checkbox"]').prop("checked", false);
-
-    updateFilterCount($item);
-
-    applyFilters();
-  });
-
-  $filterProduct.on("change", 'input[name="sort-by"]', function () {
-    const $input = $(this);
-    const $item = $input.closest(".product-filter__item");
-    const value = $input.val();
-
-    const text = $input
-      .closest(".product-filter__option")
-      .find("> span:last-child")
-      .text()
-      .trim();
-
-    $item
-      .find(".product-filter__selected")
-      .css("display", value ? "inline" : "")
-      .text(value ? text : "");
-
-    $item.toggleClass("has-value", !!value);
-
-    applyFilters();
-  });
-
-  function getSelectedFilters() {
-    const filters = {};
-
-    $filterProduct
-      .find(".product-filter__item:not(.product-filter__item--sort)")
-      .each(function () {
-        const $inputs = $(this).find('input[type="checkbox"]:checked');
-
-        if (!$inputs.length) {
-          return;
-        }
-
-        const name = $inputs.first().attr("name");
-
-        filters[name] = $inputs
-          .map(function () {
-            return $(this).val();
-          })
-          .get();
-      });
-
-    const sortValue = $filterProduct
-      .find('input[name="sort-by"]:checked')
-      .val();
-
-    filters.sortBy = sortValue || "newest";
-
-    return filters;
-  }
-
-  function getSelectedCategories() {
-    return $(".browse-settings__cate-item.active")
-      .map(function () {
-        return $(this).data("value");
-      })
-      .get();
-  }
-
-  function applyFilters() {
-    const filters = getSelectedFilters();
-
-    filters.category = getSelectedCategories();
-
-    console.log("Selected filters:", filters);
-  }
-
-  $filterProduct.on("change", "input", function () {
-    applyFilters();
-  });
-
-  $(document).on("click", ".browse-settings__cate-item", function () {
-    $(this).toggleClass("active");
-
-    applyFilters();
-  });
-  // Filter Product - End
-
-  // Collection Tabs - Start
-  $(".collection-tabs-sec").each(function () {
-    const $section = $(this);
-    const $items = $section.find(".collection-tabs__item");
-    const $contents = $section.find(".collection-tabs__content");
-    $items.first().addClass("active");
-    const firstTab = $items.first().data("tab");
-    $contents.filter(`[data-content="${firstTab}"]`).addClass("active");
-    $items.on("click", function () {
-      const $this = $(this);
-      const tab = $this.data("tab");
-
-      $items.removeClass("active");
-      $contents.removeClass("active");
-
-      $this.addClass("active");
-      $contents.filter(`[data-content="${tab}"]`).addClass("active");
+    $itemsFilters.each(function () {
+      updateFilterCount($(this));
     });
-  });
 
-  // Collection Tabs - End
-
-  // Custom Tab - Start
-  $(".section-tabs").each(function () {
-    const $section = $(this);
-    const $tabs = $section.find(".tab-item");
-    const $tabContentItems = $section.find(".tab-content__item");
-
-    $tabs.on("click", function () {
-      const $this = $(this);
-      const filter = $this.data("filter");
-
-      $tabs.removeClass("active");
-      $this.addClass("active");
-
-      $tabContentItems.stop(true, true).each(function () {
-        const $item = $(this);
-        const type = $item.data("type");
-
-        $item.css(
-          "display",
-          filter === "all" || type === filter ? "block" : "none",
-        );
-      });
-      updatePerformanceFeaturesLayout();
+    $filterProduct.on("change", 'input[type="checkbox"]', function () {
+      updateFilterCount($(this).closest(".product-filter__item"));
     });
-  });
-  // Custom Tab - End
 
-  // Custom Video - Start
-  $(".custom-video").each(function () {
-    const $wrapper = $(this);
-    const $video = $wrapper.find(".custom-video__video");
-    const $playButton = $wrapper.find(".custom-video__play");
+    $filterProduct.on("click", ".product-filter__clear", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-    $playButton.on("click", function () {
-      $video.attr("controls", true);
-      $video[0].play();
-      $wrapper.addClass("playing");
-      $(this).addClass("is-hidden");
+      const $item = $(this).closest(".product-filter__item");
+
+      $item.find('input[type="checkbox"]').prop("checked", false);
+
+      updateFilterCount($item);
+
+      applyFilters();
     });
-  });
-  // Custom Video - End
 
-  // Typing Text - Start
-  $(".typing-fade-wrap").each(function () {
-    const $container = $(this);
-    const $typingText = $container.find("p, .typing-fade");
+    $filterProduct.on("change", 'input[name="sort-by"]', function () {
+      const $input = $(this);
+      const $item = $input.closest(".product-filter__item");
+      const value = $input.val();
 
-    if (!$typingText.length) return;
+      const text = $input
+        .closest(".product-filter__option")
+        .find("> span:last-child")
+        .text()
+        .trim();
 
-    const activeColor = $container.data("color") || "#000000";
-    const fadeColor = $container.data("fade-color") || "#D9D9D9";
+      $item
+        .find(".product-filter__selected")
+        .css("display", value ? "inline" : "")
+        .text(value ? text : "");
 
-    let totalLetters = 0;
+      $item.toggleClass("has-value", !!value);
 
-    $typingText.each(function () {
-      const $el = $(this);
+      applyFilters();
+    });
 
-      const text = $el.text().replace(/\s+/g, " ").trim();
+    function getSelectedFilters() {
+      const filters = {};
 
-      $el.empty();
+      $filterProduct
+        .find(".product-filter__item:not(.product-filter__item--sort)")
+        .each(function () {
+          const $inputs = $(this).find('input[type="checkbox"]:checked');
 
-      [...text].forEach(function (char) {
-        $("<span>", {
-          text: char,
+          if (!$inputs.length) {
+            return;
+          }
+
+          const name = $inputs.first().attr("name");
+
+          filters[name] = $inputs
+            .map(function () {
+              return $(this).val();
+            })
+            .get();
+        });
+
+      const sortValue = $filterProduct
+        .find('input[name="sort-by"]:checked')
+        .val();
+
+      filters.sortBy = sortValue || "newest";
+
+      return filters;
+    }
+
+    function getSelectedCategories() {
+      return $(".browse-settings__cate-item.active")
+        .map(function () {
+          return $(this).data("value");
         })
-          .css("color", fadeColor)
-          .appendTo($el);
+        .get();
+    }
 
-        totalLetters++;
+    function applyFilters() {
+      const filters = getSelectedFilters();
+
+      filters.category = getSelectedCategories();
+
+      console.log("Selected filters:", filters);
+    }
+
+    $filterProduct.on("change", "input", function () {
+      applyFilters();
+    });
+
+    $(document).on("click", ".browse-settings__cate-item", function () {
+      $(this).toggleClass("active");
+
+      applyFilters();
+    });
+    // Filter Product - End
+
+    // Collection Tabs - Start
+    $(".collection-tabs-sec").each(function () {
+      const $section = $(this);
+      const $items = $section.find(".collection-tabs__item");
+      const $contents = $section.find(".collection-tabs__content");
+      $items.first().addClass("active");
+      const firstTab = $items.first().data("tab");
+      $contents.filter(`[data-content="${firstTab}"]`).addClass("active");
+      $items.on("click", function () {
+        const $this = $(this);
+        const tab = $this.data("tab");
+
+        $items.removeClass("active");
+        $contents.removeClass("active");
+
+        $this.addClass("active");
+        $contents.filter(`[data-content="${tab}"]`).addClass("active");
       });
     });
 
-    const $letters = $container.find("p span, .typing-fade span");
+    // Collection Tabs - End
 
-    function updateTypingByScroll() {
-      const rect = $container[0].getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+    // Custom Tab - Start
+    $(".section-tabs").each(function () {
+      const $section = $(this);
+      const $tabs = $section.find(".tab-item");
+      const $tabContentItems = $section.find(".tab-content__item");
 
-      const start = windowHeight * 0.8;
-      const end = windowHeight * 0.2;
+      $tabs.on("click", function () {
+        const $this = $(this);
+        const filter = $this.data("filter");
 
-      let progress = (start - rect.top) / (start - end);
+        $tabs.removeClass("active");
+        $this.addClass("active");
 
-      progress = Math.max(0, Math.min(1, progress));
+        $tabContentItems.stop(true, true).each(function () {
+          const $item = $(this);
+          const type = $item.data("type");
 
-      const activeCount = Math.floor(progress * totalLetters);
-
-      $letters.each(function (index) {
-        $(this).css("color", index < activeCount ? activeColor : fadeColor);
+          $item.css(
+            "display",
+            filter === "all" || type === filter ? "block" : "none",
+          );
+        });
+        updatePerformanceFeaturesLayout();
       });
-    }
+    });
+    // Custom Tab - End
 
-    updateTypingByScroll();
+    // Custom Video - Start
+    $(".custom-video").each(function () {
+      const $wrapper = $(this);
+      const $video = $wrapper.find(".custom-video__video");
+      const $playButton = $wrapper.find(".custom-video__play");
 
-    $(window).on("scroll", updateTypingByScroll);
-  });
-  // Typing Text - End
+      $playButton.on("click", function () {
+        $video.attr("controls", true);
+        $video[0].play();
+        $wrapper.addClass("playing");
+        $(this).addClass("is-hidden");
+      });
+    });
+    // Custom Video - End
 
-  // Color Picker - Common - Start
-  function initColorPicker({
-    $colors,
-    $indicator,
-    slider = null,
-    useDataSlide = false,
-  }) {
-    if (!$colors.length) return;
+    // Typing Text - Start
+    $(".typing-fade-wrap").each(function () {
+      const $container = $(this);
+      const $typingText = $container.find("p, .typing-fade");
 
-    function getIndex($color) {
-      if (useDataSlide) {
-        return Number($color.data("slide"));
+      if (!$typingText.length) return;
+
+      const activeColor = $container.data("color") || "#000000";
+      const fadeColor = $container.data("fade-color") || "#D9D9D9";
+
+      let totalLetters = 0;
+
+      $typingText.each(function () {
+        const $el = $(this);
+
+        const text = $el.text().replace(/\s+/g, " ").trim();
+
+        $el.empty();
+
+        [...text].forEach(function (char) {
+          $("<span>", {
+            text: char,
+          })
+            .css("color", fadeColor)
+            .appendTo($el);
+
+          totalLetters++;
+        });
+      });
+
+      const $letters = $container.find("p span, .typing-fade span");
+
+      function updateTypingByScroll() {
+        const rect = $container[0].getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        const start = windowHeight * 0.8;
+        const end = windowHeight * 0.2;
+
+        let progress = (start - rect.top) / (start - end);
+
+        progress = Math.max(0, Math.min(1, progress));
+
+        const activeCount = Math.floor(progress * totalLetters);
+
+        $letters.each(function (index) {
+          $(this).css("color", index < activeCount ? activeColor : fadeColor);
+        });
       }
 
-      return $colors.index($color);
+      updateTypingByScroll();
+
+      $(window).on("scroll", updateTypingByScroll);
+    });
+    // Typing Text - End
+
+    // Build Your Chair - Start
+    const $chairOptions = $(".build-chair__option");
+    const $annotations = $(".build-chair__annotation");
+
+    const $color = $(".cs-color");
+    const $buildChairColors = $(".build-chair__color");
+    const $chairImage = $(".build-chair__image");
+
+    const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
+
+    function activeChairOption($option) {
+      const id = $option.data("id");
+
+      $chairOptions.removeClass("active");
+      $option.addClass("active");
+
+      $annotations.removeClass("active");
+
+      $annotations.filter(`[data-id="${id}"]`).addClass("active");
     }
 
-    function moveIndicator($color) {
-      if (!$color.length || !$indicator.length) return;
+    $chairOptions.on("mouseenter", function () {
+      if (isDesktop()) {
+        activeChairOption($(this));
+      }
+    });
 
-      $indicator.css(
-        "transform",
-        `translate(${$color.position().left}px, -50%)`,
-      );
-    }
+    $chairOptions.on("click", function () {
+      if (!isDesktop()) {
+        activeChairOption($(this));
+      }
+    });
 
-    function setActive(index) {
-      const $activeColor = useDataSlide
-        ? $colors.filter(`[data-slide="${index}"]`)
-        : $colors.eq(index);
+    initColorPicker({
+      $colors: $color,
+      $indicator: $(".build-chair .cs-color-indicator"),
+    });
 
-      if (!$activeColor.length) return;
-
-      $colors.removeClass("active");
-      $activeColor.addClass("active");
-
-      moveIndicator($activeColor);
-    }
-
-    $colors.on("click", function () {
+    $buildChairColors.on("click", function () {
       const $this = $(this);
-      const index = getIndex($this);
 
-      setActive(index);
+      $chairImage.attr("src", $this.data("image"));
+    });
+    // Build Your Chair - End
 
-      if (slider && slider.activeIndex !== index) {
-        slider.slideTo(index);
-      }
+    // Product Detail Info - Start
+    const $productDetailColors = $(".product-detail-info__color");
+
+    const $productDetailIndicator = $(
+      ".product-detail-info__colors .cs-color-indicator",
+    );
+
+    const initialProductDetailSlide = Number(
+      $productDetailColors.filter(".active").first().data("slide") || 0,
+    );
+
+    const productDetailSlider = new Swiper(".product-detail-slider", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 700,
+      initialSlide: initialProductDetailSlide,
+      pagination: {
+        el: ".product-detail-slider__pagination",
+        clickable: true,
+      },
+
+      keyboard: {
+        enabled: true,
+      },
+      grabCursor: true,
+      observer: true,
+      observeParents: true,
     });
 
-    if (slider) {
-      slider.on("slideChange", function () {
-        setActive(this.activeIndex);
-      });
-    }
-
-    const $initialColor = $colors.filter(".active").first();
-
-    if ($initialColor.length) {
-      const initialIndex = getIndex($initialColor);
-
-      setActive(initialIndex);
-
-      if (slider && slider.activeIndex !== initialIndex) {
-        slider.slideTo(initialIndex, 0);
-      }
-    }
-
-    $(window).on("resize", function () {
-      moveIndicator($colors.filter(".active").first());
+    initColorPicker({
+      $colors: $productDetailColors,
+      $indicator: $productDetailIndicator,
+      slider: productDetailSlider,
+      useDataSlide: true,
     });
-  }
-  // Color Picker - Common - End
+    // Product Detail Info - End
 
-  // Build Your Chair - Start
-  const $chairOptions = $(".build-chair__option");
-  const $annotations = $(".build-chair__annotation");
+    // Product Detail Faq - Start
+    const $productSpecs = $(".pr-detail-wrap");
+    $productSpecs.find(".pr-detail__content").first().show();
+    $productSpecs.find(".pr-detail__item").first().addClass("is-active");
 
-  const $color = $(".cs-color");
-  const $buildChairColors = $(".build-chair__color");
-  const $chairImage = $(".build-chair__image");
+    $productSpecs.on("click", ".pr-detail__trigger", function () {
+      const $trigger = $(this);
+      const $item = $trigger.closest(".pr-detail__item");
+      const $content = $item.find(".pr-detail__content");
+      const isActive = $item.hasClass("is-active");
 
-  const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
+      $productSpecs.find(".pr-detail__item").removeClass("is-active");
 
-  function activeChairOption($option) {
-    const id = $option.data("id");
+      $productSpecs.find(".pr-detail__trigger").attr("aria-expanded", "false");
 
-    $chairOptions.removeClass("active");
-    $option.addClass("active");
+      $productSpecs.find(".pr-detail__content").stop(true, true).slideUp(400);
 
-    $annotations.removeClass("active");
+      if (!isActive) {
+        $item.addClass("is-active");
 
-    $annotations.filter(`[data-id="${id}"]`).addClass("active");
-  }
+        $trigger.attr("aria-expanded", "true");
 
-  $chairOptions.on("mouseenter", function () {
-    if (isDesktop()) {
-      activeChairOption($(this));
-    }
+        $content.stop(true, true).slideDown(400);
+      }
+    });
+    // Product Detail Faq - End
   });
-
-  $chairOptions.on("click", function () {
-    if (!isDesktop()) {
-      activeChairOption($(this));
-    }
-  });
-
-  initColorPicker({
-    $colors: $color,
-    $indicator: $(".build-chair .cs-color-indicator"),
-  });
-
-  $buildChairColors.on("click", function () {
-    const $this = $(this);
-
-    $chairImage.attr("src", $this.data("image"));
-  });
-  // Build Your Chair - End
-
-  // Product Detail Info - Start
-  const $productDetailColors = $(".product-detail-info__color");
-
-  const $productDetailIndicator = $(
-    ".product-detail-info__colors .cs-color-indicator",
-  );
-
-  const initialProductDetailSlide = Number(
-    $productDetailColors.filter(".active").first().data("slide") || 0,
-  );
-
-  const productDetailSlider = new Swiper(".product-detail-slider", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 700,
-    initialSlide: initialProductDetailSlide,
-    pagination: {
-      el: ".product-detail-slider__pagination",
-      clickable: true,
-    },
-
-    keyboard: {
-      enabled: true,
-    },
-    grabCursor: true,
-    observer: true,
-    observeParents: true,
-  });
-
-  initColorPicker({
-    $colors: $productDetailColors,
-    $indicator: $productDetailIndicator,
-    slider: productDetailSlider,
-    useDataSlide: true,
-  });
-  // Product Detail Info - End
-
-  // Product Detail Faq - Start
-  const $productSpecs = $(".pr-detail-wrap");
-  $productSpecs.find(".pr-detail__content").first().show();
-  $productSpecs.find(".pr-detail__item").first().addClass("is-active");
-
-  $productSpecs.on("click", ".pr-detail__trigger", function () {
-    const $trigger = $(this);
-    const $item = $trigger.closest(".pr-detail__item");
-    const $content = $item.find(".pr-detail__content");
-    const isActive = $item.hasClass("is-active");
-
-    $productSpecs.find(".pr-detail__item").removeClass("is-active");
-
-    $productSpecs.find(".pr-detail__trigger").attr("aria-expanded", "false");
-
-    $productSpecs.find(".pr-detail__content").stop(true, true).slideUp(400);
-
-    if (!isActive) {
-      $item.addClass("is-active");
-
-      $trigger.attr("aria-expanded", "true");
-
-      $content.stop(true, true).slideDown(400);
-    }
-  });
-  // Product Detail Faq - End
 });

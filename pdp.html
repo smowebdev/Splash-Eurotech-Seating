@@ -818,6 +818,270 @@
                             <p>Choose mesh colour, arms, casters and the comfort layer — the price updates as you go</p>
                         </div>
                     </div>
+                    <div class="chair-configurator" id="chairConfigurator">
+
+                        <!-- LEFT -->
+                        <aside class="chair-info">
+
+                            <div class="chair-info__top">
+
+                                <h1>Ergohuman GEN2</h1>
+
+                                <span class="chair-info__collection">
+                                    Ergohuman Collection
+                                </span>
+
+                                <span class="chair-info__code">
+                                    ME7ERG-GEN2
+                                </span>
+
+                                <div class="chair-info__description">
+                                    <p>
+                                        Ergohuman GEN2 is designed for users who
+                                        spend long hours seated and require maximum
+                                        ergonomic adjustability.
+                                    </p>
+
+                                    <p>
+                                        Ideal for executive offices, workstations and
+                                        professional environments.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="chair-accordion">
+
+                                <button class="chair-accordion__item">
+                                    <span>Specifications</span>
+                                    <span>⌄</span>
+                                </button>
+
+                                <button class="chair-accordion__item">
+                                    <span>Current Configuration</span>
+                                    <span>⌄</span>
+                                </button>
+
+                                <button class="chair-accordion__item">
+                                    <span>Downloads</span>
+                                    <span>⌄</span>
+                                </button>
+
+                            </div>
+
+                            <div class="chair-info__bottom">
+
+                                <div class="shipping">
+                                    <span>Shipping</span>
+
+                                    <span>
+                                        1 Day
+                                        <small>ⓘ</small>
+                                    </span>
+                                </div>
+
+                                <div class="price">
+                                    <span>Price</span>
+
+                                    <span>
+                                        <small>From</small>
+                                        <strong>$1550</strong>
+                                    </span>
+                                </div>
+
+                                <button class="quote-btn">
+                                    Request a quote
+                                </button>
+
+                                <button class="download-btn">
+                                    Download product sheet
+                                </button>
+
+                            </div>
+
+                        </aside>
+
+
+                        <!-- CENTER -->
+                        <main class="chair-viewer">
+
+                            <model-viewer id="chairModel" src="assets/models/chair.glb" camera-controls
+                                touch-action="pan-y" interaction-prompt="none" shadow-intensity="1" exposure="1"
+                                environment-image="neutral" camera-orbit="0deg 75deg 4m" min-camera-orbit="auto auto 2m"
+                                max-camera-orbit="auto auto 8m" disable-tap>
+                            </model-viewer>
+
+                            <!-- BOTTOM TOOLBAR -->
+                            <div class="viewer-toolbar">
+
+                                <button class="viewer-tool" id="zoomIn" type="button">
+                                    +
+                                </button>
+
+                                <button class="viewer-tool" id="zoomOut" type="button">
+                                    −
+                                </button>
+
+                                <button class="viewer-tool" id="dimensionsBtn" type="button">
+                                    <span>↗</span>
+                                    Dimensions
+                                </button>
+
+                                <div class="view-room-wrapper">
+                                    <div class="qr-code" id="qrCode"></div>
+
+                                    <button class="viewer-tool" id="viewRoomBtn" type="button">
+                                        <span>◇</span>
+                                        View in Room
+                                    </button>
+                                </div>
+
+                                <button class="viewer-tool" id="fullscreenBtn" type="button">
+                                    <span class="fullscreen-icon">⛶</span>
+                                    Fullscreen
+                                </button>
+
+                            </div>
+
+                        </main>
+
+
+                        <!-- RIGHT -->
+                        <aside class="chair-config">
+                            <h2>Choose Chair</h2>
+
+                            <div class="config-section">
+
+                                <div class="config-heading">
+                                    <span>Collection</span>
+
+                                    <span>
+                                        Ergohuman
+                                        <small>⌃</small>
+                                    </span>
+                                </div>
+
+                                <div class="chair-types">
+
+                                    <button class="chair-type">
+                                        <img src="assets/images/chair-1.png" alt="">
+                                        <span>Apollo</span>
+                                    </button>
+
+                                    <button class="chair-type">
+                                        <img src="assets/images/chair-2.png" alt="">
+                                        <span>Kinetic</span>
+                                    </button>
+
+                                    <button class="chair-type active">
+                                        <img src="assets/images/chair-3.png" alt="">
+                                        <span>Ergohuman</span>
+                                    </button>
+
+                                    <button class="chair-type">
+                                        <img src="assets/images/chair-4.png" alt="">
+                                        <span>Ac...</span>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="config-section">
+
+                                <div class="config-heading">
+                                    <span>Model</span>
+
+                                    <span>
+                                        GEN2
+                                        <small>⌄</small>
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="configure">
+
+                                <h2>Configure Chair</h2>
+
+                                <div class="option">
+
+                                    <div class="option-title">
+                                        1. Select Seat: Mesh
+                                    </div>
+
+                                    <button class="mesh-option active">
+                                        Mesh
+                                    </button>
+
+                                </div>
+
+
+                                <div class="option">
+
+                                    <div class="option-title">
+                                        2. Select Seat Color: Blue
+                                    </div>
+
+                                    <div class="color-options">
+
+                                        <button class="color-option" data-color="black"
+                                            data-url="assets/models/chair-1.glb">
+                                            <span class="color black"></span>
+                                            <small>Black</small>
+                                        </button>
+
+                                        <button class="color-option" data-color="grey"
+                                            data-url="assets/models/chair-2.glb">
+                                            <span class="color grey"></span>
+                                            <small>Grey</small>
+                                        </button>
+
+                                        <button class="color-option active" data-color="blue"
+                                            data-url="assets/models/chair.glb">
+                                            <span class="color blue"></span>
+                                            <small>Blue</small>
+                                        </button>
+
+                                    </div>
+                                    <div class="cs-colors color-options">
+
+                                        <span class="cs-color-indicator"></span>
+
+                                        <button type="button" class="cs-color color-option active"
+                                            data-url="assets/models/chair-1.glb" style="--color: #070707;"
+                                            aria-label="Black">
+                                            <div class="dot"></div>
+                                            <span>Black</span>
+                                        </button>
+
+                                        <button type="button" class="cs-color color-option"
+                                            data-url="assets/models/chair-2.glb" style="--color: #C0C0C0;"
+                                            aria-label="Grey">
+                                            <div class="dot"></div>
+                                            <span>Grey</span>
+                                        </button>
+
+                                        <button type="button" class="cs-color color-option active"
+                                            data-url="assets/models/chair.glb" style="--color: #5182A4;"
+                                            aria-label="Blue">
+                                            <div class="dot"></div>
+                                            <span>Blue</span>
+                                        </button>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
                 </div>
             </section>
 
@@ -984,8 +1248,13 @@
     </footer>
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
     <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/test.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,653 @@
+.material-hero .hero-main h1 {
+    font-size: 48px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    max-width: 469px;
+
+}
+
+.material-hero .hero-main {
+    max-width: 521px;
+}
+
+.material-hero .hero-desc {
+    max-width: 404px;
+}
+
+.material-hero {
+    min-height: 600px;
+    padding: 40px 0;
+
+}
+
+.material-foundation-sec {
+    padding: 100px 0;
+}
+
+.material-foundation__heading {
+    font-size: 40px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    margin-bottom: 40px;
+}
+
+.material-foundation-sec .collection-list {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 30px;
+}
+
+.material-foundation-sec .card-category {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    margin-bottom: -4px;
+
+}
+
+.material-foundation-sec .card-content {
+    color: #fff;
+    justify-content: flex-end;
+}
+
+.material-foundation-sec .collection-card {
+    height: 600px;
+    width: 100%;
+    padding: 32px;
+
+}
+
+.material-foundation-sec .collection-card::before,
+.material-foundation-sec .collection-card::after {
+    background: linear-gradient(185.67deg, rgba(0, 0, 0, 0) 50.26%, rgba(0, 0, 0, 0.7) 95.97%);
+
+
+}
+
+.material-foundation-sec .card-desc {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    max-width: unset;
+
+}
+
+.material-foundation-sec .card-title {
+    font-size: 32px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+}
+
+.material-foundation-sec .card-link {
+    color: #fff;
+}
+
+.material-brow-sec {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.material-brow-main {
+    max-width: 1165px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.material-brow-content {
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-direction: column;
+    padding-top: 34px;
+}
+
+.material-brow-content__text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.material-brow-content__title {
+    max-width: 865px;
+    text-align: center;
+    margin-left: -22px;
+}
+
+.material-brow-content__title h2 {
+    font-family: 'Neue Montreal';
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: 2%;
+}
+
+.material-brow-cards {
+    display: grid;
+    grid-template-columns: 251px 247px 191px 297px;
+    width: 100%;
+    gap: 60px;
+    padding-top: 20px;
+}
+
+.material-brow-cards-item {
+    position: relative;
+    padding-top: 5px;
+}
+
+.material-brow-cards-item:not(:last-child) {
+    padding-right: 60px;
+}
+
+.material-brow-cards-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: #e5e5e5;
+}
+
+.material-brow-cards-item:nth-child(3) .material-brow-cards-item-title {
+    margin-left: -5px;
+}
+
+.material-brow-cards-item-title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.material-brow-cards-des {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-align: center;
+
+}
+
+.material-brow-main .btn {
+    margin-top: 3px;
+}
+
+.material-express-main {
+    background-color: #f1f1f1;
+    height: 600px;
+
+}
+
+.material-express-sec {
+    padding-top: 105px;
+    padding-bottom: 100px;
+}
+
+.material-express-sec .content-item-circle {
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: "PP Neue Montreal";
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    background-color: var(--color-accent);
+
+}
+
+.material-express-sec .content-item-title p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 2%;
+
+}
+
+.material-express-sec .content-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.material-express-sec .list-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.material-express-row {
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    overflow: hidden;
+}
+
+.material-express-sec .material-express-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    height: 100%;
+    max-width: 404px;
+}
+
+.material-express-left__content h2 {
+    font-family: "PP Neue Montreal";
+    font-size: 60px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    margin-bottom: 16px;
+
+}
+
+.material-express-left__content--des p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+
+}
+
+.material-express-sec .highlight {
+    color: var(--color-accent);
+}
+
+.material-express-sec .material-express-center {
+    flex: 1;
+}
+
+.material-express-sec .material-express-right {
+    max-width: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 11px;
+    padding-bottom: 12px;
+}
+
+.material-express-right-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.material-express-right-item p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.material-express-center .block-image-left {
+    position: absolute;
+    left: 2%;
+    top: -1%;
+    object-fit: cover;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.material-express-center .block-image-left img {
+    height: 866px;
+}
+
+.material-express-center .block-image-right {
+    position: absolute;
+    right: 10.5%;
+    top: 10%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.material-express-center .block-image-right img {
+    height: 613px;
+}
+
+.material-express-center .block-line {
+    width: 248px;
+    background-color: var(--color-accent);
+    height: calc(100% + 80px);
+    margin: -40px auto;
+}
+
+.material-express-center .block-circle {
+    width: 241px;
+    height: 241px;
+    position: absolute;
+    bottom: -28%;
+    right: 3%;
+    z-index: 2;
+    border-radius: 100%;
+    background-color: var(--color-accent);
+    color: #fff;
+    text-align: center;
+    padding: 52px;
+
+}
+
+.material-express-center .block-circle p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+}
+
+.material-express-center {
+    position: relative;
+}
+
+.material-our-sec {
+    background-color: #FBFBFB;
+    padding-bottom: 60px;
+}
+
+.material-our-chair {
+    display: flex;
+    gap: 80px;
+    align-items: end;
+}
+
+.material-our-chair-left {
+    width: 43.8%;
+    min-height: 780px;
+}
+
+.material-our-chair-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 780px;
+}
+
+.material-our-chair-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 60px;
+    align-items: start;
+}
+
+.material-our-chair-right p {
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 2%;
+    max-width: 381px;
+    margin: 0;
+}
+
+.material-our-chair-right .btn {
+    padding: 11px 14px;
+}
+
+.material-our-chair-right h2 {
+    font-size: 48px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    max-width: 281px;
+
+}
+
+.material-our-chair-right span {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.material-our-tech {
+    display: flex;
+    gap: 10px;
+    padding-top: 40px;
+}
+
+.material-our-tech-title {
+    max-width: 473px;
+    margin: 0 auto;
+    padding-top: 120px;
+
+}
+
+.material-our-tech-title h2 {
+    font-size: 40px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    text-align: center;
+
+}
+
+.material-our-tech-left {
+    position: relative;
+    width: 49.6%;
+    overflow: hidden;
+
+}
+
+.material-our-tech-left__row {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    padding: 32px;
+    position: relative;
+    z-index: 1;
+
+}
+
+.material-our-tech-left__image {
+    position: absolute;
+    inset: 0;
+}
+
+.material-our-tech-left::after,
+.material-our-tech-right::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 51.08%, rgba(0, 0, 0, 0.025) 58.25%, rgba(0, 0, 0, 0.075) 65.88%, rgba(0, 0, 0, 0.5) 99.17%);
+}
+
+.material-our-tech-left__title {
+    max-width: 396px;
+}
+
+.material-our-tech-left__title h3 {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    margin-bottom: 16px;
+}
+
+.material-our-tech-left__title p {
+    line-height: 140%;
+    letter-spacing: 2%;
+    font-size: 14px;
+}
+
+.material-our-tech-left__content {
+    position: relative;
+    z-index: 1;
+}
+
+.material-our-tech-left__content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.material-our-tech-left__content ul li {
+    position: relative;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 15px;
+
+}
+
+.material-our-tech-left__content ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    background: var(--color-accent);
+    border-radius: 100%;
+}
+
+.material-our-tech-right {
+    position: relative;
+
+}
+
+.material-our-tech-right-content {
+    max-width: 501px;
+    position: absolute;
+    bottom: 33px;
+    left: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #ffff;
+    z-index: 1;
+
+}
+
+.material-our-tech-right-content h3 {
+    font-size: 28px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+
+}
+
+.material-our-tech-right-content p {
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    margin: 0;
+}
+
+.material-more-sec {
+    padding-top: 100px;
+    padding-bottom: 99px;
+}
+
+.material-more-sec .material-more-content {
+    max-width: 361px;
+    margin: 0 auto;
+
+}
+
+.material-more-sec .material-more-content h2 {
+    font-size: 40px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.material-more-content-desc {
+    padding: 0 15px;
+}
+
+.material-more-content-desc p {
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-align: center;
+
+}
+
+.material-more-content-desc p {
+    line-height: 140%;
+    letter-spacing: 2%;
+    text-align: center;
+}
+.material-more-slide {
+    overflow: hidden;
+    width: 100%;
+}
+
+.material-more-slide-track {
+    display: flex;
+    width: max-content;
+    border-top: 1px solid #0000000D;
+    border-bottom: 1px solid #0000000D;
+    min-height: 128px;
+    align-items: center;
+    margin-top: 58px;
+    flex-wrap: nowrap;
+
+    animation: marquee 20s linear infinite;
+}
+
+.material-more-slide-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    min-width: 253px;
+    width: 253px;
+    height: 128px;
+    flex-shrink: 0;
+}
+
+.material-more-slide-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: #0000000D;
+}
+
+.material-more-slide-item img {
+    transition: transform 0.3s ease;
+}
+
+.material-more-slide-item img:hover {
+    transform: scale(1.08);
+}
+
+.material-more-slide:hover .material-more-slide-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

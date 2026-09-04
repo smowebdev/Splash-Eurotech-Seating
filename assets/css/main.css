@@ -3721,11 +3721,11 @@ a.breadcrumb__item:hover {
     color: var(--color-black-light);
 }
 
-.build-own-sec {
+.chair-configurator-sec {
     padding-bottom: 60px;
 }
 
-.build-own__header {
+.chair-configurator__header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3734,7 +3734,7 @@ a.breadcrumb__item:hover {
     margin-bottom: 40px;
 }
 
-.build-own__desc {
+.chair-configurator__desc {
     max-width: 350px;
     margin: 0 auto;
     font-size: 16px;
@@ -4089,13 +4089,16 @@ a.breadcrumb__item:hover {
     margin-top: 16px;
 }
 
+.chair-configurator-sec .container {
+    max-width: 1580px;
+}
 
 .chair-configurator {
     width: 100%;
     display: flex;
-    background: #FAFAFA;
-    height: 700px;
+    height: 862px;
 }
+
 
 
 /* =========================================
@@ -4103,174 +4106,223 @@ a.breadcrumb__item:hover {
 ========================================= */
 
 .chair-info {
-    flex: 0 0 29%;
-    width: 29%;
+    flex: 0 0 24.35%;
+    width: 24.35%;
 
-    min-width: 0;
-
-    padding: 30px 16px 16px;
-
+    padding: 40px 35px 40px 0;
     display: flex;
     flex-direction: column;
-
-    background: #fafafa;
-
-    overflow: hidden;
-
     transition:
         flex-basis .6s cubic-bezier(.4, 0, .2, 1),
         width .6s cubic-bezier(.4, 0, .2, 1),
         padding .6s ease;
+    position: relative;
+}
+
+.chair-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    right: 0;
+    background: #fafafa;
+    width: 100vw;
 
 }
 
-.chair-info__top h1 {
-    margin: 0 0 5px;
-
-    font-size: 21px;
-    line-height: 1.1;
-    font-weight: 500;
+.chair-info__title {
+    font-size: 40px;
+    line-height: 110.00000000000001%;
+    margin-bottom: 16px;
 }
 
 .chair-info__collection,
 .chair-info__code {
     display: block;
-
-    color: #888;
-
-    font-size: 8px;
-    line-height: 1.4;
+    font-family: 'PP Neue Montreal Book';
+    font-size: 14px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    color: var(--color-black-light);
 }
 
 .chair-info__code {
-    margin-top: 8px;
-    color: #222;
+    margin-top: 24px;
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    color: var(--color-black);
+}
+
+.chair-info__top {
+    padding-bottom: 19px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+    position: relative;
 }
 
 .chair-info__description {
-    margin-top: 13px;
-
-    max-width: 240px;
-
-    color: #888;
-
-    font-size: 8px;
-    line-height: 1.5;
+    margin-top: 20px;
+    max-width: 294px;
+    color: var(--color-black-light);
+    font-family: 'PP Neue Montreal Book';
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    position: relative;
 }
 
 .chair-info__description p {
-    margin: 0 0 8px;
+    margin-bottom: 16px;
+}
+
+.chair-info__description p:last-child {
+    margin-bottom: 0;
 }
 
 
-/* Accordion */
-
 .chair-accordion {
-    margin-top: 12px;
+    margin-top: 40px;
+    position: relative;
+}
+
+
+
+.chair-accordion__item:first-child {
+    border-top: 1px solid rgba(204, 204, 204, 0.4);
 }
 
 .chair-accordion__item {
+    border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+}
+
+.chair-accordion__question {
     width: 100%;
-
-    min-height: 34px;
-
-    padding: 0;
-
-    border-top: 1px solid #e5e5e5;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    color: #4D4D4D;
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
 
-    font-size: 9px;
-
-    color: #444;
 }
 
-.chair-accordion__item:last-child {
-    border-bottom: 1px solid #e5e5e5;
+
+.chair-accordion__icon {
+    width: 24px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
 }
 
+.chair-accordion__answer {
+    display: none;
+}
 
-/* Bottom */
+.chair-accordion__answer-inner {
+    padding: 0 0 20px;
+}
+
+.chair-accordion__item.is-open .chair-accordion__icon {
+    transform: rotate(180deg);
+}
+
 
 .chair-info__bottom {
     margin-top: auto;
+    position: relative;
 }
 
-.shipping,
-.price {
+.chair-info__shipping,
+.chair-info__price {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin-bottom: 17px;
-
-    font-size: 9px;
-}
-
-.shipping small {
-    font-size: 8px;
-}
-
-.price span:last-child {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
-.price small {
-    color: #888;
-}
-
-.price strong {
-    color: #e52c32;
-
-    font-size: 13px;
+    font-family: 'PP Neue Montreal';
     font-weight: 500;
+    font-size: 14px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+
 }
 
-.quote-btn,
-.download-btn {
+.chair-info__shipping {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+}
+
+.chair-info__shipping .shipping-value {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chair-info__price .price-label {
+    color: #4D4D4D;
+
+}
+
+.chair-info__price .price-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chair-info__price .price-value small {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    color: var(--color-black-light);
+
+}
+
+.chair-info__price .price-value-number {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    color: var(--color-accent);
+}
+
+.chair-info__btns {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chair-info__btns .btn {
     width: 100%;
-    height: 25px;
-
-    border-radius: 20px;
-
-    font-size: 8px;
+    text-align: center;
 }
 
-.quote-btn {
-    color: #fff;
-    background: #222;
+.chair-info__btns .btn.btn-black-secondary {
+    border-color: rgba(37, 37, 37, 0.4);
 }
 
-.download-btn {
-    margin-top: 3px;
-
-    border: 1px solid #bbb;
-
-    color: #333;
-    background: #fff;
+.chair-info__btns .btn.btn-black-secondary:hover {
+    border-color: var(--color-accent);
 }
-
 
 /* =========================================
    CENTER 3D
 ========================================= */
 
 .chair-viewer {
+    height: 100%;
     position: relative;
-
     flex: 1 1 auto;
     min-width: 0;
-
-    height: 100%;
-
-
     overflow: hidden;
-
     transition: flex .6s cubic-bezier(.4, 0, .2, 1);
+    background-color: #FAFAFA;
 }
 
 
@@ -4279,189 +4331,377 @@ model-viewer {
     display: block;
     width: 100%;
     height: 100%;
-
-
     --poster-color: transparent;
 }
 
-
-/* Bottom toolbar */
-
 .viewer-toolbar {
     position: absolute;
-
-    left: 50%;
-    bottom: 13px;
-
-    transform: translateX(-50%);
-
+    left: 0;
+    width: 100%;
+    bottom: 29px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
 
-    white-space: nowrap;
+.viewe-tool__zoom {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.viewer-tool__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.viewer-tool__icon img {
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
 }
 
 .viewer-tool {
     display: flex;
     align-items: center;
-    gap: 5px;
-
-    padding: 4px;
-
-    color: #222;
-
-    font-size: 8px;
-}
-
-.viewer-tool span {
-    font-size: 13px;
-}
-
-.viewer-tool:first-child,
-.viewer-tool:nth-child(2) {
+    gap: 10px;
+    color: var(--color-black);
     font-size: 14px;
 }
 
-.fullscreen-icon {
-    font-size: 14px !important;
+
+.viewer-tool__label,
+.viewer-tool__zoomout {
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition:
+        all 0.3s ease;
 }
 
+.viewer-toolbar:hover .viewer-tool__label,
+.viewer-toolbar:hover .viewer-tool__zoomout {
+    opacity: 1;
+    visibility: visible;
+    max-width: 150px;
+}
 
-/* =========================================
-   RIGHT
-========================================= */
+#fullscreenBtn .viewer-tool__icon img {
+    display: none;
+}
 
+#fullscreenBtn .viewer-tool__icon img:first-child {
+    display: block;
+}
+
+#fullscreenBtn.is-active .viewer-tool__icon img:first-child {
+    display: none;
+}
+
+#fullscreenBtn.is-active .viewer-tool__icon img:last-child {
+    display: block;
+}
 
 .chair-config {
-    flex: 0 0 27%;
-    width: 27%;
+    flex: 0 0 28.18%;
+    width: 28.18%;
 
     min-width: 0;
 
-    padding: 29px 12px 20px;
-
+    padding: 40px 10px 40px 24px;
     background: #fff;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-
+    position: relative;
     transition:
         flex-basis .6s cubic-bezier(.4, 0, .2, 1),
         width .6s cubic-bezier(.4, 0, .2, 1),
         padding .6s ease;
 }
 
-.chair-config h2 {
-    margin: 0;
-
-    font-size: 13px;
-    font-weight: 500;
+.chair-config__title {
+    font-size: 24px;
+    line-height: 110.00000000000001%;
+    margin-bottom: 32px;
 }
-
-
-/* Config section */
 
 .config-section {
-    margin-top: 15px;
-
-    border-top: 1px solid #e5e5e5;
+    padding: 24px 0;
+    position: relative;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.4);
 }
 
-.config-heading {
-    min-height: 34px;
+.config-section:first-of-type {
+    border-top: 1px solid rgba(204, 204, 204, 0.4);
+}
 
+
+.config-section__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    font-size: 8px;
-    color: #777;
+    cursor: pointer;
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    color: #707070;
 }
 
-.config-heading span:last-child {
-    color: #222;
-}
-
-.config-heading small {
-    margin-left: 5px;
-}
-
-
-/* Chair types */
-
-.chair-types {
+.config-section__toggle {
     display: flex;
-    gap: 7px;
-
-    padding: 3px 0 13px;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-black);
 }
 
-.chair-type {
-    width: 51px;
-    height: 68px;
+.config-section__arrow {
+    width: 24px;
+    flex-shrink: 0;
+    transition: all .3s ease;
+}
 
-    padding: 3px;
+.config-section.is-open .config-section__arrow {
+    transform: rotate(180deg);
+}
 
+/* =========================
+   SLIDER
+========================= */
+
+.config-slider-wrap {
+    position: relative;
+    width: 100%;
+    display: none;
+    margin-top: 24px;
+}
+
+
+.config-swiper {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 29px;
+    padding-left: 29px;
+}
+
+.config-swiper .swiper-wrapper {
+    align-items: center;
+}
+
+.config-swiper .swiper-slide {
+    width: 82px !important;
+    height: auto;
+}
+
+.config-swiper .swiper-slide.is-active {
+    width: 102px !important;
+}
+
+.config-swiper .swiper-slide:hover .chair-card {
+    border-color: var(--color-dark);
+
+}
+
+.config-swiper .swiper-slide.is-active .chair-card {
+    border-color: var(--color-dark);
+}
+
+.chair-card {
+    padding: 9px 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 8px;
+    background: #fff;
+
+    cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease;
 }
 
-.chair-type.active {
-    border-color: #999;
+
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.chair-card__image {
+    width: 100%;
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.chair-type img {
-    width: 42px;
-    height: 43px;
-
+.chair-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
-.chair-type span {
-    font-size: 7px;
+
+
+.chair-card>span {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2%;
+    text-align: center;
+    margin-top: 12px;
 }
 
 
-/* =========================================
-   CONFIGURE
-========================================= */
-
-.configure {
-    margin-top: 30px;
+/* =========================
+   NAVIGATION
+========================= */
+.config-section .swiper-pagination {
+    top: auto;
+    background: #EBEBEB;
+    height: 2px;
+    bottom: 2px !important;
 }
 
-.option {
-    padding: 15px 0;
-
-    border-bottom: 1px solid #e5e5e5;
+.config-section .swiper-pagination-progressbar-fill {
+    background: var(--color-dark);
 }
 
-.option-title {
-    margin-bottom: 13px;
+.config-nav {
+    position: absolute;
+    z-index: 5;
+    top: calc(50% + 8px);
+    width: 8px;
+    height: 16px;
 
-    color: #777;
-
-    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B9B9B9;
+    cursor: pointer;
+    transform: translateY(-50%);
 }
 
-.mesh-option {
-    padding: 4px 8px;
+.config-nav::after {
+    display: none;
+}
 
-    border: 1px solid #222;
-    border-radius: 20px;
+.config-nav--prev {
+    left: 0;
+}
 
-    font-size: 8px;
+.config-nav--next {
+    right: 0;
 }
 
 
 
+/* =========================
+   PROGRESS
+========================= */
 
+.config-slider-progress {
+    position: relative;
+
+    width: 100%;
+    height: 2px;
+
+    margin-top: 7px;
+
+    background: #e8e8e8;
+}
+
+.config-slider-progress span {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 78px;
+    height: 2px;
+
+    background: #222;
+
+    transition: transform .3s ease;
+}
+
+
+.configure-options {
+    margin-top: 60px;
+}
+
+.configure-options__title {
+    font-size: 24px;
+    line-height: 110.00000000000001%;
+    margin-bottom: 40px;
+}
+
+.configure-option__list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.configure-option__label {
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    color: #707070;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+    padding-left: 5px;
+    margin-bottom: 16px;
+}
+
+.configure-option .option-cates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 62px;
+}
+
+.configure-option .option-cate {
+    display: inline-block;
+    font-family: 'PP Neue Montreal';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2%;
+    padding: 7px 15px;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.configure-option .option-cate:hover {
+    border-color: var(--color-dark);
+
+}
+
+.configure-option .option-cate.selected {
+    border-color: var(--color-dark);
+}
+
+.configure-option .cs-colors {
+    margin-top: 0;
+    justify-content: start;
+    gap: 60px;
+}
 
 /* =========================================
    FULLSCREEN
@@ -4492,6 +4732,7 @@ model-viewer {
 .chair-configurator.is-fullscreen .chair-viewer {
     flex: 1 1 100%;
     width: 100%;
+
 }
 
 .view-room-wrapper {

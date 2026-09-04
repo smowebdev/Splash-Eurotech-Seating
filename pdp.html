@@ -810,22 +810,21 @@
                 </div>
             </section>
 
-            <section class="build-own-sec">
+            <section class="chair-configurator-sec">
                 <div class="container">
-                    <div class="build-own__header">
-                        <h2 class="section-heading build-own__heading">Build your own</h2>
-                        <div class="build-own__desc">
+                    <div class="chair-configurator__header">
+                        <h2 class="section-heading chair-configurator__heading">Build your own</h2>
+                        <div class="chair-configurator__desc">
                             <p>Choose mesh colour, arms, casters and the comfort layer — the price updates as you go</p>
                         </div>
                     </div>
                     <div class="chair-configurator" id="chairConfigurator">
 
-                        <!-- LEFT -->
                         <aside class="chair-info">
 
                             <div class="chair-info__top">
 
-                                <h1>Ergohuman GEN2</h1>
+                                <h3 class="chair-info__title">Ergohuman GEN2</h3>
 
                                 <span class="chair-info__collection">
                                     Ergohuman Collection
@@ -834,68 +833,113 @@
                                 <span class="chair-info__code">
                                     ME7ERG-GEN2
                                 </span>
-
-                                <div class="chair-info__description">
-                                    <p>
-                                        Ergohuman GEN2 is designed for users who
-                                        spend long hours seated and require maximum
-                                        ergonomic adjustability.
-                                    </p>
-
-                                    <p>
-                                        Ideal for executive offices, workstations and
-                                        professional environments.
-                                    </p>
-                                </div>
-
                             </div>
+                            <div class="chair-info__description">
+                                <p>
+                                    Ergohuman GEN2 is designed for users who
+                                    spend long hours seated and require maximum
+                                    ergonomic adjustability.
+                                </p>
 
+                                <p>
+                                    Ideal for executive offices, workstations and
+                                    professional environments.
+                                </p>
+                            </div>
                             <div class="chair-accordion">
 
-                                <button class="chair-accordion__item">
-                                    <span>Specifications</span>
-                                    <span>⌄</span>
-                                </button>
+                                <div class="chair-accordion__item">
+                                    <button type="button" class="chair-accordion__question">
+                                        <span>Specifications</span>
+                                        <span class="chair-accordion__icon">
+                                            <img src="assets/images/weui_arrow-outlined.svg" alt="">
+                                        </span>
+                                    </button>
 
-                                <button class="chair-accordion__item">
-                                    <span>Current Configuration</span>
-                                    <span>⌄</span>
-                                </button>
+                                    <div class="chair-accordion__answer">
+                                        <div class="chair-accordion__answer-inner">
+                                            <p>
+                                                Ergonomic chair with adjustable seat height, backrest,
+                                                armrests and lumbar support.
+                                            </p>
 
-                                <button class="chair-accordion__item">
-                                    <span>Downloads</span>
-                                    <span>⌄</span>
-                                </button>
+                                            <ul>
+                                                <li>Seat height: 450–550mm</li>
+                                                <li>Weight capacity: 130kg</li>
+                                                <li>Adjustable armrests</li>
+                                                <li>Adjustable lumbar support</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="chair-accordion__item">
+                                    <button type="button" class="chair-accordion__question">
+                                        <span>Current Configuration</span>
+                                        <span class="chair-accordion__icon">
+                                            <img src="assets/images/weui_arrow-outlined.svg" alt="">
+                                        </span>
+                                    </button>
+
+                                    <div class="chair-accordion__answer">
+                                        <div class="chair-accordion__answer-inner">
+                                            <p>
+                                                Your current chair configuration is displayed here.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="chair-accordion__item">
+                                    <button type="button" class="chair-accordion__question">
+                                        <span>Downloads</span>
+                                        <span class="chair-accordion__icon">
+                                            <img src="assets/images/weui_arrow-outlined.svg" alt="">
+                                        </span>
+                                    </button>
+
+                                    <div class="chair-accordion__answer">
+                                        <div class="chair-accordion__answer-inner">
+                                            <a href="#" target="_blank">Download Specifications PDF</a>
+                                            <a href="#" target="_blank">Download Product Brochure</a>
+                                            <a href="#" target="_blank">Download User Manual</a>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
 
                             <div class="chair-info__bottom">
 
-                                <div class="shipping">
-                                    <span>Shipping</span>
+                                <div class="chair-info__shipping">
+                                    <span class="shipping-label">Shipping</span>
 
-                                    <span>
+                                    <span class="shipping-value">
                                         1 Day
-                                        <small>ⓘ</small>
+                                        <img src="assets/images/note-icon.svg" alt="">
                                     </span>
                                 </div>
 
-                                <div class="price">
-                                    <span>Price</span>
+                                <div class="chair-info__price">
+                                    <span class="price-label">Price</span>
 
-                                    <span>
+                                    <span class="price-value">
                                         <small>From</small>
-                                        <strong>$1550</strong>
+                                        <div class="price-value-number">$1550</div>
                                     </span>
                                 </div>
+                                <div class="chair-info__btns">
+                                    <a href="#" class="btn btn-black quote-btn">
+                                        Request a quote
+                                    </a>
 
-                                <button class="quote-btn">
-                                    Request a quote
-                                </button>
+                                    <a href="#" class="btn btn-black-secondary download-btn">
+                                        Download product sheet
+                                    </a>
+                                </div>
 
-                                <button class="download-btn">
-                                    Download product sheet
-                                </button>
 
                             </div>
 
@@ -911,34 +955,46 @@
                                 max-camera-orbit="auto auto 8m" disable-tap>
                             </model-viewer>
 
-                            <!-- BOTTOM TOOLBAR -->
                             <div class="viewer-toolbar">
 
-                                <button class="viewer-tool" id="zoomIn" type="button">
-                                    +
-                                </button>
+                                <div class="viewe-tool__zoom">
+                                    <button class="viewer-tool" id="zoomIn" type="button">
+                                        <div class="viewer-tool__icon">
+                                            <img src="assets/images/ic_baseline-plus.svg" alt="">
+                                        </div>
+                                    </button>
 
-                                <button class="viewer-tool" id="zoomOut" type="button">
-                                    −
-                                </button>
+                                    <button class="viewer-tool viewer-tool__zoomout " id="zoomOut" type="button">
+                                        <div class="viewer-tool__icon">
+                                            <img src="assets/images/ic_baseline-minus.svg" alt="">
+                                        </div>
+                                    </button>
+                                </div>
 
                                 <button class="viewer-tool" id="dimensionsBtn" type="button">
-                                    <span>↗</span>
-                                    Dimensions
+                                    <div class="viewer-tool__icon">
+                                        <img src="assets/images/radix-icons_size.svg" alt="">
+                                    </div>
+                                    <span class="viewer-tool__label">Dimensions</span>
                                 </button>
 
                                 <div class="view-room-wrapper">
                                     <div class="qr-code" id="qrCode"></div>
 
                                     <button class="viewer-tool" id="viewRoomBtn" type="button">
-                                        <span>◇</span>
-                                        View in Room
+                                        <div class="viewer-tool__icon">
+                                            <img src="assets/images/iconamoon_3d-light.svg" alt="">
+                                        </div>
+                                        <span class="viewer-tool__label">View in Room</span>
                                     </button>
                                 </div>
 
                                 <button class="viewer-tool" id="fullscreenBtn" type="button">
-                                    <span class="fullscreen-icon">⛶</span>
-                                    Fullscreen
+                                    <div class="viewer-tool__icon">
+                                        <img src="assets/images/material-symbols_fullscreen.svg" alt="">
+                                        <img src="assets/images/xmark-solid-full.svg" alt="">
+                                    </div>
+                                    <span class="viewer-tool__label">Fullscreen</span>
                                 </button>
 
                             </div>
@@ -948,133 +1004,375 @@
 
                         <!-- RIGHT -->
                         <aside class="chair-config">
-                            <h2>Choose Chair</h2>
+                            <h4 class="chair-config__title">Choose Chair</h4>
 
                             <div class="config-section">
 
-                                <div class="config-heading">
+                                <div class="config-section__header">
                                     <span>Collection</span>
 
-                                    <span>
-                                        Ergohuman
-                                        <small>⌃</small>
-                                    </span>
-                                </div>
-
-                                <div class="chair-types">
-
-                                    <button class="chair-type">
-                                        <img src="assets/images/chair-1.png" alt="">
-                                        <span>Apollo</span>
-                                    </button>
-
-                                    <button class="chair-type">
-                                        <img src="assets/images/chair-2.png" alt="">
-                                        <span>Kinetic</span>
-                                    </button>
-
-                                    <button class="chair-type active">
-                                        <img src="assets/images/chair-3.png" alt="">
+                                    <div class="config-section__toggle">
                                         <span>Ergohuman</span>
-                                    </button>
+                                        <span class="config-section__arrow">
+                                            <img src="assets/images/weui_arrow-outlined.svg" alt="">
+                                        </span>
+                                    </div>
+                                </div>
 
-                                    <button class="chair-type">
-                                        <img src="assets/images/chair-4.png" alt="">
-                                        <span>Ac...</span>
-                                    </button>
+                                <div class="config-slider-wrap">
+
+                                    <div class="swiper config-swiper collection-swiper">
+
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-1.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Apollo.png" alt="Apollo">
+                                                    </div>
+                                                    <span>Apollo</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-2.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Kinetic.png" alt="Kinetic">
+                                                    </div>
+                                                    <span>Kinetic</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide is-active" data-url="assets/models/chair.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Ergohuman.png" alt="Ergohuman">
+                                                    </div>
+                                                    <span>Ergohuman</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-1.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Adapt.png" alt="Adapt">
+                                                    </div>
+                                                    <span>Adapt</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-2.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/4x4.png" alt="4x4">
+                                                    </div>
+                                                    <span>4x4</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-3.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Apollo-II.png" alt="Apollo II">
+                                                    </div>
+                                                    <span>Apollo II</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-7.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Leather.png" alt="Leather">
+                                                    </div>
+                                                    <span>Leather</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div type="button"
+                                            class="swiper-button-prev config-nav config-nav--prev collection-prev">
+                                            <svg width="8" height="16" viewBox="0 0 8 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.36534 11.6119L5.65801 12.3185L1.80534 8.46721C1.74324 8.4055 1.69395 8.33211 1.66032 8.25128C1.62669 8.17045 1.60937 8.08376 1.60937 7.99621C1.60937 7.90866 1.62669 7.82197 1.66032 7.74114C1.69395 7.6603 1.74324 7.58692 1.80534 7.52521L5.65801 3.67188L6.36468 4.37854L2.74868 7.99521L6.36534 11.6119Z"
+                                                    fill="currentColor" />
+                                            </svg>
+
+                                        </div>
+
+                                        <div type="button"
+                                            class="swiper-button-next config-nav config-nav--next collection-next">
+                                            <svg width="8" height="16" viewBox="0 0 8 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1.63466 4.38813L2.34199 3.68146L6.19466 7.53279C6.25676 7.5945 6.30605 7.66789 6.33968 7.74872C6.37331 7.82955 6.39062 7.91624 6.39062 8.00379C6.39062 8.09134 6.37331 8.17803 6.33968 8.25886C6.30605 8.3397 6.25676 8.41308 6.19466 8.47479L2.34199 12.3281L1.63532 11.6215L5.25132 8.00479L1.63466 4.38813Z"
+                                                    fill="currentColor" />
+                                            </svg>
+
+                                        </div>
+                                        <div class="swiper-pagination collection-pagination"></div>
+
+                                    </div>
+
+
 
                                 </div>
+
 
                             </div>
 
 
                             <div class="config-section">
 
-                                <div class="config-heading">
+                                <div class="config-section__header">
                                     <span>Model</span>
 
-                                    <span>
-                                        GEN2
-                                        <small>⌄</small>
-                                    </span>
+                                    <button type="button" class="config-section__toggle">
+                                        <span>GEN2</span>
+                                        <span class="config-section__arrow">
+                                            <img src="assets/images/weui_arrow-outlined.svg" alt="">
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="config-slider-wrap">
+
+                                    <div class="swiper config-swiper model-swiper">
+
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide" data-url="assets/models/chair.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Ergohuman-GEN2.png"
+                                                            alt="GEN-2">
+                                                    </div>
+                                                    <span>GEN-2</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-1.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Ergohuman-GEN2-high-all-mesh-blue.png"
+                                                            alt="Gen-2 With Headrest">
+                                                    </div>
+                                                    <span>Gen-2 With Headrest</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-2.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Xtreme.png" alt="Xtreme">
+                                                    </div>
+                                                    <span>Xtreme</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair-3.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Xtreme.png"
+                                                            alt="Xtreme With Headrest">
+                                                    </div>
+                                                    <span>Xtreme With Headrest</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="swiper-slide" data-url="assets/models/chair.glb">
+                                                <div class="chair-card">
+                                                    <div class="chair-card__image">
+                                                        <img src="assets/images/products/Xtreme.png" alt="Ultra ">
+                                                    </div>
+                                                    <span>Ultra </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div type="button"
+                                            class="swiper-button-prev config-nav config-nav--prev model-prev">
+                                            <svg width="8" height="16" viewBox="0 0 8 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.36534 11.6119L5.65801 12.3185L1.80534 8.46721C1.74324 8.4055 1.69395 8.33211 1.66032 8.25128C1.62669 8.17045 1.60937 8.08376 1.60937 7.99621C1.60937 7.90866 1.62669 7.82197 1.66032 7.74114C1.69395 7.6603 1.74324 7.58692 1.80534 7.52521L5.65801 3.67188L6.36468 4.37854L2.74868 7.99521L6.36534 11.6119Z"
+                                                    fill="currentColor" />
+                                            </svg>
+
+                                        </div>
+
+                                        <div type="button"
+                                            class="swiper-button-next config-nav config-nav--next model-next">
+                                            <svg width="8" height="16" viewBox="0 0 8 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1.63466 4.38813L2.34199 3.68146L6.19466 7.53279C6.25676 7.5945 6.30605 7.66789 6.33968 7.74872C6.37331 7.82955 6.39062 7.91624 6.39062 8.00379C6.39062 8.09134 6.37331 8.17803 6.33968 8.25886C6.30605 8.3397 6.25676 8.41308 6.19466 8.47479L2.34199 12.3281L1.63532 11.6215L5.25132 8.00479L1.63466 4.38813Z"
+                                                    fill="currentColor" />
+                                            </svg>
+
+                                        </div>
+                                        <div class="swiper-pagination model-pagination"></div>
+
+                                    </div>
+
+
                                 </div>
 
                             </div>
 
+                            <div class="configure-options">
 
-                            <div class="configure">
+                                <h4 class="configure-options__title">Configure Chair</h4>
+                                <div class="configure-option__list">
+                                    <div class="configure-option seat-option">
+                                        <div class="configure-option__label">
+                                            1. Select Seat: <span>Mesh</span>
+                                        </div>
 
-                                <h2>Configure Chair</h2>
+                                        <div class="option-cates">
+                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                                Mesh
+                                            </div>
 
-                                <div class="option">
-
-                                    <div class="option-title">
-                                        1. Select Seat: Mesh
+                                            <div class="option-cate" data-url="assets/models/chair-1.glb">
+                                                Leather
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="configure-option seat-color-option">
 
-                                    <button class="mesh-option active">
-                                        Mesh
-                                    </button>
+                                        <div class="configure-option__label">
+                                            2. Select Seat Color: <span>Blue</span>
+                                        </div>
 
+                                        <div class="cs-colors color-options">
+
+                                            <span class="cs-color-indicator"></span>
+
+                                            <button type="button" class="cs-color color-option "
+                                                data-url="assets/models/chair-1.glb" style="--color: #070707;"
+                                                aria-label="Black">
+                                                <div class="dot"></div>
+                                                <span>Black</span>
+                                            </button>
+
+                                            <button type="button" class="cs-color color-option"
+                                                data-url="assets/models/chair-2.glb" style="--color: #C0C0C0;"
+                                                aria-label="Grey">
+                                                <div class="dot"></div>
+                                                <span>Grey</span>
+                                            </button>
+
+                                            <button type="button" class="cs-color color-option active"
+                                                data-url="assets/models/chair.glb" style="--color: #5182A4;"
+                                                aria-label="Blue">
+                                                <div class="dot"></div>
+                                                <span>Blue</span>
+                                            </button>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="configure-option back-option">
+                                        <div class="configure-option__label">
+                                            3. Select Back: <span>Mesh</span>
+                                        </div>
+
+                                        <div class="option-cates">
+                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                                Mesh
+                                            </div>
+
+                                            <div class="option-cate" data-url="assets/models/chair-2.glb">
+                                                Leather
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="configure-option back-color-option">
+
+                                        <div class="configure-option__label">
+                                            4. Select Back Color: <span>Blue</span>
+                                        </div>
+
+                                        <div class="cs-colors color-options">
+
+                                            <span class="cs-color-indicator"></span>
+
+                                            <button type="button" class="cs-color color-option "
+                                                data-url="assets/models/chair-2.glb" style="--color: #070707;"
+                                                aria-label="Black">
+                                                <div class="dot"></div>
+                                                <span>Black</span>
+                                            </button>
+
+                                            <button type="button" class="cs-color color-option"
+                                                data-url="assets/models/chair-1.glb" style="--color: #D13532;"
+                                                aria-label="Red">
+                                                <div class="dot"></div>
+                                                <span>Red</span>
+                                            </button>
+
+                                            <button type="button" class="cs-color color-option active"
+                                                data-url="assets/models/chair.glb" style="--color: #5182A4;"
+                                                aria-label="Blue">
+                                                <div class="dot"></div>
+                                                <span>Blue</span>
+                                            </button>
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="configure-option seat-comfort-option">
+
+                                        <div class="configure-option__label">
+                                            5. Select Seat comfort: <span>Tempur-Pedic®</span>
+                                        </div>
+                                        <div class="option-cates">
+                                            <div class="option-cate " data-url="assets/models/chair-3.glb">
+                                                Standard foam
+                                            </div>
+                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                                Tempur-Pedic®
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="configure-option arms-option">
+                                        <div class="configure-option__label">
+                                            6. Select Arms: <span>Tempur-Pedic®</span>
+                                        </div>
+                                        <div class="option-cates">
+                                            <div class="option-cate " data-url="assets/models/chair-1.glb">
+                                                Armless
+                                            </div>
+                                            <div class="option-cate " data-url="assets/models/chair-3.glb">
+                                                Height Adjustable + Pivot
+                                            </div>
+                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                                Height Adjustable + Pivot + Flip Front
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="configure-option casters-option">
+                                        <div class="configure-option__label">
+                                            7. Select Casters: <span>Tempur-Pedic®</span>
+                                        </div>
+                                        <div class="option-cates">
+                                            <div class="option-cate selected" data-url="assets/models/chair.glb">
+                                                Roller Blade
+                                            </div>
+                                            <div class="option-cate " data-url="assets/models/chair-3.glb">
+                                                Stationary Glides
+                                            </div>
+                                            <div class="option-cate " data-url="assets/models/chair-2.glb">
+                                                Hoodless Multi Surface
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-
-                                <div class="option">
-
-                                    <div class="option-title">
-                                        2. Select Seat Color: Blue
-                                    </div>
-
-                                    <div class="color-options">
-
-                                        <button class="color-option" data-color="black"
-                                            data-url="assets/models/chair-1.glb">
-                                            <span class="color black"></span>
-                                            <small>Black</small>
-                                        </button>
-
-                                        <button class="color-option" data-color="grey"
-                                            data-url="assets/models/chair-2.glb">
-                                            <span class="color grey"></span>
-                                            <small>Grey</small>
-                                        </button>
-
-                                        <button class="color-option active" data-color="blue"
-                                            data-url="assets/models/chair.glb">
-                                            <span class="color blue"></span>
-                                            <small>Blue</small>
-                                        </button>
-
-                                    </div>
-                                    <div class="cs-colors color-options">
-
-                                        <span class="cs-color-indicator"></span>
-
-                                        <button type="button" class="cs-color color-option active"
-                                            data-url="assets/models/chair-1.glb" style="--color: #070707;"
-                                            aria-label="Black">
-                                            <div class="dot"></div>
-                                            <span>Black</span>
-                                        </button>
-
-                                        <button type="button" class="cs-color color-option"
-                                            data-url="assets/models/chair-2.glb" style="--color: #C0C0C0;"
-                                            aria-label="Grey">
-                                            <div class="dot"></div>
-                                            <span>Grey</span>
-                                        </button>
-
-                                        <button type="button" class="cs-color color-option active"
-                                            data-url="assets/models/chair.glb" style="--color: #5182A4;"
-                                            aria-label="Blue">
-                                            <div class="dot"></div>
-                                            <span>Blue</span>
-                                        </button>
-
-
-                                    </div>
-
-                                </div>
 
                             </div>
 
@@ -1249,12 +1547,11 @@
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
     </script>
     <script src="assets/js/main.js"></script>
 
-    <script src="assets/js/test.js"></script>
+    <script src="assets/js/pdp.js"></script>
 </body>
 
 </html>

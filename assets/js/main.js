@@ -17,7 +17,6 @@ function initColorPicker({
 
   function moveIndicator($color) {
     if (!$color.length || !$indicator.length) return;
-    console.log($color);
 
     $indicator.css("transform", `translate(${$color.position().left}px, -50%)`);
   }
@@ -29,7 +28,9 @@ function initColorPicker({
 
     if (!$activeColor.length) return;
 
-    $colors.removeClass("active");
+    const $wrapper = $(this).closest(".color-options");
+
+    $wrapper.find(".color-option").removeClass("active");
     $activeColor.addClass("active");
 
     moveIndicator($activeColor);
@@ -578,4 +579,4 @@ function updatePerformanceFeaturesLayout() {
     });
     // Product Detail Faq - End
   });
-});
+})(jQuery);

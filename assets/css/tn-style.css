@@ -10,15 +10,19 @@
     padding: 60px 0;
 }
 
+.key-statistics .container {
+    max-width: 1500px;
+}
+
 .key-statistics__grid {
     display: grid;
     gap: 138.5px;
-  
-    grid-template-columns: 132px 111px 120px 120px 131px 154px;
+
+    grid-template-columns: 132px 112px 120px 120px 131px 154px;
 }
 
 .key-statistics__item {
-   position: relative;
+    position: relative;
 }
 
 .key-statistics__item:last-child {
@@ -31,14 +35,14 @@
 }
 
 .key-statistics__number {
-    font-family: Neue Montreal;
     font-weight: 500;
     font-size: 32px;
-    line-height: 1;
+    line-height: 38px;
     letter-spacing: 2%;
     text-align: center;
     white-space: nowrap;
-    color: #D13532
+    color: var(--color-accent);
+    margin-bottom: 12px;
 }
 
 .key-statistics__text {
@@ -52,13 +56,10 @@
 }
 
 .key-statistics__text {
-    font-family: Neue Montreal;
-    font-weight: 400;
     font-size: 16px;
-    line-height: 1;
+    line-height: 19px;
     letter-spacing: 2%;
     text-align: center;
-    color: #000
 }
 
 .key-statistics__item::after {
@@ -75,6 +76,10 @@
     display: none;
 }
 
+.about-manifesto {
+    padding-top: 40px;
+}
+
 .about-manifesto__flex {
     display: flex;
     align-items: center;
@@ -89,33 +94,37 @@
     max-width: 577px;
 }
 
+.about-manifesto .section-heading {
+    font-weight: 400;
+    letter-spacing: 2%;
+    font-family: 'Neue Montreal';
+}
+
 .legacy-company__wrap {
     display: flex;
     gap: 140px;
-    align-items: center;
+    align-items: end;
 
+}
+
+.legacy-company__image {
+    width: 100%;
 }
 
 .legacy-company {
     padding-top: 182px;
     background-color: #FAFAFA;
     padding-bottom: 308px;
-    margin-bottom: -100px;
+    margin-bottom: -140px;
+    margin-top: -50px;
 }
 
 .legacy-company__left {
-    margin-left: calc(0px - calc((100vw - 1520px) / 2));
-    width: calc(420px / 1520px * 100%);
-    max-height: 320px;
+    margin-left: -40px;
+    width: 460px;
+    min-width: 400px;
 }
 
-.legacy-company__title {
-    margin-bottom: 50px;
-
-    font-size: 40px;
-    line-height: 1;
-
-}
 
 .legacy-company__right {
     max-width: 360px;
@@ -125,7 +134,8 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 1.4;
-    letter-spacing: -0.02px;
+    letter-spacing: 2%;
+    margin-top: 40px;
 
 }
 
@@ -149,6 +159,10 @@
     padding-bottom: 40px;
 }
 
+.red-box-2 .red-box__wrap {
+    padding-bottom: 45px;
+}
+
 .red-box__title {
     font-weight: 400;
     font-size: 40px;
@@ -158,21 +172,27 @@
     margin-bottom: 40px;
 }
 
+.red-box-2 .red-box__title {
+    max-width: 382px;
+}
+
+.red-box-2 .red-box__text {
+    max-width: 406px;
+}
+
 .red-box__text {
     color: #FFFFFF;
     line-height: 1.4;
     max-width: 506px;
+    letter-spacing: 2%;
 
 }
 
 .red-box__wrap::before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(67.06deg, rgba(34, 33, 33, 0.5) 38.49%, rgba(0, 0, 0, 0) 71.2%);
-    left: 0;
-    bottom: 0;
+    background: linear-gradient(-283.06deg, rgba(34, 33, 33, 0.5) 38.49%, rgba(0, 0, 0, 0) 71.2%);
+    inset: 0;
     pointer-events: none;
 }
 
@@ -181,21 +201,26 @@
     z-index: 2;
 }
 
+.red-box {
+    overflow: hidden;
+}
+
 .red-box__wrap::after {
     content: '';
     width: 60px;
     height: 338px;
     background-color: #D13532;
     bottom: 0;
-    left: -30px;
+    left: -40px;
     position: absolute;
 
 }
 
+.red-box-2 .red-box__wrap::after {
+    height: 322px;
+}
+
 .decades-of-experience__title {
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 1;
     text-align: center;
     margin-bottom: 24px;
 }
@@ -220,6 +245,12 @@
     background-color: #ECEDEA;
 }
 
+.decades-of-experience__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .decades-of-experience__item {
     max-width: 480px;
 }
@@ -234,9 +265,8 @@
 }
 
 .decades-swiper__title {
-    font-weight: 500;
     font-size: 24px;
-    line-height: 1;
+    line-height: 29px;
     letter-spacing: 0.02em;
     margin-bottom: 16px;
 
@@ -246,6 +276,14 @@
     padding-top: 24px;
 }
 
+.decades-of-experience__content p {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: var(--color-black-light);
+    max-width: 286px;
+}
+
 .decades-of-experience__header {
     margin-bottom: 40px;
 }
@@ -253,7 +291,10 @@
 .red-box__list {
     display: flex;
     list-style: none;
-
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 2%;
+    text-transform: uppercase;
 }
 
 .red-box__list li {
@@ -278,46 +319,105 @@
 }
 
 .section-certified__list li {
-    color: #000000;
-    border-left: 2px solid #D13532;
+    border-left: 4px solid var(--color-accent);
     line-height: 1.4;
     letter-spacing: 0.02em;
-    padding-left: 30px;
+    padding-left: 16px;
 }
 
 .section-certified__wrap {
     display: flex;
     align-items: end;
-    gap: 133px;
 }
 
 .section-certified__left {
     display: flex;
     gap: 40px;
     align-items: center;
+    padding-right: 133px;
+    width: 43.45%;
+    min-width: 400px;
 
 }
 
 .section-certified__left img {
-    border-radius: 42px;
     max-width: 139px;
+    flex-shrink: 0;
+}
+
+.section-certified__right {
+    width: 56.55%;
 }
 
 .section-certified__title {
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 1;
     margin-bottom: 24px;
+}
+
+.section-certified__text {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
 }
 
 .section-certified {
     padding: 160px 0;
 }
 
+.section-certified .container {
+    max-width: 1480px;
+}
+
 .about-us .hero-sec {
     min-height: 650px;
     padding: 40px 0;
 }
-.about-us .hero-sec .btn  {
+
+.about-us .hero-sec .btn {
     padding: 11px 16px;
+}
+
+.about-hero__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+.about-hero__top .left {
+    width: 58.2%;
+    padding-right: 60px;
+}
+
+.about-hero__top .right {
+    width: 41.8%;
+    padding-bottom: 13px;
+}
+
+.about-hero__heading {
+    font-size: 72px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 2%;
+    max-width: 467px;
+}
+
+.about-hero__desc {
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    max-width: 284px;
+}
+
+.about-hero .section-label {
+    margin-bottom: 12px;
+}
+
+.about-hero {
+    padding: 80px 0 0;
+}
+
+.about-hero-img {
+    margin-top: 40px;
+}
+
+.about-hero-img img {
+    width: 100%;
 }

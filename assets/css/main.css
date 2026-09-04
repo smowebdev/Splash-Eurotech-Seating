@@ -3959,7 +3959,7 @@ a.breadcrumb__item:hover {
 }
 
 .cta-contact__right {
-    flex: 50%;
+    width: 50%;
 }
 
 .cta-contact__image {
@@ -4089,6 +4089,29 @@ a.breadcrumb__item:hover {
     margin-top: 16px;
 }
 
+.cta-contact-reverse-sec .cta-contact__inner {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cta-contact-reverse-sec .cta-contact__image {
+    margin-right: 0;
+    margin-left: calc(0px - calc((100vw - 1520px)/2));
+}
+
+.cta-contact-reverse-sec .cta-contact__left {
+    padding: 80px 40px 100px 120px;
+}
+
+
+.cta-contact-reverse-sec .cta-contact__heading {
+    max-width: 100%;
+}
+
+.cta-contact-reverse-sec .cta-contact__desc {
+    max-width: 508px;
+}
+
 .chair-configurator-sec .container {
     max-width: 1580px;
 }
@@ -4102,9 +4125,6 @@ a.breadcrumb__item:hover {
 
 
 
-/* =========================================
-   LEFT
-========================================= */
 
 .chair-info {
     flex: 0 0 24.35%;
